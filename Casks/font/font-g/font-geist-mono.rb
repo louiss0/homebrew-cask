@@ -1,6 +1,6 @@
 cask "font-geist-mono" do
-  version "1.5.0"
-  sha256 "8a57ecad52a78d5d4f90e1ac2f8cbf1ed9479c796e52ef2e564f67c8cf06c247"
+  version "1.8.0"
+  sha256 "ee309b6b0762f89c3e8a799f700bee0323315ff047df3a587af978f8180daa28"
 
   url "https://github.com/vercel/geist-font/releases/download/#{version}/geist-font-#{version}.zip",
       verified: "github.com/vercel/geist-font/"
@@ -11,8 +11,6 @@ cask "font-geist-mono" do
     url :url
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   font "geist-font-#{version}/fonts/GeistMono/otf/GeistMono-Black.otf"
   font "geist-font-#{version}/fonts/GeistMono/otf/GeistMono-BlackItalic.otf"

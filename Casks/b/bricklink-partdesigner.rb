@@ -1,6 +1,6 @@
 cask "bricklink-partdesigner" do
-  version "2.25.3_1"
-  sha256 "78ab640c2f0a298ad24a69989edbc7e8bec8eb8118d1a337d8d7d9e43504adbe"
+  version "2.26.3_1"
+  sha256 "e7aaf9f48720200829aa3af79b2e9ad3284e50caa5d1484a73b43abb390bedb7"
 
   url "https://studio.download.bricklink.info/PartDesigner/Archive/#{version}/PartDesigner.pkg",
       verified: "studio.download.bricklink.info/PartDesigner/"
@@ -12,8 +12,6 @@ cask "bricklink-partdesigner" do
     url :homepage
     regex(/"strVersion"\s*:\s*"([^"]+)"/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on cask: "bricklink-studio"

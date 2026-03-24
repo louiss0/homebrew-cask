@@ -1,6 +1,6 @@
 cask "crashplan" do
-  version "11.6.0,758"
-  sha256 "870ce116cc6ccb54a331d25a6f41c1ded3ca46f90f5240d69034aa757c474ddf"
+  version "11.9.0,507"
+  sha256 "d74cc592ec779acbbc6962cdf4d880a8ec3ddfb0e6f0b20f03105f7be93c499a"
 
   url "https://download.crashplan.com/installs/agent/cloud/#{version.csv.first}/#{version.csv.second}/install/CrashPlan_#{version.csv.first}_#{version.csv.second}_Mac.dmg"
   name "CrashPlan"
@@ -32,7 +32,14 @@ cask "crashplan" do
             pkgutil:   "com.crashplan.app.pkg"
 
   zap trash: [
+    "/Library/Application Support/CrashPlan",
+    "/Library/Caches/CrashPlan",
+    "/Library/LaunchDaemons/com.crashplan.service.plist",
+    "/Library/Logs/CrashPlan",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.crashplan.desktop.sfl*",
     "~/Library/Application Support/CrashPlan",
+    "~/Library/LaunchAgents/com.crashplan.menubar.plist",
+    "~/Library/Logs/CrashPlan",
     "~/Library/Preferences/com.crashplan.desktop.plist",
   ]
 end

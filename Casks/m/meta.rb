@@ -1,6 +1,6 @@
 cask "meta" do
-  version "2.2"
-  sha256 "18429c0f6875719af17f5845b1799b85c4bea45e7d915c45463cfa14e545236d"
+  version "2.3.6"
+  sha256 "c73c6ecc16874fbc78c5d4a73f2b28b7a25e89509a7dd791ce22bfccb9457779"
 
   url "https://www.nightbirdsevolve.com/meta/updates/bin/Meta%20#{version}.zip"
   name "Meta"
@@ -12,10 +12,7 @@ cask "meta" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Meta.app"
 

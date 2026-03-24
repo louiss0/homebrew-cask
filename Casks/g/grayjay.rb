@@ -1,9 +1,9 @@
 cask "grayjay" do
   arch arm: "arm64", intel: "x64"
 
-  version "8"
-  sha256 arm:   "a4e9c21c74d277d4f2de01385ffc60d387c9b05fb104c2188b982ca0f8a200ce",
-         intel: "dbbb123e624c5c695fda2bfa5ff1f14cfe1a61a7a102b4ae235868f4d070ae6f"
+  version "17"
+  sha256 arm:   "d19c6a57cd925424a92806d96796ab1a031b7e9ae9deaa312fe411a5b3d456aa",
+         intel: "14986dbe9a712a442351750778d50420d8c5d6d08200553667564961cdd3f757"
 
   url "https://updater.grayjay.app/Apps/Grayjay.Desktop/#{version}/Grayjay.Desktop-osx-#{arch}-v#{version}.zip"
   name "Grayjay desktop"
@@ -14,8 +14,6 @@ cask "grayjay" do
     url "https://updater.grayjay.app/Apps/Grayjay.Desktop/VersionLastMacOS.json"
     strategy :json, &:to_s
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "Grayjay.app"
 

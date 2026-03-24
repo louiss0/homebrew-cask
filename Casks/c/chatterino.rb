@@ -1,6 +1,6 @@
 cask "chatterino" do
-  version "2.5.3"
-  sha256 "a53030d8aa357dc6315a140af63d287503e7dbc2352f0d821cbb36d4a09ba3b8"
+  version "2.5.5"
+  sha256 "eb2b4f48f1a96ad362c21bec6bec9ab02c662c652c963b8884dcad171ddad000"
 
   url "https://chatterino.fra1.digitaloceanspaces.com/bin/#{version}/Chatterino.dmg",
       verified: "chatterino.fra1.digitaloceanspaces.com/"
@@ -15,7 +15,7 @@ cask "chatterino" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  depends_on macos: ">= :big_sur"
 
   app "chatterino.app"
 

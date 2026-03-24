@@ -1,11 +1,11 @@
 cask "wondershare-uniconverter" do
-  arch arm: "arm_"
+  arch arm: "_arm"
 
-  version "16.5.6"
-  sha256 arm:   "c52e68ab4ce45daa4ebbe2a471da9f5b31e7c18d91c5741a1fb81ecdadf6d74c",
-         intel: "3e728fa14d9bd8b821e81ce7d89a15786e48fe05d0bc26a4e96c2d27425754d0"
+  version "17.2.3"
+  sha256 arm:   "f07220399f9dbb9c97f711557da18024a53b1f6cf3c0f72165d0860625cd7e5c",
+         intel: "27816cb4c8157014c1ffdd6a0ae0b421040c65c713a1f9317c3e79e1753170b3"
 
-  url "https://download.wondershare.com/cbs_down/uniconverter#{version.major}-mac_#{arch}#{version}_full14207.zip"
+  url "https://download.wondershare.com/cbs_down/uniconverter-mac#{arch}_#{version}_full14207.zip"
   name "UniConverter"
   desc "Video editing software"
   homepage "https://videoconverter.wondershare.com/"

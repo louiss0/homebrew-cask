@@ -1,6 +1,6 @@
 cask "ente-auth" do
-  version "4.4.0"
-  sha256 "698a727f103a1d00ef646f3fa6f74a0f7850bea1235054ec2f3fbc9ad54b7ce1"
+  version "4.4.17"
+  sha256 "b162ac257bc1b520bf497bb5fabe1c300739d19448c426433ca714bb8fb4eda9"
 
   url "https://github.com/ente-io/ente/releases/download/auth-v#{version}/ente-auth-v#{version}.dmg",
       verified: "github.com/ente-io/ente/"
@@ -13,8 +13,6 @@ cask "ente-auth" do
     regex(/^auth[._-]v?(\d+(?:\.\d+)+)$/i)
     strategy :github_releases
   end
-
-  depends_on macos: ">= :mojave"
 
   app "Ente Auth.app"
 

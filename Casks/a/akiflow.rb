@@ -1,6 +1,6 @@
 cask "akiflow" do
-  version "2.53.7,e65be87c"
-  sha256 "eadc13f0ffd253c5dc059c7aa92c948e34228afc717ad20d35ae8004599fb10d"
+  version "2.69.3,2bd8b1fa"
+  sha256 "dcd819aff5a0870acd243c851ecb748cb1316154bd4c77e3897f919060171a0f"
 
   url "https://download.akiflow.com/builds/Akiflow-#{version.csv.first}-#{version.csv.second}-universal.dmg"
   name "Akiflow"
@@ -21,7 +21,7 @@ cask "akiflow" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "Akiflow.app"
 

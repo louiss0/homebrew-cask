@@ -1,6 +1,6 @@
 cask "gridtracker2" do
-  version "2.250616.2"
-  sha256 "1f73310fef6a13df726f63fb738e19d79ec7b27e7550cd4d733a02016bb4d693"
+  version "2.260307.1"
+  sha256 "bc6441e16e62c33baedbbc8437f5ad6d89045b08f99bef43743553d586187f69"
 
   url "https://download2.gridtracker.org/GridTracker2-#{version}-universal-mac.zip"
   name "GridTracker2"
@@ -12,7 +12,7 @@ cask "gridtracker2" do
     strategy :electron_builder
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "GridTracker2.app"
 

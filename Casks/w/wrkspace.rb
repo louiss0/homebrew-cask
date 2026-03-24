@@ -1,9 +1,9 @@
 cask "wrkspace" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.0.11"
-  sha256 arm:   "3ed6dca05983088f329f528c00a7721c315cc6002976b3f2b0037edef37ed8a3",
-         intel: "2e8a8f0578d8ca660fdde482e184fc4a32b1e12da0a676ab3106da98ae8f7ce4"
+  version "2.1.1"
+  sha256 arm:   "8c8646bc61c855adc27dbdfe6a94223954be904bee961cdc3545000a6c4053ff",
+         intel: "31518a410aa9bcb69f23fd8fcd6ee7a8fb2f47ac45ba94e3474a73f73bcdac56"
 
   url "https://updater.wrkspace.co/download/version/#{version}/darwin-#{arch}"
   name "Wrkspace"
@@ -16,10 +16,6 @@ cask "wrkspace" do
       json["name"]
     end
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
 
   app "Wrkspace.app"
 

@@ -12,10 +12,6 @@ cask "dropshelf" do
     regex(/href=.*?dropshelf[._-]build[._-](\d+)\.zip/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
-
   app "Dropshelf.app"
 
   zap trash: [

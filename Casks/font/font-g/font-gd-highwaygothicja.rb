@@ -9,10 +9,8 @@ cask "font-gd-highwaygothicja" do
 
   livecheck do
     url :homepage
-    regex(/GDHighwayGoJA[._-]Rev(\d+(?:\.\d+)*(?:b\d+)?)[._-]OTF\.zip/)
+    regex(/GDHighwayGoJA[._-]Rev(\d+(?:\.\d+)*(?:b\d+)?)[._-]OTF\.zip/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   font "GDHighwayGoJA-Rev#{version}-OTF/GDhwGoJA-OTF#{version}.otf"
 

@@ -1,5 +1,5 @@
 cask "ndi-tools" do
-  version "6.2.0.3"
+  version "6.3.1.0"
   sha256 :no_check
 
   url "https://downloads.ndi.tv/Tools/NDIToolsInstaller.pkg",
@@ -15,9 +15,7 @@ cask "ndi-tools" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :monterey"
+  depends_on macos: ">= :ventura"
 
   pkg "NDIToolsInstaller.pkg"
 

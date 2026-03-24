@@ -10,10 +10,19 @@ cask "vscodium" do
       skip "Legacy version"
     end
   end
-  on_big_sur :or_newer do
-    version "1.101.24242"
-    sha256 arm:   "7b1864cc4981539819901c7087614e68dcd343078ffec280e168d91f288093d3",
-           intel: "1f215698bc3a3966680982930489636d43c1f61a6bf910caef01e9ea4c229e66"
+  on_big_sur do
+    version "1.106.37943"
+    sha256 arm:   "e09c8fbf04c82d752ec0b4f5f4e93bab8644a06d2b9ad6c08e6b8eb6067b5f85",
+           intel: "a946df0329f0e501db58793ef0c7101480972a25a4edd7ec3bd8cda6006f92e7"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  end
+  on_monterey :or_newer do
+    version "1.112.01907"
+    sha256 arm:   "f67ee456d927a9f49f4dcd8c985a6ce5bc52a8c9cbe8a3616604dbf835549216",
+           intel: "e0458a21773e08a40ba2dede37a06477fc62801c8419a7cb30a27cdf610e4b00"
 
     livecheck do
       url "https://raw.githubusercontent.com/VSCodium/versions/refs/heads/master/stable/darwin/#{arch}/latest.json"
@@ -29,7 +38,6 @@ cask "vscodium" do
   homepage "https://github.com/VSCodium/vscodium"
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "VSCodium.app"
   binary "#{appdir}/VSCodium.app/Contents/Resources/app/bin/codium"

@@ -1,6 +1,6 @@
 cask "wetype" do
-  version "1.4.0,503"
-  sha256 "843af117d30d0665c62660cd383e601733f3a28993f9adac1f6c6dea0eff504b"
+  version "2.0.0,569"
+  sha256 "a95384d5b00e9da8b54afcb362cb42b364b1e01d24e8368fbe5eeb4133a23685"
 
   url "https://download.z.weixin.qq.com/app/mac/#{version.csv.first}/WeTypeInstaller_#{version.csv.first}_#{version.csv.second}.zip"
   name "WeType"
@@ -13,14 +13,17 @@ cask "wetype" do
     regex(/WeTypeInstaller[._-]v?(\d+(?:\.\d+)+)[._-](\d+)\.zip/i)
     strategy :json do |json, regex|
       match = json.dig("data", "mac", "download_link")&.match(regex)
-      next if match.blank?
+
+      # Try to match the version from the `InstallInfo` file name if the
+      # Mac installer file name doesn't include a version
+      match ||= json.dig("data", "mac", "InstallInfo")&.match(/v?(\d+(?:\.\d+)+)[_-](\d+)/i)
+      next unless match
 
       "#{match[1]},#{match[2]}"
     end
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   installer manual: "WeTypeInstaller_#{version.csv.first}_#{version.csv.second}.app"
 

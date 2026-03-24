@@ -8,10 +8,6 @@ cask "jitouch" do
   desc "Multi-touch gestures editor"
   homepage "https://www.jitouch.com/"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
-
   pkg "Install-Jitouch.pkg"
 
   uninstall launchctl: "com.jitouch.Jitouch.agent",

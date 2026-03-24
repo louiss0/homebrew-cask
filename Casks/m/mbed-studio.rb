@@ -12,13 +12,9 @@ cask "mbed-studio" do
     strategy :header_match
   end
 
-  no_autobump! because: :requires_manual_review
+  rename "MbedStudio-*.pkg", "MbedStudio.pkg"
 
   pkg "MbedStudio.pkg"
-
-  preflight do
-    staged_path.glob("MbedStudio-*.pkg").first.rename("#{staged_path}/MbedStudio.pkg")
-  end
 
   uninstall pkgutil: "com.arm.mbed.studio"
 

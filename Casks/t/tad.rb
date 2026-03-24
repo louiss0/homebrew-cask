@@ -16,10 +16,6 @@ cask "tad" do
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
-
   app "Tad.app"
   binary "#{appdir}/Tad.app/Contents/Resources/tad.sh", target: "tad"
 

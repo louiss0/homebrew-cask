@@ -1,24 +1,22 @@
 cask "baidunetdisk" do
   arch arm: "arm64", intel: "x64"
 
-  version "4.51.2"
-  sha256 arm:   "bbb337138666e07aeda2daae9ce3fb01fe3581a53a4f27253eeaa2d7f03f1f0a",
-         intel: "09012ce7cfbb64a5763ee91eac46a4027a2a2358e68c5314a70f6c2dc6b4ef08"
+  version "8.3.1"
+  sha256 arm:   "eec01facd50be00dd5ffe7cc8d85e67e7a0a6199f550ef0ddf6db1d783c96963",
+         intel: "9d55a37783195c9710aa3a5de7cbef0cc4ce0d40bfa4b8d906feb2d151c1e88a"
 
-  url "https://issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/#{version}/BaiduNetdisk_mac_#{version}_#{arch}.dmg",
-      verified: "issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/"
+  url "https://pkg-ant.baidu.com/issue/netdisk/MACguanjia/#{version}/BaiduNetdisk_mac_#{version}_#{arch}.dmg"
   name "Baidu NetDisk"
   name "百度网盘"
   desc "Cloud storage service"
-  homepage "https://pan.baidu.com/download"
+  homepage "https://pan.baidu.com/"
 
   livecheck do
     url "https://pan.baidu.com/disk/cmsdata?do=client"
-    regex(/BaiduNetdisk[._-]mac[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
+    regex(/BaiduNetdisk(?:[._-]mac)?[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "BaiduNetdisk_mac.app"
 

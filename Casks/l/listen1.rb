@@ -12,9 +12,7 @@ cask "listen1" do
   desc "Search and play songs from a variety of online sources"
   homepage "https://listen1.github.io/listen1/"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :el_capitan"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Listen1.app"
 

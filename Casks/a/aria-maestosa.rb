@@ -13,7 +13,7 @@ cask "aria-maestosa" do
     regex(%r{url=.*?/AriaMaestosa[._-]osx[._-]64bits[._-]v?(\d+(?:\.\d+)+[a-z]?)\.zip}i)
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Aria Maestosa.app"
 

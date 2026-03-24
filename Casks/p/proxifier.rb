@@ -20,7 +20,7 @@ cask "proxifier" do
     end
   end
   on_monterey :or_newer do
-    version "3.14"
+    version "3.15"
     sha256 :no_check
 
     url "https://www.proxifier.com/download/ProxifierMac.dmg"
@@ -34,8 +34,6 @@ cask "proxifier" do
   name "Proxifier"
   desc "Proxy client"
   homepage "https://www.proxifier.com/"
-
-  no_autobump! because: :requires_manual_review
 
   app "Proxifier.app"
 

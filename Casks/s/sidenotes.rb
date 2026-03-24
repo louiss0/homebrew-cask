@@ -1,6 +1,6 @@
 cask "sidenotes" do
-  version "1.4.19"
-  sha256 "928beed95d23890e67c61de5b886a22a95ee6df56bf79026fd434f5a4b288a24"
+  version "1.5.3"
+  sha256 "d8785fa1b001aed6a8432a48ebb4e0ad6ca81d77716f98e042f118c9148b9426"
 
   url "https://www.apptorium.com/public/products/sidenotes/releases/SideNotes-#{version}.zip"
   name "SideNotes"
@@ -13,12 +13,14 @@ cask "sidenotes" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :ventura"
 
   app "SideNotes.app"
 
   zap trash: [
+    "~/Library/Application Scripts/com.apptorium.SideNotes",
     "~/Library/Application Scripts/com.apptorium.SideNotes-paddle*.ShareExtension--Paddle-",
+    "~/Library/Application Scripts/com.apptorium.SideNotes.ShareExtension",
     "~/Library/Application Support/com.apptorium.SideNotes-paddle",
     "~/Library/Application Support/SideNotes",
     "~/Library/Caches/com.apptorium.SideNotes-paddle",

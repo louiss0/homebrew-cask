@@ -1,8 +1,8 @@
 cask "emacs-app" do
   arch arm: "arm64-11", intel: "x86_64-10_12"
 
-  version "30.1"
-  sha256 "5a6543e6b753b93389e6ad09ee2e6bbc3f0a5e6389ada572dfd3f0f8f7966bfe"
+  version "30.2-1"
+  sha256 "72b31176903a68a7b82093a94fedd51eda7ecbb3c54eae21a9160cedc88fab1f"
 
   url "https://emacsformacosx.com/emacs-builds/Emacs-#{version}-universal.dmg"
   name "Emacs"
@@ -14,13 +14,11 @@ cask "emacs-app" do
     regex(%r{href=.*?/Emacs[._-]v?(\d+(?:\.\d+)*(?:-\d+)?)[._-]universal\.dmg}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  conflicts_with cask:    [
-                   "emacs@nightly",
-                   "emacs@pretest",
-                 ],
-                 formula: "emacs"
+  conflicts_with cask: [
+    "emacs-app@nightly",
+    "emacs-app@pretest",
+  ]
+  depends_on macos: ">= :big_sur"
 
   app "Emacs.app"
   binary "#{appdir}/Emacs.app/Contents/MacOS/Emacs", target: "emacs"

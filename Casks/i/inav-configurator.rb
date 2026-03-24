@@ -1,9 +1,9 @@
 cask "inav-configurator" do
   arch arm: "arm64", intel: "x64"
 
-  version "8.0.1"
-  sha256 arm:   "235919b9f98b7560dddce10e4e5e4107c56f5f9edce14d69b5acbea9bf758837",
-         intel: "61ffc113f93ef7ff6b19c208006f96773170e4beb1afd934b819a70ad598a0e3"
+  version "9.0.1"
+  sha256 arm:   "66062a9a9dcf5fe13e45cd3956171102caa59da9090d5e945d5915ecacb5309b",
+         intel: "3cd6cc777b8272e41cc2bb5addcdb2f7640d6a5eade3357580b022e7d68d1f1a"
 
   url "https://github.com/iNavFlight/inav-configurator/releases/download/#{version}/INAV-Configurator_MacOS_#{arch}_#{version}.zip"
   name "INAV Configurator"
@@ -15,7 +15,9 @@ cask "inav-configurator" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :catalina"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :monterey"
 
   app "INAV Configurator.app"
 

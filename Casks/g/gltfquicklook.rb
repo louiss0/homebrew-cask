@@ -7,7 +7,7 @@ cask "gltfquicklook" do
   desc "Quick Look plugin for glTF files"
   homepage "https://github.com/magicien/GLTFQuickLook"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "GLTFQuickLook.qlgenerator"
 

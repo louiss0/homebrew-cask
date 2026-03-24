@@ -1,14 +1,6 @@
 cask "calibre" do
-  on_ventura :or_older do
-    on_high_sierra :or_older do
-      version "3.48.0"
-      sha256 "68829cd902b8e0b2b7d5cf7be132df37bcc274a1e5720b4605d2dd95f3a29168"
-    end
-    on_mojave do
-      version "5.44.0"
-      sha256 "89d7772ba1b95d219b34e285353340a174a013e06b4d8ad370433b3b98c94ad4"
-    end
-    on_catalina do
+  on_monterey :or_older do
+    on_catalina :or_older do
       version "6.11.0"
       sha256 "d7c40f3f35ba9043c13303632526f135b2c4086471a5c09ceb8b397c55c076fa"
     end
@@ -20,18 +12,14 @@ cask "calibre" do
       version "6.29.0"
       sha256 "2f76428ae19617875c5725cd892751a80eb2acdda76e06cd19c2f21a63966998"
     end
-    on_ventura do
-      version "7.26.0"
-      sha256 "6c329e20bc575fb2445b2279f1c9df73efecfd371a3864a35f1b575b87332ee4"
-    end
 
     livecheck do
       skip "Legacy version"
     end
   end
-  on_sonoma :or_newer do
-    version "8.5.0"
-    sha256 "fac65f7e2f3badea6ae9e44aef0ec145b091599dde654f40c14e1dcb68e9de5e"
+  on_ventura :or_newer do
+    version "9.5.0"
+    sha256 "b68d9d97b9efe6ed1de3c5dd85640349b857b47093568d81ff6a2af83848d13b"
 
     livecheck do
       url "https://calibre-ebook.com/dist/osx"

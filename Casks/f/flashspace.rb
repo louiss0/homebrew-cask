@@ -1,15 +1,17 @@
 cask "flashspace" do
-  version "3.9.47"
-  sha256 "9141f9e34e9d551d95c0db0e62ad60c7c5c55436e6a682893e5a48e412980e6b"
+  version "4.16.74"
+  sha256 "d9d5024d76bd262b853fd0860cbb1e89722a92a1752aa716b92db4ad5c2ae124"
 
   url "https://github.com/wojciech-kulik/FlashSpace/releases/download/v#{version}/FlashSpace.app.zip"
   name "FlashSpace"
   desc "Virtual workspace manager"
   homepage "https://github.com/wojciech-kulik/FlashSpace"
 
+  auto_updates true
   depends_on macos: ">= :sonoma"
 
   app "FlashSpace.app"
+  binary "#{appdir}/FlashSpace.app/Contents/Resources/flashspace"
 
   uninstall quit: "pl.wojciechkulik.FlashSpace"
 

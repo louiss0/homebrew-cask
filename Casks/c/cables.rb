@@ -1,9 +1,9 @@
 cask "cables" do
   arch arm: "-arm64", intel: "-x64"
 
-  version "0.6.0"
-  sha256 arm:   "26ac6599da608c909b9a723c546de9940ad54f3f344221f4830f34e14881b266",
-         intel: "c2ca56de7444e5860cb63751916fb1ef22f48c83c57b741f1f5b438c4c03ae12"
+  version "0.10.4"
+  sha256 arm:   "b3b9df35db15c294f967ab496a5f3858d0e5c9efd7e374c047c2e35e614df2b6",
+         intel: "541413675e447a50122424185edb9d67ce5f85311631b66bfae41ca6d07067ab"
 
   url "https://github.com/cables-gl/cables_electron/releases/download/v#{version}/cables-#{version}-mac#{arch}.dmg"
   name "Cables"
@@ -16,8 +16,6 @@ cask "cables" do
       json["name"]
     end
   end
-
-  depends_on macos: ">= :catalina"
 
   app "cables-#{version}.app"
 

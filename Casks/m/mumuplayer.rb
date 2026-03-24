@@ -1,8 +1,8 @@
 cask "mumuplayer" do
-  version "1.6.8"
-  sha256 "e2de610dad2f4513ecb164959edcafca4f4d90e89c4fc6c8da949cf01d70afa4"
+  version "1.8.9"
+  sha256 "d5c1749d2090934de625d8b250192c7f42c9a5468bceed72f6e60b5a874a8d46"
 
-  url "https://a11.gdl.netease.com/MuMuMacUpdater_#{version}.tar.gz",
+  url "https://a11.gdl.netease.com/MuMuUpdater_#{version}_default.tar.gz",
       verified: "a11.gdl.netease.com/"
   name "Mumu Player Pro"
   name "MuMu模拟器Pro"

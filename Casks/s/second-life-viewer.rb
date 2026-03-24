@@ -1,15 +1,15 @@
 cask "second-life-viewer" do
-  version "7.1.15.15596336374"
-  sha256 "8918c08c196121f487e1137cad1dcc6bd5245c0707743c007f2f6146a0af603a"
+  version "26.1.0.22641522367"
+  sha256 "9e8602018c35f53bfe0fc19dcaa20817baf8ac431528ef48b75cbb050643bb41"
 
-  url "http://download.cloud.secondlife.com/Viewer_#{version.major}/Second_Life_#{version.dots_to_underscores}_x86_64.dmg"
+  url "https://viewer-download.secondlife.com/Viewer_#{version.major}/Second_Life_#{version.dots_to_underscores}_universal.dmg"
   name "Linden Lab Second Life Viewer"
   desc "3D browsing software for Second Life online virtual world"
   homepage "https://secondlife.com/"
 
   livecheck do
     url "https://secondlife.com/downloads"
-    regex(/href=.*?Second[._-]Life[._-]v?(\d+(?:[._]\d+)+)(?:[._-]x86_64)?\.dmg/i)
+    regex(/Second[._-]Life[._-]v?(\d+(?:[._]\d+)+)(?:[._-](?:universal|x86_64))?\.dmg/i)
     strategy :page_match do |page, regex|
       match = page.match(regex)
       next if match.blank?
@@ -26,8 +26,4 @@ cask "second-life-viewer" do
     "~/Library/Application Support/SecondLife",
     "~/Library/Caches/SecondLife",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

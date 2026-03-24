@@ -1,6 +1,6 @@
 cask "squirrel-app" do
-  version "1.0.3"
-  sha256 "ceb45dde93fe31e090ca3ea982d90255ee59bd66225354d0750b56bfc2b3b0a4"
+  version "1.1.2"
+  sha256 "614746013212937623d5bbab9901e9c43d1ec937aa32307d6b6092a05e308287"
 
   url "https://github.com/rime/squirrel/releases/download/#{version}/Squirrel-#{version}.pkg",
       verified: "github.com/rime/squirrel/"
@@ -12,8 +12,6 @@ cask "squirrel-app" do
     url "https://rime.im/release/squirrel/appcast.xml"
     strategy :sparkle
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :ventura"

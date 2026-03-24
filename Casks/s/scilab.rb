@@ -1,9 +1,9 @@
 cask "scilab" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2025.0.0"
-  sha256 arm:   "8501444f342282eaa254a06e22b71eeb6798109d3ae81d651cdd087a335468f4",
-         intel: "d02ae625f8d3b7b1a4a3a7ad0671fd6142edab0c01ee90d81c3c04fda92e5ae0"
+  version "2026.0.1"
+  sha256 arm:   "737310b7dd7dec619e9224f577fcb0a6937e1f54a1f023e8a3ad47c6f1290fd3",
+         intel: "95939fcd900499cb5aa608533d7ca43a43ea20fb71ec8af8e10c7ddb30cac3b4"
 
   url "https://www.scilab.org/download/#{version}/scilab-#{version}-#{arch}.dmg"
   name "Scilab"
@@ -14,10 +14,6 @@ cask "scilab" do
     url "https://www.scilab.org/download/latest/"
     regex(/scilab[._-]v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
 
   app "scilab-#{version}.app"
   binary "#{appdir}/scilab-#{version}.app/Contents/bin/scilab"

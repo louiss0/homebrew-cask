@@ -1,6 +1,6 @@
 cask "mailsteward" do
-  version "17.1.3"
-  sha256 "36fa58cbff5415426749c5b504a97eab46c65a2060a876b9349bc2fceea4c4b3"
+  version "18.2.1"
+  sha256 "0d5cc8fdfa1e6a88ee39599faa59081538ca49123ec8d75c258ff226b729231c"
 
   url "https://s3.amazonaws.com/mailsteward/images/MailSteward_#{version}.zip",
       verified: "s3.amazonaws.com/mailsteward/"
@@ -13,10 +13,7 @@ cask "mailsteward" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "MailSteward.app"
 

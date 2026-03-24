@@ -12,10 +12,7 @@ cask "droplr" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   pkg "Droplr#{version.csv.first.no_dots}-#{version.csv.second}.pkg"
 

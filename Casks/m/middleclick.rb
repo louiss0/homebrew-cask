@@ -1,6 +1,6 @@
 cask "middleclick" do
-  version "3.1.0"
-  sha256 "ed933a932164b16e0f9c5c06b17b8ae05c759b3e442513be509deb672097e4d5"
+  version "3.1.3"
+  sha256 "d2d36983074caf349917bb4046c6a9cb7b98de0b2682cd797e5b1d9e0b59d7f0"
 
   url "https://github.com/artginzburg/MiddleClick/releases/download/#{version}/MiddleClick.zip"
   name "MiddleClick"
@@ -11,10 +11,6 @@ cask "middleclick" do
     url :url
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
 
   app "MiddleClick.app"
 

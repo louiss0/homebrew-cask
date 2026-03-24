@@ -20,10 +20,6 @@ cask "logitech-camera-settings" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
-
   pkg "LogiCameraSettings_#{version}.pkg"
 
   uninstall signal:     ["TERM", "com.logitech.vc.LogiVCCoreService"],

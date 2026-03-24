@@ -1,26 +1,31 @@
 cask "hopper-disassembler" do
-  version "5.19.5"
-  sha256 "1b319a69f02cd139ddb64667dcb172400efbda2e7b70c715348889c39a3c8ced"
+  version "6.2.4"
+  sha256 "439d9a112eaffec7c03f2bed225ca619c407c45611090a5151bfcf9bbbca492a"
 
-  url "https://www.hopperapp.com/downloader/hopperv4/Hopper-#{version}-demo.dmg",
-      user_agent: :fake
+  url "https://www.hopperapp.com/downloader/public/Hopper-#{version}-demo.dmg",
+      user_agent: :browser
   name "Hopper Disassembler"
   desc "Reverse engineering tool that lets you disassemble, decompile and debug your app"
   homepage "https://www.hopperapp.com/"
 
   livecheck do
-    url "https://www.hopperapp.com/rss/changelog.xml"
-    regex(/Version\s+v?(\d+(?:\.\d+)+)/i)
+    url "https://www.hopperapp.com/rss/changelog.xml",
+        user_agent: :browser
+    regex(/<title>\s*Version\s+v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: ">= :high_sierra"
+  auto_updates true
+  depends_on macos: ">= :monterey"
 
-  app "Hopper Disassembler v4.app"
+  app "Hopper Disassembler.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.cryptic-apps.hopper-web-4.sfl*",
     "~/Library/Application Support/Hopper Disassembler v4",
     "~/Library/Application Support/Hopper",
+    "~/Library/Caches/com.apple.helpd/Generated/com.cryptic-apps.hopper-web-4.help*",
     "~/Library/Caches/com.cryptic-apps.hopper-web-4",
+    "~/Library/HTTPStorages/com.cryptic-apps.hopper-web-4",
     "~/Library/Preferences/com.cryptic-apps.hopper-web-4.plist",
     "~/Library/Saved Application State/com.cryptic-apps.hopper-web-4.savedState",
   ]

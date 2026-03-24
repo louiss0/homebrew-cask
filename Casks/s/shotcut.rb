@@ -1,8 +1,8 @@
 cask "shotcut" do
-  version "25.05.11"
-  sha256 "97be8cd8652f46c4d33ca15e9ecb2746af70929f24fe76ca883f0e2357da44ad"
+  version "26.2.26"
+  sha256 "f8288c75d7632b66d17f2560820d82d006a1fe35077abd5e8e41ee0a779982eb"
 
-  url "https://github.com/mltframework/shotcut/releases/download/v#{version.csv.first}/shotcut-macos-#{version.csv.second || version.csv.first.no_dots}.dmg",
+  url "https://github.com/mltframework/shotcut/releases/download/v#{version.csv.first}/shotcut-macos-#{version.csv.second || version.csv.first}.dmg",
       verified: "github.com/mltframework/shotcut/"
   name "Shotcut"
   desc "Video editor"
@@ -25,9 +25,7 @@ cask "shotcut" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Shotcut.app"
 

@@ -7,9 +7,8 @@ cask "cinch" do
   desc "Window management tool"
   homepage "https://www.irradiatedsoftware.com/cinch/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2025-03-01", because: :unmaintained
+  disable! date: "2026-03-01", because: :unmaintained
 
   app "Cinch.app"
 

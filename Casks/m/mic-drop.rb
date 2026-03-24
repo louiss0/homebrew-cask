@@ -8,12 +8,10 @@ cask "mic-drop" do
   desc "Quickly mute your microphone with a global shortcut or menu bar control"
   homepage "https://getmicdrop.com/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-08", because: :moved_to_mas
+  disable! date: "2025-10-08", because: :moved_to_mas
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Mic Drop.app"
 

@@ -7,7 +7,7 @@ cask "qlcommonmark" do
   desc "Quick Look plugin for CommonMark and Markdown"
   homepage "https://github.com/digitalmoksha/QLCommonMark/"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "QLCommonMark.qlgenerator"
 

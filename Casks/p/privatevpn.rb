@@ -7,14 +7,7 @@ cask "privatevpn" do
   desc "VPN provider"
   homepage "https://privatevpn.com/"
 
-  livecheck do
-    url "https://privatevpn.com/why-privatevpn/view-our-software/"
-    regex(/Mac\s*OS(?:\s+X)?\s+VPN\s+App\s+(?:Version\s+)?v?(\d+(?:\.\d+)+)/i)
-  end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
+  disable! date: "2026-01-07", because: :unreachable
 
   app "PrivateVPN.app"
 

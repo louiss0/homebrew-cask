@@ -1,9 +1,9 @@
 cask "labplot" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2.12.0"
-  sha256 arm:   "b4ccf38806584755174c34ace9574261c96d1d6d19003296c6a9414bae046403",
-         intel: "fa133a87a88762da6090473f36ad764dc940e7208e0a0fc10b212ed86d480051"
+  version "2.12.1"
+  sha256 arm:   "6f6f8675189059d08a6a6cfe33b14ff8b864ce18ea2987d412f120a31e32aa56",
+         intel: "61d1bca44121bfdf87252feb76673d8f7719b4597dc16a7434563550371b9711"
 
   url "https://download.kde.org/stable/labplot/labplot-#{version}-#{arch}.dmg"
   name "LabPlot"
@@ -14,8 +14,6 @@ cask "labplot" do
     url "https://download.kde.org/stable/labplot/"
     regex(/href=.*?labplot[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :sonoma"
 

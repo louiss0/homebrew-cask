@@ -1,25 +1,28 @@
 cask "librewolf" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "140.0.2,1"
-  sha256 arm:   "991765476e1f6194036dcbb55f1a2e537e7125819b28f8a6fa8d1b89b53ba956",
-         intel: "86add2a38023fefa7c9e08660f89a4dc3a440918a1f1c4ed26aaaa066460de08"
+  version "148.0.2,3"
+  sha256 arm:   "9a4f3d0fc7b67f10e416a4896aa4be82e7f13cacf847f5ba68e9fc604323ef67",
+         intel: "45f9a2d35fb6a0ce4bc737ce5da2a0bb26a710ace12b8117f80adb3e4ee2e6f3"
 
-  url "https://gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/#{version.tr(",", "-")}/librewolf-#{version.tr(",", "-")}-macos-#{arch}-package.dmg",
-      verified: "gitlab.com/api/v4/projects/44042130/packages/generic/librewolf/"
+  url "https://codeberg.org/api/packages/librewolf/generic/librewolf/#{version.tr(",", "-")}/librewolf-#{version.tr(",", "-")}-macos-#{arch}-package.dmg",
+      verified: "codeberg.org/api/packages/librewolf/generic/librewolf/"
   name "LibreWolf"
   desc "Web browser"
   homepage "https://librewolf.net/"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
   livecheck do
-    url "https://gitlab.com/librewolf-community/browser/bsys6.git"
+    url "https://codeberg.org/api/v1/repos/librewolf/bsys6/releases/latest"
     regex(/^v?(\d+(?:[.-]\d+)+)$/i)
-    strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.tr("-", ",") }
+    strategy :json do |json, regex|
+      json["tag_name"]&.[](regex, 1)&.tr("-", ",")
     end
   end
 
-  depends_on macos: ">= :catalina"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "LibreWolf.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

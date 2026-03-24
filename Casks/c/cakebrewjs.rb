@@ -1,9 +1,9 @@
 cask "cakebrewjs" do
-  version "2.79"
-  sha256 "a12fa3d8581f14226d2a8f9d265acaee67ebc0d614489ba7a921642cef809d26"
+  version "2.96"
+  sha256 "c18803f1ab9559f1e8b61fd715cd5254defbc6d317dc23dbfae111dbeeee64b7"
 
-  url "https://downloads.sourceforge.net/cakebrewjs/cakebrewjs-#{version}-Darwin.dmg"
-  name "cakebrewjs"
+  url "https://downloads.sourceforge.net/cakebrewjs/Cakebrewjs-#{version}-Darwin.dmg"
+  name "Cakebrewjs"
   desc "Homebrew GUI app"
   homepage "https://sourceforge.net/projects/cakebrewjs/"
 
@@ -12,7 +12,9 @@ cask "cakebrewjs" do
     regex(%r{url=.*?/cakebrewjs[._-]v?(\d+(?:\.\d+)+)(?:[._-]Darwin)?\.dmg}i)
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :tahoe"
 
   app "cakebrewjs.app"
 

@@ -1,6 +1,6 @@
 cask "comfyui" do
-  version "0.4.54,250627l6sir2rce"
-  sha256 "75004b95fd751893b2f0f2a719073a83f314db28ba4a9b5bd8f7809c49e0d3e1"
+  version "0.8.25,26032337av0wd0b"
+  sha256 "fd15f31e1cd96564262d099cfd81ea1069c1f5fedafb7d3443267e6784983e3b"
 
   url "https://download.todesktop.com/241012ess7yxs0e/ComfyUI%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-arm64-mac.zip",
       verified: "download.todesktop.com/241012ess7yxs0e/"
@@ -23,7 +23,7 @@ cask "comfyui" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "ComfyUI.app"
 

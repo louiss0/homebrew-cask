@@ -1,6 +1,6 @@
 cask "swinsian" do
-  version "2.3.6"
-  sha256 "750efa71b9c806cdc2c572ebb5f16a25deb83033d9a8cb4dffe347da758bd1e3"
+  version "3.0.8"
+  sha256 "05739cc1eeeae2a5a7eb6dd0eaaad7cba484c051e5c2a28f157a78f3f7670ad7"
 
   url "https://www.swinsian.com/sparkle/Swinsian_#{version}.zip"
   name "Swinsian"
@@ -11,8 +11,6 @@ cask "swinsian" do
     url "https://www.swinsian.com/sparkle/sparklecast.xml"
     strategy :sparkle, &:short_version
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
 
@@ -26,8 +24,4 @@ cask "swinsian" do
     "~/Library/Containers/com.swinsian.SwinsianChapterReader",
     "~/Library/Preferences/com.swinsian.Swinsian.plist",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

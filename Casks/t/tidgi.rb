@@ -1,9 +1,9 @@
 cask "tidgi" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.12.1-update"
-  sha256 arm:   "fdf70c092ee4d8b4f410b72b14fa6243f58d26dc5a26860e2cb8513874e021d6",
-         intel: "5d9adaa2d7fa7b0b2b6f62c16d94d344cad3f81e7634d5ac658fd0c63bbc84dc"
+  version "0.12.4"
+  sha256 arm:   "6d224533aefe29510252a8f0bb51d88a99feccea6cd5a84dcccef6d7264be767",
+         intel: "9f17e73f3da8c6c614b13d90f400c3c55ab9c5c26f90d0d04c15fc1241941788"
 
   url "https://github.com/tiddly-gittly/TidGi-Desktop/releases/download/v#{version}/TidGi-darwin-#{arch}-#{version.split("-").first}.zip"
   name "TidGi"
@@ -15,6 +15,8 @@ cask "tidgi" do
     regex(/^\D*?(\d+(?:\.\d+)+.*)$/i)
     strategy :github_latest
   end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   depends_on macos: ">= :big_sur"
 

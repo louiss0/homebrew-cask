@@ -7,7 +7,7 @@ cask "dteoh-devdocs" do
   desc "API documentation viewer"
   homepage "https://github.com/dteoh/devdocs-macos/"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   depends_on macos: ">= :big_sur"
 

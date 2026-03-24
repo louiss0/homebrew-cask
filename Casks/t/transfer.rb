@@ -1,6 +1,6 @@
 cask "transfer" do
-  version "2.2.5"
-  sha256 "d4a95042b1c017f64ddd56e017de253b10e6ef1475b1227de3812623b700c978"
+  version "2.4.2"
+  sha256 "b99d7c421694dec9ab24b7feae6c907253102462e30f0dbd565b210fbfe0fa89"
 
   url "https://www.intuitibits.com/downloads/Transfer_#{version}.dmg"
   name "Transfer"
@@ -12,10 +12,8 @@ cask "transfer" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :ventura"
 
   app "Transfer.app"
 

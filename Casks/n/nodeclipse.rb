@@ -8,9 +8,8 @@ cask "nodeclipse" do
   desc "Node.js tooling with Eclipse"
   homepage "https://nodeclipse.github.io/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-09-01", because: :unmaintained
+  disable! date: "2025-09-02", because: :unmaintained
 
   # Renamed for clarity: app name is inconsistent with its branding.
   # Also renamed to avoid conflict with other eclipse Casks.

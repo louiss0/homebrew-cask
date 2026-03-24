@@ -1,6 +1,6 @@
 cask "transmission" do
-  version "4.0.6"
-  sha256 "e69857f152e0c2f5384cc603586c3dff2c30c93e674263346a702863e7277c1a"
+  version "4.1.1"
+  sha256 "744429da72cb2c57964f20b78b83d75f4ecbd3c68ce79aefda08a6e8d83c7930"
 
   url "https://github.com/transmission/transmission/releases/download/#{version}/Transmission-#{version}.dmg",
       verified: "github.com/transmission/transmission/"
@@ -13,11 +13,12 @@ cask "transmission" do
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  conflicts_with cask: "transmission@nightly"
-  depends_on macos: ">= :high_sierra"
+  conflicts_with cask: [
+    "transmission@beta",
+    "transmission@nightly",
+  ]
+  depends_on macos: ">= :big_sur"
 
   app "Transmission.app"
 

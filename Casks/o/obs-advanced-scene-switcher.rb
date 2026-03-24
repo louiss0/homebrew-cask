@@ -1,6 +1,6 @@
 cask "obs-advanced-scene-switcher" do
-  version "1.30.2"
-  sha256 "985587d8f7a17e8a43c8dad03b8683bbc90db6d30d7323ea12457e1e7fb7278a"
+  version "1.32.9"
+  sha256 "6d6644716cd8eb0b9554fca5afdfa1ecf1c6782d82e65961e472f904c4c8371b"
 
   url "https://github.com/WarmUpTill/SceneSwitcher/releases/download/#{version}/advanced-scene-switcher-#{version}-macos-universal.pkg",
       verified: "github.com/WarmUpTill/SceneSwitcher/"
@@ -13,7 +13,10 @@ cask "obs-advanced-scene-switcher" do
     strategy :github_latest
   end
 
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
   depends_on cask: "obs"
+  depends_on macos: ">= :big_sur"
 
   pkg "advanced-scene-switcher-#{version}-macos-universal.pkg"
 

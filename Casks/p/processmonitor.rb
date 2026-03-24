@@ -13,10 +13,6 @@ cask "processmonitor" do
     regex(/href=.*?ProcessMonitor[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
-
   app "ProcessMonitor.app"
   binary "#{appdir}/ProcessMonitor.app/Contents/MacOS/ProcessMonitor", target: "processmonitor"
 

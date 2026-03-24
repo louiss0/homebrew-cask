@@ -8,11 +8,9 @@ cask "mdb-accdb-viewer" do
   homepage "https://eggerapps.at/mdbviewer/"
 
   livecheck do
-    url "https://eggerapps.at/mdbviewer/download/"
+    url "https://eggerapps.at/mdbviewer/download/download.php"
     strategy :header_match
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "MDB ACCDB Viewer.app"
 

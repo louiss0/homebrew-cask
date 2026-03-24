@@ -1,26 +1,26 @@
 cask "lobehub" do
   arch arm: "-arm64"
 
-  version "1.96.15"
-  sha256 arm:   "457ab79cdb079c684d2fc2846fc7aeebf4a88325c8fc00e5979176e86c642ad5",
-         intel: "2d8a68905c121344252215f6cd3aee77418b4ef6924e65ba88d1750c41084a00"
+  version "2.1.44"
+  sha256 arm:   "43d034622801b82f8867cc103c87bd9a6dbb3ee25bc51a45735dbf56557bfc01",
+         intel: "9ddbe70d080e1fb7d997f192251572a4d550200ca9c23c85dc5543e6b30201c2"
 
-  url "https://github.com/lobehub/lobe-chat/releases/download/v#{version}/LobeHub-Beta-#{version}#{arch}-mac.zip"
+  url "https://github.com/lobehub/lobe-chat/releases/download/v#{version}/LobeHub-#{version}#{arch}-mac.zip"
   name "LobeHub"
   desc "AI chat framework"
   homepage "https://github.com/lobehub/lobe-chat"
 
-  # Not every GitHub release provides a file for macOS, so we check multiple
-  # recent releases instead of only the "latest" release.
+  # Not every release on GitHub has assets, so we have to find the newest one
+  # with the files the cask uses.
   livecheck do
     url :url
-    regex(/^LobeHub(?:[._-]Beta)?[._-]v?(\d+(?:\.\d+)+)#{arch}[._-]mac\.zip$/i)
+    regex(/LobeHub[._-]v?(\d+(?:\.\d+)+)#{arch}[._-]mac\.zip/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
 
         release["assets"]&.map do |asset|
-          match = asset["name"]&.match(regex)
+          match = asset["browser_download_url"]&.match(regex)
           next if match.blank?
 
           match[1]
@@ -30,9 +30,9 @@ cask "lobehub" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
-  app "LobeHub-Beta.app"
+  app "LobeHub.app"
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.lobehub.lobehub-desktop-beta.sfl*",

@@ -7,12 +7,8 @@ cask "apptivate" do
   desc "Create global hotkeys for your files and applications"
   homepage "http://www.apptivateapp.com/"
 
-  livecheck do
-    url "http://www.apptivateapp.com/changelog.txt"
-    regex(/Apptivate\s*v?(\d+(?:\.\d+)+)/i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  # Artifact not available over HTTPS
+  disable! date: "2025-12-23", because: :no_longer_meets_criteria
 
   app "Apptivate.app"
 

@@ -1,14 +1,12 @@
 cask "smoothcsv" do
-  version "3.0.0"
-  sha256 "8c9470cd4adf50d66b14ba037304ff17cd10a3a2bb13b6e11a396e4efc246fbb"
+  version "3.16.0"
+  sha256 "a86f771e1055bbf04969334db7e5fef6195172427db06c5ed2afefd1c0f09196"
 
   url "https://github.com/kohii/smoothcsv3/releases/download/v#{version}/SmoothCSV_#{version}_universal.dmg",
       verified: "github.com/kohii/smoothcsv3/"
   name "SmoothCSV"
   desc "CSV editor"
   homepage "https://smoothcsv.com/"
-
-  depends_on macos: ">= :high_sierra"
 
   app "SmoothCSV.app"
 

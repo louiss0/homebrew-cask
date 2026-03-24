@@ -1,5 +1,5 @@
 cask "fission" do
-  version "2.8.8"
+  version "2.9.4"
   sha256 :no_check
 
   url "https://cdn.rogueamoeba.com/fission/download/Fission.zip"
@@ -11,8 +11,6 @@ cask "fission" do
     url "https://rogueamoeba.net/ping/versionCheck.cgi?format=sparkle&system=999&bundleid=com.rogueamoeba.fission&platform=osx&version=#{version.no_dots}8000"
     strategy :sparkle
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :big_sur"

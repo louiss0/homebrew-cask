@@ -1,9 +1,9 @@
 cask "cloud-pbx" do
   arch arm: "arm", intel: "intel"
 
-  version "45.5.0"
-  sha256 arm:   "4484328e512e0d547958c2e9a8a831b98105bb83f9d1727c437f3f97541d21f5",
-         intel: "61902f18a9d9ce6764e745e42ad3643009ea86675beac72d590dbb65453aa268"
+  version "46.2"
+  sha256 arm:   "28482d9f530ed08391b6fbbede00d043bd4ed250ca4aec654be6982251e9e792",
+         intel: "85feae499697eb1c837edf3290f70f5eb96a8a6e43ceb2602308eff5aa731f27"
 
   url "https://cpbx-hilfe.deutschland-lan.de/de/direkthilfe/hilfe-downloads/desktop-clients/cloud-pbx-2.0-#{arch}_v#{version}",
       verified: "cpbx-hilfe.deutschland-lan.de/de/direkthilfe/hilfe-downloads/desktop-clients/"
@@ -15,8 +15,6 @@ cask "cloud-pbx" do
     url "https://cpbx-hilfe.deutschland-lan.de/de/direkthilfe/hilfe-downloads/downloads"
     regex(%r{href=.*?/cloud[._-]pbx[._-]2\.0[._-]#{arch}[._-]v?(\d+(?:\.\d+)+)}i)
   end
-
-  depends_on macos: ">= :catalina"
 
   app "Cloud PBX 2.0.app"
 

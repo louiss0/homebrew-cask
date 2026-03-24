@@ -17,9 +17,10 @@ cask "gplates" do
     strategy :header_match
   end
 
-  no_autobump! because: :requires_manual_review
+  # The url is unversioned, but the download returns an app directory with a version number
+  rename "GPlates_*", "Gplates"
 
-  app "GPlates_#{version}/gplates.app"
+  app "GPlates/gplates.app"
 
   zap trash: [
     "~/Library/Application Support/GPlates",

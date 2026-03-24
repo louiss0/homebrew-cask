@@ -1,6 +1,6 @@
 cask "vk-calls" do
-  version "1.41.33061"
-  sha256 "39fedaf7e57d0e9702a9c3dff8a1762b2ae5e9d1b11e61f4739e7be842deb65e"
+  version "1.44.39190"
+  sha256 "a7abd88d126f2d3d46b4672a374d4c7b3d412be39b03942963d5dd879e0d2d36"
 
   url "https://vkcalls-native-ac.vk-apps.com/#{version}/vk-calls.dmg",
       verified: "vkcalls-native-ac.vk-apps.com/"
@@ -14,7 +14,7 @@ cask "vk-calls" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "VK Calls.app"
 

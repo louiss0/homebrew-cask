@@ -29,14 +29,14 @@ cask "xit" do
       regex(/^v?(\d+(?:\.\d+)+(?:b\d+)?)$/i)
     end
 
+    disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
     app "Xit#{arch} #{version}/Xit.app"
   end
 
   name "Xit"
   desc "GUI for the git version control system"
   homepage "https://github.com/Uncommon/Xit"
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :big_sur"
 

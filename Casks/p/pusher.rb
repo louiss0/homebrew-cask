@@ -7,7 +7,7 @@ cask "pusher" do
   desc "Send push notifications through Apple Push Notification Service"
   homepage "https://github.com/noodlewerk/NWPusher"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Pusher.app"
 

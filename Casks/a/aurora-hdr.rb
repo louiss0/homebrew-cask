@@ -8,11 +8,9 @@ cask "aurora-hdr" do
   homepage "https://skylum.com/aurorahdr"
 
   livecheck do
-    url "http://aurorahdr2019mac.update.skylum.com/"
+    url "https://aurorahdrmac.skylum.com"
     strategy :sparkle
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
 

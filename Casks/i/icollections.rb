@@ -1,5 +1,5 @@
 cask "icollections" do
-  version "9.2.0"
+  version "9.6.4"
   sha256 :no_check
 
   url "https://naarakstudio.com/download/iCollections.dmg"
@@ -13,8 +13,6 @@ cask "icollections" do
       page.split(":").first[0..2].chars.join(".")
     end
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "iCollections.app"
 

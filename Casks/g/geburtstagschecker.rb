@@ -11,9 +11,10 @@ cask "geburtstagschecker" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
+  # The url is unversioned, but the download returns an app directory with a version number
+  rename "GeburtstagsChecker #{version.csv.first} (#{version.csv.second})", "GeburtstagsChecker"
 
-  app "GeburtstagsChecker #{version.csv.first} (#{version.csv.second})/GeburtstagsChecker.app"
+  app "GeburtstagsChecker/GeburtstagsChecker.app"
 
   zap trash: [
     "~/Library/Caches/earthlingsoft.GeburtstagsChecker",

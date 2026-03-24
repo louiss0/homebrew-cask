@@ -1,9 +1,9 @@
 cask "adobe-creative-cloud" do
   arch arm: "macarm64", intel: "osx10"
 
-  version "6.7.0.278"
-  sha256 arm:   "d533b2e0ae3ea1d0e017c07ed75a7352d2108fe8a8c54479effab8c1909a35c1",
-         intel: "811bb12371d4ce4b129d422c13841be205a426941b9ce439e2b8a5c8f83da9ea"
+  version "6.8.1.865"
+  sha256 arm:   "bedbaf48288b5d09cd86450f13d91b311411b4e535eee414c9f50c161f3765ec",
+         intel: "235f15c69e1734ad7178703089301d243be731cb3519558c04c1b9d409c338e2"
 
   # If url breaks you can find the latest static urls - https://helpx.adobe.com/download-install/kb/creative-cloud-desktop-app-download.html
   url "https://ccmdls.adobe.com/AdobeProducts/StandaloneBuilds/ACCC/ESD/#{version.major_minor_patch}/#{version.split(".").fourth}/#{arch}/ACCCx#{version.dots_to_underscores}.dmg"
@@ -22,8 +22,6 @@ cask "adobe-creative-cloud" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
 
   installer script: {
@@ -32,10 +30,6 @@ cask "adobe-creative-cloud" do
     sudo:         true,
     print_stderr: false,
   }
-
-  uninstall_preflight do
-    set_ownership "/Library/Application Support/Adobe"
-  end
 
   uninstall_postflight do
     stdout, * = system_command "/bin/launchctl", args: ["print", "gui/#{Process.uid}"]
@@ -56,6 +50,7 @@ cask "adobe-creative-cloud" do
               "com.adobe.acc.installer",
               "com.adobe.acc.installer.v2",
               "com.adobe.AdobeCreativeCloud",
+              "com.adobe.AdobeDesktopService",
               "com.adobe.ccxprocess",
             ],
             quit:         "com.adobe.acc.AdobeCreativeCloud",

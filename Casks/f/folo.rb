@@ -1,28 +1,25 @@
 cask "folo" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.6.1"
-  sha256 arm:   "c28ecb4b2cd29882882917b374e764aa7be5c55b86633b7873843876dab939ad",
-         intel: "fac034f432033a2c57344c509329cd9e28270216331f0ebae6b1291fe1db67ce"
+  version "1.4.0"
+  sha256 arm:   "5cc286f30c5ad9af9826ad449def0a1d06380e4a8cd49efd86b4094cd1d63ccc",
+         intel: "1649369f68fb9c9bc166e0aa14885d51338662fc98b5da959db5979a236ff90b"
 
-  url "https://github.com/RSSNext/Folo/releases/download/v#{version}/Folo-#{version}-macos-#{arch}.dmg",
+  url "https://github.com/RSSNext/Folo/releases/download/desktop%2Fv#{version}/Folo-#{version}-macos-#{arch}.dmg",
       verified: "github.com/RSSNext/Folo/"
   name "Folo"
   desc "Information browser"
-  homepage "https://follow.is/"
+  homepage "https://folo.is/"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+(?:[._-]beta[._-]?\d+)?)$/i)
+    regex(%r{^(?:desktop[/@])?v?(\d+(?:\.\d+)+(?:[._-]beta[._-]?\d+)?)$}i)
     strategy :github_latest
   end
 
   auto_updates true
-  conflicts_with cask: [
-    "follow@alpha",
-    "folo@nightly",
-  ]
-  depends_on macos: ">= :big_sur"
+  conflicts_with cask: "folo@nightly"
+  depends_on macos: ">= :monterey"
 
   app "Folo.app"
 

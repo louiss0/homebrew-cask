@@ -1,12 +1,19 @@
 cask "tableau-prep" do
   arch arm: "-arm64"
 
-  version "2025.2.0"
-  sha256 arm:   "defb8e165184a25cd6ee7d442522873941216c3e7177554227c404008302fc1f",
-         intel: "d1fd5aa753da061893c927e6c2f06c611467b9730d0027d82b3f4f8dc4562c81"
+  version "2026.1.0"
+  sha256 arm:   "f4b2ecf41e335dc78f897a5ea0dfcc5686623509b6a5d0f16e366b1836f3fca0",
+         intel: "e8228b586154946dee6e2d51cadaaf77b23f8a01389fe03b885a603e804b9ce2"
+
+  on_arm do
+    depends_on macos: ">= :ventura"
+  end
+  on_intel do
+    depends_on macos: ">= :catalina"
+  end
 
   url "https://downloads.tableau.com/esdalt/tableau_prep/#{version}/TableauPrep-#{version.dots_to_hyphens}#{arch}.dmg",
-      user_agent: "curl/8.7.1"
+      user_agent: :curl
   name "Tableau Prep"
   name "Tableau Prep Builder"
   desc "Combine, shape, and clean your data for analysis"
@@ -15,8 +22,6 @@ cask "tableau-prep" do
   livecheck do
     cask "tableau"
   end
-
-  depends_on macos: ">= :el_capitan"
 
   pkg "Tableau Prep Builder.pkg"
 

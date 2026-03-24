@@ -1,6 +1,6 @@
 cask "ik-product-manager" do
-  version "1.1.8"
-  sha256 "30d05bd65d5068692c09030a943a254d09e76f59068d9a6c9c027b64adfcaae8"
+  version "1.1.11"
+  sha256 "a2c20a0e77ffb2e40bed4be89cd16140230067d12fa27d229b338e3797c0fd69"
 
   url "https://g1.ikmultimedia.com/plugins/ProductManager/ik_product_manager_#{version}.dmg",
       referer:    "https://www.ikmultimedia.com/",
@@ -13,8 +13,6 @@ cask "ik-product-manager" do
     url :homepage
     regex(/href=.*?ik[._-]product[._-]manager[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   pkg "Install IK Product Manager (v#{version}).pkg"
 

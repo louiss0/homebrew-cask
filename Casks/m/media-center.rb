@@ -1,6 +1,6 @@
 cask "media-center" do
-  version "34.00.19"
-  sha256 "1bc4f387cdae792227c5c89a4261d040c75d8a44c8204a6ab832d9d35693b71d"
+  version "35.00.31"
+  sha256 "84c4abd486908f4e1e4dcbc5e987274e84c867fcc21f5cb0017ae2c409f15945"
 
   url "https://files.jriver-cdn.com/mediacenter/channels/v#{version.major}/stable/MediaCenter#{version.no_dots}-Universal.dmg",
       verified: "files.jriver-cdn.com/mediacenter/"
@@ -17,7 +17,6 @@ cask "media-center" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Media Center #{version.major}.app"
 

@@ -1,6 +1,6 @@
 cask "jgrasp" do
-  version "2.0.6_17"
-  sha256 "4f27ad84a8fcf1821d524eaa345a03b3775f15d196719c4cdedf1c3041c6aacb"
+  version "2.0.6_19"
+  sha256 "3c0970328d34c95f5ddff02d60eeb0d34aeaeaf93ae7dd2f392afeea9afa6dfc"
 
   url "https://jgrasp.org/dl4g/jgrasp/jgrasp#{version.no_dots}.pkg"
   name "jgrasp"
@@ -11,8 +11,6 @@ cask "jgrasp" do
     url "https://spider.eng.auburn.edu/user-cgi/grasp/grasp.pl?;dl=download_jgrasp.html"
     regex(/jGRASP\s*(\d+(?:\.\d+)*_\d+)\s(?!Beta)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   pkg "jgrasp#{version.no_dots}.pkg"
 

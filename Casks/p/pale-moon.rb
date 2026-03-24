@@ -1,6 +1,6 @@
 cask "pale-moon" do
-  version "33.8.0"
-  sha256 "4b277454c6082ea658511170eacd360bd91c35ca130f40bfaabd55e3b2298a40"
+  version "34.1.0"
+  sha256 "f2232b07bc912bf9ed39eebcb766a292673d3db0ff377ba510c063917d759076"
 
   url "https://rm-us.palemoon.org/release/palemoon-#{version}.arm64.dmg"
   name "Pale Moon"
@@ -8,8 +8,9 @@ cask "pale-moon" do
   homepage "https://www.palemoon.org/"
 
   livecheck do
-    url "https://repo.palemoon.org/MoonchildProductions/Pale-Moon.git"
-    regex(/^v?(\d+(?:\.\d+)+)[._-]Release$/i)
+    url "https://www.palemoon.org/download.php?mirror=us&bits=64&type=macarm"
+    regex(/palemoon[._-]v?(\d+(?:\.\d+)+)/i)
+    strategy :header_match
   end
 
   depends_on macos: ">= :big_sur"

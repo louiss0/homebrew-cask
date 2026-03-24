@@ -1,6 +1,6 @@
 cask "deezer" do
-  version "7.0.110"
-  sha256 "42df334c1cc7bcb8177fa60c0d6801965a0f081d217be968e39d83e8f9aa57d6"
+  version "7.1.120"
+  sha256 "2c6f4aba7a313262a9a79c691cce02075608c7b881068339e880c54c9990f640"
 
   url "https://www.deezer.com/desktop/download/artifact-darwin-x64-#{version}"
   name "Deezer"
@@ -13,7 +13,7 @@ cask "deezer" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Deezer.app"
 

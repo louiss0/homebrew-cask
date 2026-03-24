@@ -1,6 +1,6 @@
 cask "kaleidoscope" do
-  version "6.0.1,8139"
-  sha256 "f22ed20e263af90b13c7d53d28b2410f36e765643e4466093198035eedebe0f5"
+  version "6.6,9910"
+  sha256 "39f0b226eab4a2fb1e0489805cab3939667e638eef5f2db644185cee32ab5bb2"
 
   url "https://updates.kaleidoscope.app/v#{version.major}/prod/Kaleidoscope-#{version.csv.first}-#{version.csv.second}.app.zip"
   name "Kaleidoscope"
@@ -8,7 +8,7 @@ cask "kaleidoscope" do
   homepage "https://kaleidoscope.app/"
 
   livecheck do
-    url "https://updates.kaleidoscope.app/v5/prod/appcast"
+    url "https://updates.kaleidoscope.app/v#{version.major}/prod/appcast"
     strategy :sparkle
   end
 
@@ -16,7 +16,6 @@ cask "kaleidoscope" do
   conflicts_with cask: %w[
     kaleidoscope@2
     kaleidoscope@3
-    ksdiff
   ]
   depends_on macos: ">= :ventura"
 

@@ -1,6 +1,6 @@
 cask "tuple" do
-  version "1.123.10,2025-07-01,08defa70a"
-  sha256 "43897f508f8cad41f5c9440f2ca66bb784cda4b34ead2b5bb575fc715b8420ef"
+  version "2.4.0,2026-03-23,5b61202ae"
+  sha256 "fb10968451de09b5e0436786f67857e4a15b2db70a1f692fe53baf2bc36eab85"
 
   url "https://d32ifkf9k9ezcg.cloudfront.net/production/sparkle/tuple-#{version.tr(",", "-")}.zip",
       verified: "d32ifkf9k9ezcg.cloudfront.net/"
@@ -20,7 +20,7 @@ cask "tuple" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: ">= :sonoma"
 
   app "Tuple.app"
 

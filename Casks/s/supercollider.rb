@@ -1,6 +1,6 @@
 cask "supercollider" do
-  version "3.13.0"
-  sha256 "fae71509475d66d47bb7b8d204a57a0d6cd4bcb3d9e77c5f2670b916b7160868"
+  version "3.14.1"
+  sha256 "ed264b32752d27fc86e506dd0a7eb36de7c19ebce73c3fdf2ed5514f8c73f02e"
 
   url "https://github.com/supercollider/supercollider/releases/download/Version-#{version}/SuperCollider-#{version}-macOS-universal.dmg",
       verified: "github.com/supercollider/supercollider/"
@@ -9,25 +9,11 @@ cask "supercollider" do
   homepage "https://supercollider.github.io/"
 
   livecheck do
-    url :url
-    regex(/SuperCollider[._-]v?(\d+(?:\.\d+)+)[._-]macOS(?:[._-]universal)?\.dmg/i)
-    strategy :github_releases do |json, regex|
-      json.map do |release|
-        next if release["draft"] || release["prerelease"]
-
-        release["assets"]&.map do |asset|
-          match = asset["name"]&.match(regex)
-          next if match.blank?
-
-          match[1]
-        end
-      end.flatten
-    end
+    url :homepage
+    regex(/href=.*?SuperCollider[._-]v?(\d+(?:\.\d+)+)[._-]macOS(?:[._-]universal)?\.dmg/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "SuperCollider.app"
 

@@ -8,7 +8,7 @@ cask "mu-editor" do
   desc "Small, simple editor for beginner Python programmers"
   homepage "https://codewith.mu/"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-08-31", because: :unmaintained
 
   app "Mu Editor.app"
 

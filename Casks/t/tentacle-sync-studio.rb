@@ -1,23 +1,21 @@
 cask "tentacle-sync-studio" do
-  version "1.36"
-  sha256 "879118fdabbde5551fb0f0120f73b796dfd94a952954c1199837c58fb2407344"
+  version "1.37"
+  sha256 "383cd519b647594254ffc6deb744e47c5f939932d96711a60158e6e40d2fe16e"
 
-  url "https://cms.tentaclesync.com/assets/downloads/download-files/ttsyncstudio-v#{version.dots_to_underscores}.dmg"
+  url "https://cms.tentaclesync.com/assets/ttsyncstudio-v#{version.dots_to_underscores}.dmg"
   name "Tentacle Sync Studio"
   desc "Automatically synchronise video and audio via timecode"
   homepage "https://tentaclesync.com/"
 
   livecheck do
-    url "https://tentaclesync.com/api/collections/downloads/entries"
+    url "https://tentaclesync.com/downloads/tentacle-sync-studio-macos"
     regex(/ttsyncstudio[._-]v?(\d+(?:[._-]\d+)+)\.dmg/i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| match[0].tr("_", ".") }
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Tentacle Sync Studio.app"
 

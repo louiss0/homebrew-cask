@@ -1,6 +1,6 @@
 cask "ghostty" do
-  version "1.1.3"
-  sha256 "64e514188f549598f166d6dcb6f8df29f333e954e28172a2901ea988a14f2647"
+  version "1.3.1"
+  sha256 "18cff2b0a6cee90eead9c7d3064e808a252a40baf214aa752c1ecb793b8f5f69"
 
   url "https://release.files.ghostty.org/#{version}/Ghostty.dmg"
   name "Ghostty"
@@ -17,7 +17,6 @@ cask "ghostty" do
   depends_on macos: ">= :ventura"
 
   app "Ghostty.app"
-  binary "#{appdir}/Ghostty.app/Contents/MacOS/ghostty"
   manpage "#{appdir}/Ghostty.app/Contents/Resources/man/man1/ghostty.1"
   manpage "#{appdir}/Ghostty.app/Contents/Resources/man/man5/ghostty.5"
   bash_completion "#{appdir}/Ghostty.app/Contents/Resources/bash-completion/completions/ghostty.bash"
@@ -25,7 +24,8 @@ cask "ghostty" do
   zsh_completion "#{appdir}/Ghostty.app/Contents/Resources/zsh/site-functions/_ghostty"
 
   zap trash: [
-    "~/.config/ghostty/",
+    "~/.cache/ghostty",
+    "~/.config/ghostty",
     "~/Library/Application Support/com.mitchellh.ghostty",
     "~/Library/Caches/com.mitchellh.ghostty",
     "~/Library/HTTPStorages/com.mitchellh.ghostty",

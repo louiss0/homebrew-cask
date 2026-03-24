@@ -1,11 +1,11 @@
 cask "godot" do
-  version "4.4.1"
-  sha256 "6c670596d21afb7917c739d0b85b10b4ac6a44051ffa2a672f90bc7da5062864"
+  version "4.6.1"
+  sha256 "f43613ad72ab1cc9ef14383545f4de344844451a5c9c5f4ea4a923f1f34f91e4"
 
   url "https://github.com/godotengine/godot/releases/download/#{version}-stable/Godot_v#{version}-stable_macos.universal.zip",
       verified: "github.com/godotengine/godot/"
   name "Godot Engine"
-  desc "Game development engine"
+  desc "2D and 3D game engine"
   homepage "https://godotengine.org/"
 
   livecheck do
@@ -15,7 +15,7 @@ cask "godot" do
   end
 
   conflicts_with cask: "godot@3"
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
   app "Godot.app"
   binary "#{appdir}/Godot.app/Contents/MacOS/Godot", target: "godot"

@@ -1,9 +1,9 @@
 cask "forkgram-telegram" do
   arch arm: "arm64", intel: "x86"
 
-  version "5.16.1"
-  sha256 arm:   "3f33e6c8035eb8b01a744509b0f763f85de11b69b73a671196ed54311b3d088e",
-         intel: "fc569738550e14a8e5ceb8654b3f95c52d9ec8e65ea4366fa00238580fee78f3"
+  version "6.6.2"
+  sha256 arm:   "6a2bcef45e5471c3680c4c483d9e4423da28a2d5a09ec97f77e4c77536104f9d",
+         intel: "26a9fdc15ea01766e1b4d5d0e1b1791bf93b833c6fb87f14facdec1d089270cd"
 
   url "https://github.com/Forkgram/tdesktop/releases/download/v#{version}/Forkgram.macOS.no.auto-update_#{arch}.zip"
   name "Forkgram"
@@ -30,7 +30,7 @@ cask "forkgram-telegram" do
     end
   end
 
-  depends_on macos: ">= :high_sierra"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   # Renamed to avoid conflict with telegram
   app "Telegram.app", target: "Forkgram.app"

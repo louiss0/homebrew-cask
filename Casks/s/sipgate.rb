@@ -1,6 +1,6 @@
 cask "sipgate" do
-  version "2.13.4"
-  sha256 "b9c924b626e277339da8122357ee1b3bdef2ea71f72057041d44035857a28cc8"
+  version "2.33.3"
+  sha256 "8eeb4b243a2ff64d89e04edc27469fe68b586394040bdda114b1fa9fe3f1a83b"
 
   url "https://s3-eu-central-1.amazonaws.com/desktop.download.sipgate.com/sipgate-#{version}.zip",
       verified: "s3-eu-central-1.amazonaws.com/desktop.download.sipgate.com/"
@@ -14,7 +14,7 @@ cask "sipgate" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "sipgate.app"
 

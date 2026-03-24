@@ -1,6 +1,6 @@
 cask "p4v" do
-  version "2025.2,2776508"
-  sha256 "c7130099d50b5dbb9c9578e9cc5158f7d632877d2644be0bf5592deb12773a04"
+  version "2025.4,2886649"
+  sha256 "8aec794b0ed253b11307c56c1f3712707ab0269fcf6808a629c7112e4ff1c41e"
 
   url "https://filehost.perforce.com/perforce/r#{version.major[-2..]}.#{version.minor}/bin.macosx12u/P4V.dmg"
   name "Perforce Helix Visual Client"
@@ -17,12 +17,14 @@ cask "p4v" do
     end
   end
 
+  depends_on macos: ">= :big_sur"
+
   app "p4v.app"
   app "p4admin.app"
   app "p4merge.app"
-  binary "p4vc"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
   p4_wrapper = "#{staged_path}/p4.wrapper.sh"
+  binary "p4vc"
   binary p4_wrapper, target: "p4v"
   binary p4_wrapper, target: "p4admin"
   binary p4_wrapper, target: "p4merge"

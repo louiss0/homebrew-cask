@@ -1,9 +1,9 @@
 cask "clion" do
   arch arm: "-aarch64"
 
-  version "2025.1.3,251.26927.39"
-  sha256 arm:   "b415b03f8099cb4bcfd443562f9a88aecbe641ba387586d437031b5d2dc2726d",
-         intel: "8144071d2c4485b5fd2447a00be3577533a7bc5c510b4b4fdd5db68bb93607a1"
+  version "2025.3.4,253.32098.68"
+  sha256 arm:   "59697625f2b9cc9ce6ac82855311cf0a40b3464cd5abc21011696a0ef2319528",
+         intel: "a5d2577795609fcaa22b30b5434ad524ca6e2135b2654fa997e34b295b27480f"
 
   url "https://download.jetbrains.com/cpp/CLion-#{version.csv.first}#{arch}.dmg"
   name "CLion"
@@ -24,7 +24,7 @@ cask "clion" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "CLion.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

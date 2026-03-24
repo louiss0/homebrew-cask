@@ -7,9 +7,7 @@ cask "macmediakeyforwarder" do
   desc "Media key forwarder for iTunes and Spotify"
   homepage "https://github.com/quentinlesceller/macmediakeyforwarder/"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "MacMediaKeyForwarder.app"
 

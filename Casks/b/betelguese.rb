@@ -7,7 +7,7 @@ cask "betelguese" do
   desc "Odysseyra1n installer GUI for jailbroken devices"
   homepage "https://github.com/23Aaron/Betelguese"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Betelguese.app"
 

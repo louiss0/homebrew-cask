@@ -1,28 +1,20 @@
 cask "pixpin" do
-  version "1.9.11.8"
-  sha256 "69fe9b9d2ccb51acc07f95599594c0638764c99e0285e301164efa1ada52b9f6"
+  version "2.4.9.6"
+  sha256 "bebbf572c378588504482b0fe6ea5a6f2bde505e169fb34f16766586e8dbba60"
 
-  url "https://download.pixpin.cn/PixPin_#{version}.dmg"
+  url "https://download.pixpin.cn/PixPin_cn_zh-cn_#{version}_uni.dmg"
   name "PixPin"
   desc "Screenshot tool"
   homepage "https://pixpin.cn/"
 
   livecheck do
-    url :homepage
-    regex(%r{href=.*/PixPin[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
-    strategy :page_match do |page, regex|
-      changelog_path = page[%r{href=.*?/docs/official-log/(v?\d+(?:\.\d+)+(?:\.html)?)["' >]}i, 1]
-      next if changelog_path.blank?
-
-      version_page = Homebrew::Livecheck::Strategy.page_content("https://pixpin.cn/docs/official-log/#{changelog_path}")
-      version_page[:content]&.scan(regex)&.map { |match| match[0] }
+    url "https://api.viewdepth.cn/app_info?app_id=pixpin&update_type=0&sys=mac&ver=0.0.0"
+    strategy :json do |json|
+      json.dig("ver_info", "version")
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "PixPin.app"
 

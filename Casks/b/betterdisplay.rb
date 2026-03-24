@@ -16,8 +16,8 @@ cask "betterdisplay" do
     end
   end
   on_ventura :or_newer do
-    version "3.5.6"
-    sha256 "fbfdaac8699245db60260ecd4dc0d0644e3639774c20e45e2f548bd6a751f2bb"
+    version "4.2.3"
+    sha256 "91e26474c0cedb5dc3525d8b015aadc758e8026714a54df7e938fc025742a0aa"
 
     livecheck do
       url "https://betterdisplay.pro/betterdisplay/sparkle/appcast.xml"
@@ -34,9 +34,18 @@ cask "betterdisplay" do
   homepage "https://betterdisplay.pro/"
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "BetterDisplay.app"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/betterdisplay.wrapper.sh"
+  binary shimscript, target: "betterdisplaycli"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!/bin/bash
+      exec '#{appdir}/BetterDisplay.app/Contents/MacOS/BetterDisplay' "$@"
+    EOS
+  end
 
   uninstall quit:       "pro.betterdisplay.BetterDisplay",
             login_item: "BetterDisplay"

@@ -7,11 +7,7 @@ cask "deelay" do
   desc "Delay plugin"
   homepage "https://sixthsample.com/deelay/"
 
-  no_autobump! because: :requires_manual_review
-
   disable! date: "2025-06-01", because: :no_longer_meets_criteria
-
-  depends_on macos: ">= :high_sierra"
 
   pkg "Deelay-#{version.csv.first}/Deelay-#{version.csv.first}-Installer-macOS.pkg"
 

@@ -1,6 +1,6 @@
 cask "mediainfo" do
-  version "25.04"
-  sha256 "9e341c56d42b75fff558ee516e33df115dab32d35af22ce344d404327019fa90"
+  version "26.01"
+  sha256 "71841e8abe9e6f5982ee81daa77449428573ca02c7f2eadb10c1d52c86a8646d"
 
   url "https://mediaarea.net/download/binary/mediainfo-gui/#{version}/MediaInfo_GUI_#{version}_Mac.dmg"
   name "MediaInfo"
@@ -13,8 +13,6 @@ cask "mediainfo" do
     url "https://mediaarea.net/en/MediaInfo/Download/Mac_OS"
     regex(/href=.*?MediaInfo[._-]GUI[._-]v?(\d+(?:\.\d+)+)(?:[._-]Mac)?\.dmg/i)
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "MediaInfo.app"
 

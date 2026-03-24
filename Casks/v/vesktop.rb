@@ -1,6 +1,6 @@
 cask "vesktop" do
-  version "1.5.7"
-  sha256 "ef697fcf2ca40914b784eca700af3f5a41467f4eccd8680d3055ac6add94fdd7"
+  version "1.6.5"
+  sha256 "9a63e6a2f57253ccb4a25ac7b99046654a39dc7bc55e08619957992d34887e93"
 
   url "https://github.com/Vencord/Vesktop/releases/download/v#{version}/Vesktop-#{version}-universal.dmg"
   name "Vesktop"
@@ -13,7 +13,7 @@ cask "vesktop" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Vesktop.app"
 

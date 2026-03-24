@@ -1,5 +1,5 @@
 cask "rode-connect" do
-  version "1.3.43"
+  version "1.3.47"
   sha256 :no_check
 
   url "https://update.rode.com/connect/RODE_Connect_MACOS.zip"
@@ -14,9 +14,10 @@ cask "rode-connect" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  # The url is unversioned, but the download returns a pkg with a version number
+  rename "RØDE Connect*.pkg", "RØDE Connect.pkg"
 
-  pkg "RØDE Connect (#{version}).pkg"
+  pkg "RØDE Connect.pkg"
 
   uninstall pkgutil: "com.rodeconnect.installer"
 

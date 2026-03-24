@@ -1,6 +1,6 @@
 cask "sync" do
-  version "2.2.51"
-  sha256 "f468a7820f2dc646087592b74da20b186a753ef54c2e9bc0a0b28a346394a61c"
+  version "2.2.55"
+  sha256 "5983ad217388da2891e796d8d314f60c6e2e24a317c092efbb000f6c1482576c"
 
   url "https://www10.sync.com/download/apple/Sync-#{version}.dmg"
   name "Sync"
@@ -11,6 +11,8 @@ cask "sync" do
     url "https://www.sync.com/install/"
     regex(/href=.*?Sync[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
+
+  auto_updates true
 
   app "Sync.app"
 

@@ -1,6 +1,6 @@
 cask "discord@canary" do
-  version "0.0.818"
-  sha256 "ca315b8426cd1c192dc471f94d3c88e9ebb907b7cf3f3d8714704df9f495b0b6"
+  version "0.0.1032"
+  sha256 "41a1b40c1cc8d6d585e4f089d87bef3f8efd4475144de8756eb9e6ac4f9ada38"
 
   url "https://dl-canary.discordapp.net/apps/osx/#{version}/DiscordCanary.dmg",
       verified: "dl-canary.discordapp.net/"
@@ -14,7 +14,7 @@ cask "discord@canary" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Discord Canary.app"
 

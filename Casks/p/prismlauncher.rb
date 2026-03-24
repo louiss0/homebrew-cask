@@ -1,27 +1,44 @@
 cask "prismlauncher" do
-  version "9.4"
-
   on_catalina :or_older do
+    version "9.4"
     sha256 "ad5e4d12d91631e4aeec69499e244b0c6fc255d9abe3e26f4f45571a6736206c"
 
     url "https://github.com/PrismLauncher/PrismLauncher/releases/download/#{version}/PrismLauncher-macOS-Legacy-#{version}.zip",
         verified: "github.com/PrismLauncher/PrismLauncher/"
+
+    livecheck do
+      skip "Legacy version"
+    end
   end
-  on_big_sur :or_newer do
+  on_big_sur do
+    version "9.4"
     sha256 "5cc0148e427d28c632978a9e83e2da3fc02f5072990d9e7732dff3fdb1912ae4"
 
     url "https://github.com/PrismLauncher/PrismLauncher/releases/download/#{version}/PrismLauncher-macOS-#{version}.zip",
         verified: "github.com/PrismLauncher/PrismLauncher/"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  end
+  on_monterey :or_newer do
+    version "10.0.5"
+    sha256 "c43de98b9a16144b1f0d886ef8422113ff79db0a644fd71cee4f4b9df67cd566"
+
+    url "https://github.com/PrismLauncher/PrismLauncher/releases/download/#{version}/PrismLauncher-macOS-#{version}.zip",
+        verified: "github.com/PrismLauncher/PrismLauncher/"
+
+    livecheck do
+      url "https://prismlauncher.org/feed/appcast.xml"
+      strategy :sparkle
+    end
   end
 
   name "Prism Launcher"
   desc "Minecraft launcher"
   homepage "https://prismlauncher.org/"
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Prism Launcher.app"
   binary "#{appdir}/Prism Launcher.app/Contents/MacOS/prismlauncher"

@@ -1,5 +1,5 @@
 cask "jabra-direct" do
-  version "6.23.16101"
+  version "6.27.03702"
   sha256 :no_check
 
   url "https://jabraxpressonlineprdstor.blob.core.windows.net/jdo/JabraDirectSetup.dmg",
@@ -16,7 +16,6 @@ cask "jabra-direct" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   pkg "JabraDirectSetup.pkg"
 

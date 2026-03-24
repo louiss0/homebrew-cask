@@ -1,9 +1,9 @@
 cask "shadow@beta" do
   arch arm: "arm64", intel: "x64"
 
-  version "9.9.10249"
-  sha256 arm:   "b210f35595549ee6ba1fd348d7b1053ecb6b119e66cc125cfe50aac75af95653",
-         intel: "bb423027821e9828fde8b7f9a14d450ade6e4bfdab0fb3e3faf408cf271963e3"
+  version "9.9.10390"
+  sha256 arm:   "d438836f7ac37b2837bc0d2d0565556d352562255026a990c569b29f54fdee90",
+         intel: "d17314d524d96e6a184a192a18e65db76bd792576aa7b86a7c85fb89be8d1b42"
 
   url "https://update.shadow.tech/launcher/preprod/mac/#{arch}/ShadowPCBeta-#{version}.dmg"
   name "Shadow PC Beta"
@@ -14,8 +14,6 @@ cask "shadow@beta" do
     url "https://update.shadow.tech/launcher/preprod/mac/#{arch}/latest-mac.yml"
     strategy :electron_builder
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "Shadow PC Beta.app"
 

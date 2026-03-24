@@ -1,8 +1,8 @@
 cask "flowdown" do
-  version "1.28.281"
-  sha256 "025590009b8f3323d73c23d48e1e14ae2e80af6bb13122eda2535d06e89e170e"
+  version "4.6.6"
+  sha256 "418a64f3ca4850cc1b75305fecf87977dd1e047b7baef38001b19a8332bfe6ef"
 
-  url "https://github.com/Lakr233/FlowDown/releases/download/#{version}/FlowDown-v#{version}.zip",
+  url "https://github.com/Lakr233/FlowDown/releases/download/#{version}/FlowDown-#{version}.zip",
       verified: "github.com/Lakr233/FlowDown/"
   name "FlowDown"
   desc "AI agent"
@@ -10,10 +10,11 @@ cask "flowdown" do
 
   livecheck do
     url :url
+    regex(/^v?(\d+(?:\.\d+)+(?:[._-](?:patch|rev)[._-]\d+)?)$/i)
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: ">= :sonoma"
 
   app "FlowDown.app"
 

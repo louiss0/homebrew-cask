@@ -1,9 +1,9 @@
 cask "youdaonote" do
   arch arm: "-arm64"
 
-  version "8.1.51"
-  sha256 arm:   "c0946ca83c31830612badaaa865e4d1cb3abe8372328eaf709f5b3ccb1e7c7fb",
-         intel: "7c3e41adee94007edcb988250a436b54d7fd78cd7896964785930104b0977c12"
+  version "8.2.41"
+  sha256 arm:   "4b25d9c46f8db655219ee7af433d9e10f285fbd035d281229dc3351a6ca4ef23",
+         intel: "7a0389c425f1449039a7d3452af3c3b713883bd74fbfc16d998b6c9cae43c4df"
 
   url "https://artifact.lx.netease.com/download/ynote-electron/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0-#{version}#{arch}.dmg",
       user_agent: :fake,

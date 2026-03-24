@@ -1,6 +1,6 @@
 cask "graphicconverter" do
-  version "12.4.1,6880"
-  sha256 "2ae3026570b096eb1f652a5072c154d715f5eb9c20acd3ff4d8d48216681ac62"
+  version "12.5.1,7134"
+  sha256 "d9618b6b14c794c772b54ca3ac4c9bfadb267f54035037981e8fa3684d6ed600"
 
   url "https://www.lemkesoft.info/files/graphicconverter/gc#{version.major}_build#{version.csv.second}.zip",
       verified: "lemkesoft.info/"
@@ -18,7 +18,6 @@ cask "graphicconverter" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "GraphicConverter #{version.major}.app"
 

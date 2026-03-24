@@ -1,9 +1,9 @@
 cask "positron" do
   arch arm: "arm64", intel: "x64"
 
-  version "2025.07.0-204"
-  sha256 arm:   "cb6638d0640e47df38b725acf2bb42ad5b4a0f0207ac5734a422ccab9527b9f0",
-         intel: "414ed38f88f66c26fed5cb1f32a4b719449f6b4b29a5001c22916286e72dc68e"
+  version "2026.03.0-212"
+  sha256 arm:   "0eef3a5a6406edeb8044974e06405e851e777357566e26e5386dd689ad761aab",
+         intel: "89ef2c69c43bf6bf9dd82e7f62a8e2193aaad86f18fba5742a2e02cae9e1e998"
 
   url "https://cdn.posit.co/positron/releases/mac/#{arch}/Positron-darwin-#{version}-#{arch}.zip"
   name "Positron"
@@ -17,7 +17,7 @@ cask "positron" do
     end
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "Positron.app"
 

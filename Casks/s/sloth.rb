@@ -1,6 +1,6 @@
 cask "sloth" do
-  version "3.4"
-  sha256 "2bc0f078114020b110caaae2e8d3bea79a916a6f811e3224d6d978de072c78db"
+  version "3.5"
+  sha256 "ef5e0e064ac5ce85d9ada7bb3ad22dace2bd4981a4920a7470f9d2673b8cdcb5"
 
   url "https://sveinbjorn.org/files/software/sloth/sloth-#{version}.zip"
   name "Sloth"
@@ -12,10 +12,8 @@ cask "sloth" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
   app "Sloth.app"
 

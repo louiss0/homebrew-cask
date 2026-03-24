@@ -2,28 +2,26 @@ cask "wireshark-app" do
   arch arm: "Arm", intel: "Intel"
   livecheck_arch = on_arch_conditional arm: "arm", intel: "x86-"
 
-  on_catalina :or_older do
-    version "4.2.12"
-    sha256 arm:   "3581038c7325b0f810d44b0598bbceab1832c28d8f40912e4e924ec61c79779b",
-           intel: "ac51f031d3b0b7e1a0f323c7356b8a0284ed1369b7435dd221cf29de768e5e4c"
+  on_big_sur :or_older do
+    version "4.4.14"
+    sha256 arm:   "b8b1070bdedfff76ba72376ea58e1e7406af1e2788705ce617f0e58d67eec99a",
+           intel: "2cc68307183a710ac0c07f6d77c36656f55ffd6e30ca24097bca8c3fff20b77c"
 
+    url "https://www.wireshark.org/download/osx/all-versions/Wireshark%20#{version}%20#{arch}%2064.dmg"
+
+    # The 4.4.x "old stable release" uses the same appcast as the current stable
+    # release but that only includes an item for the current stable release, so
+    # we have to check the homepage for the old stable release version.
     livecheck do
-      url "https://www.wireshark.org/update/0/Wireshark/0.0.0/macOS/#{livecheck_arch}64/en-US/development.xml"
-      strategy :sparkle do |items|
-        items.map do |item|
-          next unless item.minimum_system_version
-          next if item.minimum_system_version < :high_sierra ||
-                  item.minimum_system_version >= :catalina
-
-          item.version
-        end
-      end
+      url :homepage
+      regex(/Old\s+Stable\s+Release.*?href=["']?[^"' >]*?Wireshark%20v?(\d+(?:\.\d+)+)%20#{arch}%2064\.dmg/im)
     end
   end
-  on_big_sur :or_newer do
-    version "4.4.7"
-    sha256 arm:   "af1189f35774c2cf86578c4c143a79824c43070c59f7b01acff27469a40a847a",
-           intel: "dd735fa58a7390e242717a9badcc2168ff9c41ec559a4897b193d5b46f3b2788"
+  on_monterey :or_newer do
+    version "4.6.4"
+    sha256 "08150f79cfc5828820f991b6d944c68536db9595b1c3052982bbde79fb2053df"
+
+    url "https://www.wireshark.org/download/osx/all-versions/Wireshark%20#{version}.dmg"
 
     # This appcast sometimes uses a newer pubDate for an older version, so we
     # have to ignore the default `Sparkle` strategy sorting (which involves the
@@ -36,15 +34,13 @@ cask "wireshark-app" do
     end
   end
 
-  url "https://2.na.dl.wireshark.org/osx/all-versions/Wireshark%20#{version}%20#{arch}%2064.dmg"
   name "Wireshark"
   desc "Network protocol analyzer"
   homepage "https://www.wireshark.org/"
 
   auto_updates true
-  conflicts_with cask:    "wireshark-chmodbpf",
-                 formula: "wireshark"
-  depends_on macos: ">= :mojave"
+  conflicts_with cask: "wireshark-chmodbpf"
+  depends_on macos: ">= :big_sur"
 
   app "Wireshark.app"
   pkg "Add Wireshark to the system path.pkg"

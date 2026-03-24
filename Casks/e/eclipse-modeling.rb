@@ -1,9 +1,9 @@
 cask "eclipse-modeling" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "4.36.0,2025-06"
-  sha256 arm:   "1e9a131356c918315c32dc1faec0065c9032742772570208158bb6fc7197671c",
-         intel: "12e88d8e3fce342d47d4b0a9d04eb47544bfb5ca4446044361dafb78ec7366e1"
+  version "4.39,2026-03"
+  sha256 arm:   "4d9b38edfa09c5ca17253824730990326f200cccc13206fb64c7c7a34a2f7cae",
+         intel: "66d0a10432bbfcd7f5721e96fb72a1da0d43e2c124215ef4ffb70d263eb1439f"
 
   url "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/#{version.csv.second}/R/eclipse-modeling-#{version.csv.second}-R-macosx-cocoa-#{arch}.dmg&mirror_id=1"
   name "Eclipse Modeling Tools"
@@ -14,7 +14,7 @@ cask "eclipse-modeling" do
     cask "eclipse-ide"
   end
 
-  no_autobump! because: :requires_manual_review
+  depends_on macos: ">= :big_sur"
 
   # Renamed to avoid conflict with other Eclipse.
   app "Eclipse.app", target: "Eclipse Modeling.app"

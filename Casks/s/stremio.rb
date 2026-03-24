@@ -1,18 +1,26 @@
 cask "stremio" do
-  version "4.4.168"
-  sha256 "4f140302a2c283a15a4740bfa4d983b6cc373e9375336dd69de274ae4b18c1ce"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://dl.strem.io/shell-osx/v#{version}/Stremio+#{version}.dmg"
+  version "5.1.16"
+  sha256 arm:   "d75053aea263d828dc48251c1633412c344522d5fcb5e96bd953815aff9d9cbd",
+         intel: "dd9a7e5dd4332177d3334e2e145c913776988f9c269c86afc393bdced29143ab"
+
+  on_arm do
+    depends_on macos: ">= :big_sur"
+  end
+  on_intel do
+    depends_on macos: ">= :catalina"
+  end
+
+  url "https://dl.strem.io/stremio-shell-macos/v#{version}/Stremio_#{arch}.dmg"
   name "Stremio"
   desc "Open-source media center"
   homepage "https://www.strem.io/"
 
   livecheck do
-    url "https://www.strem.io/download?platform=mac&four=true"
-    strategy :header_match
+    url "https://www.stremio.com/downloads"
+    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/Stremio[._-]#{arch}\.dmg}i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "Stremio.app"
 
@@ -24,8 +32,4 @@ cask "stremio" do
     "~/Library/Preferences/com.stremio.Stremio.plist",
     "~/Library/Saved Application State/com.smartcodeltd.stremio.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

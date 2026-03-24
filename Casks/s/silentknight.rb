@@ -1,32 +1,6 @@
 cask "silentknight" do
-  on_mojave :or_older do
-    version "1.21,2022.06"
-    sha256 "c1cbb734f620e073f1c08c473edaa036c2b5ccdca02baa99ca117f86c10ad505"
-
-    livecheck do
-      skip "Legacy version"
-    end
-  end
-  on_catalina :or_newer do
-    version "2.12,2025.06"
-    sha256 "84eb2feb1e4d0ac26f28f963bf809e6d6206b5d345d9d9c428bdbc583b249f76"
-
-    livecheck do
-      url "https://raw.githubusercontent.com/hoakleyelc/updates/master/eclecticapps.plist"
-      regex(%r{/(\d+)/(\d+)/[^/]+?$}i)
-      strategy :xml do |xml, regex|
-        item = xml.elements["//dict[key[text()='AppName']/following-sibling::*[1][text()='SilentKnight#{version.major}']]"]
-        next unless item
-
-        version = item.elements["key[text()='Version']"]&.next_element&.text
-        url = item.elements["key[text()='URL']"]&.next_element&.text
-        match = url.strip.match(regex) if url
-        next if version.blank? || match.blank?
-
-        "#{version.strip},#{match[1]}.#{match[2]}"
-      end
-    end
-  end
+  version "2.14,2026.03"
+  sha256 "adeed760e2d4482a250b48013fde40916afc6cbcb253bce491c9bdbc64f8023b"
 
   # Upstream zero-pads the minor version in the no-dot filename version to two
   # digits (e.g. 2.9 is 209). We only need this workaround while the minor
@@ -41,7 +15,23 @@ cask "silentknight" do
   desc "Automatically checks computer's security"
   homepage "https://eclecticlight.co/lockrattler-systhist/"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url "https://raw.githubusercontent.com/hoakleyelc/updates/master/eclecticapps.plist"
+    regex(%r{/(\d+)/(\d+)/[^/]+?$}i)
+    strategy :xml do |xml, regex|
+      item = xml.elements["//dict[key[text()='AppName']/following-sibling::*[1][text()='SilentKnight#{version.major}']]"]
+      next unless item
+
+      version = item.elements["key[text()='Version']"]&.next_element&.text
+      url = item.elements["key[text()='URL']"]&.next_element&.text
+      match = url.strip.match(regex) if url
+      next if version.blank? || match.blank?
+
+      "#{version.strip},#{match[1]}.#{match[2]}"
+    end
+  end
+
+  depends_on macos: ">= :big_sur"
 
   app "silentknight#{no_dot_version}/SilentKnight.app"
 

@@ -1,9 +1,9 @@
 cask "gitbutler" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.15.1,2163"
-  sha256 arm:   "a33476b8be7d7f3536f130100162156db792fe29dffeea74c236d8a020e8e9dc",
-         intel: "5d7d905e8eab2ce144163fb197c9e2965b07d4e264e4de923ee58d7806fc0500"
+  version "0.19.6,2922"
+  sha256 arm:   "799b86bfe4e59f05994bccde4890ac3b522e4d51dd2c4b2770606fd985a30ef1",
+         intel: "3ce43bd670a8a4296352a1b66d661389b6c1a328f7b0e9c89af776a25f3acd9c"
 
   url "https://releases.gitbutler.com/releases/release/#{version.csv.first}-#{version.csv.second}/macos/#{arch}/GitButler.app.tar.gz"
   name "GitButler"
@@ -22,9 +22,9 @@ cask "gitbutler" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "GitButler.app"
+  binary "#{appdir}/GitButler.app/Contents/MacOS/gitbutler-tauri", target: "but"
 
   zap trash: [
     "~/Library/Application Support/com.gitbutler.app",

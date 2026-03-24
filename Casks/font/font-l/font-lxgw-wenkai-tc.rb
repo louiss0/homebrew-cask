@@ -1,13 +1,11 @@
 cask "font-lxgw-wenkai-tc" do
-  version "1.520"
-  sha256 "95e734c880016a928d00cd0dc4b20f7874ed4a52d972749cfa354c6a616c3334"
+  version "1.522"
+  sha256 "1c3021d72c2000fdbad219bbf093a7a20fe1f8de7699ca4b4017192afe2b542f"
 
   url "https://github.com/lxgw/LxgwWenkaiTC/releases/download/v#{version}/lxgw-wenkai-tc-v#{version}.zip"
   name "LXGW WenKai TC"
   name "霞鶩文楷 TC"
   homepage "https://github.com/lxgw/LxgwWenkaiTC"
-
-  no_autobump! because: :requires_manual_review
 
   font "lxgw-wenkai-tc-v#{version}/LXGWWenKaiMonoTC-Light.ttf"
   font "lxgw-wenkai-tc-v#{version}/LXGWWenKaiMonoTC-Medium.ttf"

@@ -1,26 +1,25 @@
 cask "djv" do
-  version "2.0.8"
-  sha256 "5df641ad2eb27d2beb35ec6ebb05a1d2a14c2af19b65aee370a1eac6fa5ae056"
+  version "3.3.4"
+  sha256 "3ffc220a1b7c5eb74300136676f5fcfe182b4e4ebb61a886095a5f8e5fd50fba"
 
-  url "https://github.com/darbyjohnston/DJV/releases/download/#{version}/DJV-#{version}-Darwin.dmg",
-      verified: "github.com/darbyjohnston/DJV/"
-  name "DJV Imaging"
+  url "https://github.com/grizzlypeak3d/DJV/releases/download/#{version}/DJV-#{version}-macOS-arm64.dmg",
+      verified: "github.com/grizzlypeak3d/DJV/"
+  name "DJV"
   desc "Review software for VFX, animation, and film production"
-  homepage "https://darbyjohnston.github.io/DJV/"
+  homepage "https://grizzlypeak3d.github.io/DJV/"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
-  deprecate! date: "2024-11-17", because: :unmaintained
+  depends_on arch: :arm64
 
-  app "DJV#{version.major}.app"
+  app "DJV.app"
 
   zap trash: [
         "~/Documents/DJV/djv.log",
         "~/Library/Preferences/com.djv-sourceforge-net-*.plist",
       ],
       rmdir: "~/Documents/DJV"
-
-  caveats do
-    requires_rosetta
-  end
 end

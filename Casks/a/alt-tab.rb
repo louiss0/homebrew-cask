@@ -1,6 +1,6 @@
 cask "alt-tab" do
-  version "7.25.0"
-  sha256 "7b5dde9f47d01ced22e3d80fd7353a9acf530cc030a35aacb9bb138bf0dd214a"
+  version "10.9.0"
+  sha256 "be30ce7635bff5dc3907e2c693ee32acb5fba3770d69b53be5bf26661677d5da"
 
   url "https://github.com/lwouis/alt-tab-macos/releases/download/v#{version}/AltTab-#{version}.zip",
       verified: "github.com/lwouis/alt-tab-macos/"
@@ -14,11 +14,11 @@ cask "alt-tab" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   app "AltTab.app"
 
-  uninstall quit: "com.lwouis.alt-tab-macos"
+  uninstall quit:       "com.lwouis.alt-tab-macos",
+            on_upgrade: :quit
 
   zap trash: [
     "~/Library/Application Support/com.lwouis.alt-tab-macos",

@@ -1,6 +1,6 @@
 cask "box-drive" do
-  version "2.43.205"
-  sha256 "200c5fa6d8eec5516924938d46e7fa6122fdc189044fd935e8c155faa5beaf3d"
+  version "2.50.191"
+  sha256 "ab1470864f0a1213a97b13ed6c77b1b0240bd477d1680e6d461f88ce585152f0"
 
   url "https://e3.boxcdn.net/desktop/releases/mac/BoxDrive-#{version}.pkg",
       verified: "e3.boxcdn.net/desktop/releases/mac/"
@@ -9,7 +9,7 @@ cask "box-drive" do
   homepage "https://www.box.com/drive"
 
   livecheck do
-    url "https://cdn07.boxcdn.net/Autoupdate5.json"
+    url "https://cdn07.boxcdn.net/Autoupdate6.json"
     strategy :json do |json|
       json.dig("mac", "free", "version")
     end
@@ -17,7 +17,7 @@ cask "box-drive" do
 
   auto_updates true
   conflicts_with cask: "box-sync"
-  depends_on macos: ">= :el_capitan"
+  depends_on macos: ">= :big_sur"
 
   pkg "BoxDrive-#{version}.pkg"
 

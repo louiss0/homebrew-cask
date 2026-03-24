@@ -1,6 +1,6 @@
 cask "rotato" do
-  version "151"
-  sha256 "e6e15031ff155dd72005861e36267256cad77797dd78e3164e4f7f41add3501a"
+  version "154"
+  sha256 "f8a9b0c1cae6398b5b0973bcabe1ce8e840539b29df987adb92443c67662a3bc"
 
   url "https://download.rota.to/Rotato-#{version}.dmg",
       verified: "download.rota.to/"
@@ -10,10 +10,10 @@ cask "rotato" do
 
   livecheck do
     url "https://download.rota.to/appcast.xml"
-    strategy :sparkle, &:short_version
+    strategy :sparkle do |items|
+      items.find { |item| item.channel.nil? }&.short_version
+    end
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :monterey"

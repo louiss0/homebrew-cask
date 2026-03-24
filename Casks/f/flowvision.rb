@@ -1,6 +1,6 @@
 cask "flowvision" do
-  version "1.6.5"
-  sha256 "54f2b72900a8d240ccc2486e1d61d8eac3af705c32d83e157407c8f9425d4039"
+  version "1.6.9"
+  sha256 "6a2b43ca8f35babf0da65c5629cbe047a8a95715a90bd307c04048227ecbec4d"
 
   url "https://github.com/netdcy/FlowVision/releases/download/#{version}/FlowVision.#{version}.zip",
       verified: "github.com/netdcy/FlowVision/"
@@ -12,8 +12,6 @@ cask "flowvision" do
     url :url
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :big_sur"
 

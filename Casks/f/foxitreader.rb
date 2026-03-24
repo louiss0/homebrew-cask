@@ -1,6 +1,6 @@
 cask "foxitreader" do
-  version "2025.1.0.66692"
-  sha256 "88fe620d85c044b9e0d556588e72beee563ce8b43a884aac58573ccb5f2b9a34"
+  version "2025.3"
+  sha256 "36ab2f04bcd082a7dee7b19e938c66c0289a5959a0271774106846b962665195"
 
   url "https://cdn01.foxitsoftware.com/pub/foxit/phantomPDF/desktop/mac/#{version.major}.x/#{version.major_minor}/FoxitPDFReader#{version.major_minor.no_dots}.L10N.Setup.pkg",
       verified: "cdn01.foxitsoftware.com/pub/foxit/phantomPDF/desktop/mac/"
@@ -11,9 +11,11 @@ cask "foxitreader" do
   livecheck do
     url "https://www.foxit.com/portal/download/getdownloadform.html?formId=download-reader&retJson=1&platform=Mac-OS-X"
     strategy :json do |json|
-      json.dig("package_info", "version")
+      json.dig("package_info", "big_version")&.delete_suffix(".x")
     end
   end
+
+  depends_on macos: ">= :monterey"
 
   pkg "FoxitPDFReader#{version.major_minor.no_dots}.L10N.Setup.pkg"
 

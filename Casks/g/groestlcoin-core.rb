@@ -1,17 +1,19 @@
 cask "groestlcoin-core" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "29.0"
-  sha256 arm:   "381446d49527fe2291498a01773ab44615bb970e0e7ea3bd8e14e0458f02e072",
-         intel: "2195198790178321d3f0233e4ad7439c6f387f0e5d5f6e6c80ed338a54df2014"
+  version "30.2"
+  sha256 arm:   "6d744a9c2fb98a15ad538598269d197778e5cdbc190b4aaebc16fe88f7647823",
+         intel: "6abf28e5466c6e3a3ebf71f2d275aab045962f249a9b2b38fde787bbe30c090f"
 
-  url "https://github.com/groestlcoin/groestlcoin/releases/download/v#{version}/groestlcoin-#{version}-#{arch}-apple-darwin.zip",
+  url "https://github.com/groestlcoin/groestlcoin/releases/download/v#{version}/groestlcoin-#{version}-#{arch}-apple-darwin-unsigned.zip",
       verified: "github.com/groestlcoin/groestlcoin/"
   name "Groestlcoin Core"
   desc "Groestlcoin client and wallet"
   homepage "https://www.groestlcoin.org/groestlcoin-core-wallet/"
 
-  depends_on macos: ">= :big_sur"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :ventura"
 
   # Renamed for consistency: app name is different in the Finder and in a shell.
   app "Groestlcoin-Qt.app", target: "Groestlcoin Core.app"

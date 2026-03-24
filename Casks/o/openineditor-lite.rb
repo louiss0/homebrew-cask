@@ -27,10 +27,6 @@ cask "openineditor-lite" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
-
   app "OpenInEditor-Lite.app"
 
   zap trash: "~/Library/Preferences/wang.jianing.app.OpenInEditor-Lite.plist"

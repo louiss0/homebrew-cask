@@ -22,7 +22,7 @@ cask "avidemux" do
   desc "Video editor"
   homepage "https://www.avidemux.org/"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Avidemux_#{version}.app"
   binary "#{appdir}/Avidemux_#{version}.app/Contents/MacOS/avidemux_cli", target: "avidemux"

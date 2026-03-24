@@ -1,6 +1,6 @@
 cask "waterfox" do
-  version "6.5.10"
-  sha256 "5b5e3b778dc1c3c1f083f87ab578d5d1072a4deac6d0c5e75417fcc40098ffb8"
+  version "6.6.9"
+  sha256 "c5e658b0bdb75db8b5539401ccbcd780373514211ad53f8bfb98139d1b2de8ff"
 
   url "https://cdn1.waterfox.net/waterfox/releases/#{version}/Darwin_x86_64-aarch64/Waterfox%20#{version}.dmg"
   name "Waterfox"
@@ -8,12 +8,11 @@ cask "waterfox" do
   homepage "https://www.waterfox.net/"
 
   livecheck do
-    url "https://cdn1.waterfox.net/waterfox/releases/latest/macos"
-    strategy :header_match
+    url "https://www.waterfox.com/download/"
+    regex(/href=.*?Waterfox(?:%20|[._-])v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Waterfox.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

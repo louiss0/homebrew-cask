@@ -1,6 +1,6 @@
 cask "lg-onscreen-control" do
-  version "7.20,9mZ5Rk4cToGkdcOPTFIUgA"
-  sha256 "d2891a3b1b5413d1d55ecb9da6182f374e6d2fb2151d3c56a1efcb7d341e68c0"
+  version "7.30,clVHLZBprha2LMY4GyIBsQ"
+  sha256 "bb174c4158876f4c8a0c5393bb69aa20cd14817afd86278926299ff57b7ed070"
 
   url "https://gscs-b2c.lge.com/downloadFile?fileId=#{version.csv.second}",
       verified: "lge.com/"
@@ -12,7 +12,7 @@ cask "lg-onscreen-control" do
   # so we return the downloads from one of the popular products
   livecheck do
     url "https://www.lg.com/us/support/product/lg-27GN950-B.AUS"
-    regex(/Mac[._-]OSC[._-]v?(\d+(?:\.\d+)+)\.zip/)
+    regex(/Mac[._-]OSC[._-]v?(\d+(?:\.\d+)+)\.zip/i)
     strategy :page_match do |page, regex|
       json_string = page[/NEXT[._-]DATA[^>]*>\s*([^<]+)\s*</i, 1]
       next if json_string.blank?
@@ -28,10 +28,6 @@ cask "lg-onscreen-control" do
       end&.flatten
     end
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
 
   pkg "OSC_V#{version.csv.first}_signed.pkg"
 

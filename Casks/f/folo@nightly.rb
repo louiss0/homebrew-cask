@@ -11,14 +11,9 @@ cask "folo@nightly" do
   desc "Information browser"
   homepage "https://follow.is/"
 
-  no_autobump! because: :requires_manual_review
-
   disable! date: "2025-04-15", because: :discontinued
 
-  conflicts_with cask: [
-    "follow@alpha",
-    "folo",
-  ]
+  conflicts_with cask: "folo"
   depends_on macos: ">= :big_sur"
 
   app "Folo.app"

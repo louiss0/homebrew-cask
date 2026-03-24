@@ -1,6 +1,6 @@
 cask "airtool" do
-  version "2.6.1"
-  sha256 "788b67ea7cf9bd48ca681b339741ff96b706639841a43bcc6e03d8e579a532a5"
+  version "2.7.4"
+  sha256 "f28c111e4b38896b0265789f58fb27235c1db56e50e759d816bf7ac0ea108461"
 
   url "https://www.intuitibits.com/downloads/Airtool_#{version}.pkg"
   name "Airtool"
@@ -12,10 +12,8 @@ cask "airtool" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :ventura"
 
   pkg "Airtool_#{version}.pkg"
 

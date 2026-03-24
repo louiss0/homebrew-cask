@@ -1,13 +1,19 @@
 cask "virtualbox" do
   arch arm: "macOSArm64", intel: "OSX"
 
-  version "7.1.10,169112"
-  sha256 arm:   "15ff0ae76005a2a77e8f40ea2a87095a645899fadaf798aabbe8dafd130de5d6",
-         intel: "cd63aa9d056b15589152b0304368dfae6930b47ebb465873d0c33fd648cd64c5"
+  version "7.2.6,172322"
+  sha256 arm:   "02da8ad74c0b3da0702359797beae941a3d3ef75d1bb0577bdd001fbe844d2b8",
+         intel: "95609b7a6e00033bd2d54c2ccd33229ffe2360612a679eeec705214bd5792684"
+
+  on_arm do
+    desc "Virtualiser for arm64 hardware"
+  end
+  on_intel do
+    desc "Virtualiser for x86 hardware"
+  end
 
   url "https://download.virtualbox.org/virtualbox/#{version.csv.first}/VirtualBox-#{version.csv.first}-#{version.csv.second}-#{arch}.dmg"
   name "Oracle VirtualBox"
-  desc "Virtualiser for x86 hardware"
   homepage "https://www.virtualbox.org/"
 
   livecheck do
@@ -25,15 +31,9 @@ cask "virtualbox" do
     "virtualbox@6",
     "virtualbox@beta",
   ]
-  depends_on macos: ">= :catalina"
 
   pkg "VirtualBox.pkg",
       choices: [
-        {
-          "choiceIdentifier" => "choiceVBoxKEXTs",
-          "choiceAttribute"  => "selected",
-          "attributeSetting" => 1,
-        },
         {
           "choiceIdentifier" => "choiceVBox",
           "choiceAttribute"  => "selected",
@@ -44,16 +44,11 @@ cask "virtualbox" do
           "choiceAttribute"  => "selected",
           "attributeSetting" => 1,
         },
-        {
-          "choiceIdentifier" => "choiceOSXFuseCore",
-          "choiceAttribute"  => "selected",
-          "attributeSetting" => 0,
-        },
       ]
 
   postflight do
-    # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew, it creates it itself
-    # with incorrect permissions that break other packages
+    # If VirtualBox is installed before `/usr/local/lib/pkgconfig` is created by Homebrew,
+    # it creates it itself with incorrect permissions that break other packages.
     # See https://github.com/Homebrew/homebrew-cask/issues/68730#issuecomment-534363026
     set_ownership "/usr/local/lib/pkgconfig"
   end

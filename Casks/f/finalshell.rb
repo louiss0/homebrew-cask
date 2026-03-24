@@ -14,7 +14,7 @@ cask "finalshell" do
     regex(/版本号?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: ">= :el_capitan"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   pkg "finalshell_macos_#{arch}.pkg"
 

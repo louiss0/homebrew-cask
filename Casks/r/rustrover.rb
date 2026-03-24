@@ -1,9 +1,9 @@
 cask "rustrover" do
   arch arm: "-aarch64"
 
-  version "2025.1.5,251.26927.79"
-  sha256 arm:   "9386f41063a209d4634098bc14e8e63d3cf030b3f8b83524b61d99bf992905d1",
-         intel: "320183fdab31207bf56396e97ba4c15549feec71885f5f390a70a1c1cd81ecc7"
+  version "2025.3.5,253.31033.204"
+  sha256 arm:   "3770fa604eaf57cc7eb25be9872ab30eeda64e9f32dae01e4994d9834a4c0014",
+         intel: "f0e3564e5776f432636831f8b9bb01466618a2c43ac13010227ba4a3be947287"
 
   url "https://download.jetbrains.com/rustrover/RustRover-#{version.csv.first}#{arch}.dmg"
   name "RustRover"
@@ -24,7 +24,6 @@ cask "rustrover" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "RustRover.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

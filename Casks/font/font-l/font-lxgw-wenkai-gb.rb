@@ -1,13 +1,16 @@
 cask "font-lxgw-wenkai-gb" do
-  version "1.520"
-  sha256 "6d3f46a9d98a1fe7605309040481ceddbfb8c992df3c21b8be9ff38f8c5e8239"
+  version "1.522"
+  sha256 "37982f21c5f70fad0a82ee5a5d0cc0d01b1903196852cd2303083173da04d194"
 
   url "https://github.com/lxgw/LxgwWenkaiGB/releases/download/v#{version}/lxgw-wenkai-gb-v#{version}.zip"
   name "LXGW WenKai GB"
   name "霞鹜文楷 GB"
   homepage "https://github.com/lxgw/LxgwWenkaiGB"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :url
+    strategy :github_releases
+  end
 
   font "lxgw-wenkai-gb-v#{version}/LXGWWenKaiGB-Light.ttf"
   font "lxgw-wenkai-gb-v#{version}/LXGWWenKaiGB-Medium.ttf"

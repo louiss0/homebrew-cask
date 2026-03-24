@@ -1,7 +1,13 @@
 cask "devonthink" do
-  on_catalina :or_older do
-    version "3.9.6"
-    sha256 "e272af94a61619adaf729de336e1ef24465a5e6ff27ed6ae8cb11d28ca35638a"
+  on_monterey :or_older do
+    on_catalina :or_older do
+      version "3.9.6"
+      sha256 "e272af94a61619adaf729de336e1ef24465a5e6ff27ed6ae8cb11d28ca35638a"
+    end
+    on_big_sur :or_newer do
+      version "3.9.16"
+      sha256 "d7f13faf8672a6c71cadc3c6c9fae56ecd3907329376c655d078b4f76e849e61"
+    end
 
     url "https://download.devontechnologies.com/download/devonthink/#{version}/DEVONthink_#{version.major}.app.zip"
 
@@ -11,9 +17,9 @@ cask "devonthink" do
 
     app "DEVONthink #{version.major}.app"
   end
-  on_big_sur :or_newer do
-    version "4.0.1"
-    sha256 "c1924a5777c34fa3ae08bae0f14fecfbdbe2c236c72edce18936b18034df17fb"
+  on_ventura :or_newer do
+    version "4.2.2"
+    sha256 "d7f13faf8672a6c71cadc3c6c9fae56ecd3907329376c655d078b4f76e849e61"
 
     url "https://download.devontechnologies.com/download/devonthink/#{version}/DEVONthink.app.zip"
 
@@ -34,10 +40,7 @@ cask "devonthink" do
   desc "Collect, organise, edit and annotate documents"
   homepage "https://www.devontechnologies.com/apps/devonthink"
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   zap trash: [
     "~/Library/Application Scripts/com.devon-technologies.*",

@@ -1,5 +1,5 @@
 cask "amadeus-pro" do
-  version "2.8.13"
+  version "2.8.14"
   sha256 :no_check
 
   url "https://s3.amazonaws.com/AmadeusPro#{version.major}/AmadeusPro.zip",
@@ -12,8 +12,6 @@ cask "amadeus-pro" do
     url :homepage
     regex(/Download\s*Amadeus\s*Pro\s*v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "Amadeus Pro.app"
 

@@ -1,9 +1,8 @@
 cask "vagrant" do
   arch arm: "arm64", intel: "amd64"
 
-  version "2.4.7"
-  sha256 arm:   "1994a74f7faad04448e361da43eb8fb6b29688a897b8207c6827defa52f8eb8d",
-         intel: "1994a74f7faad04448e361da43eb8fb6b29688a897b8207c6827defa52f8eb8d"
+  version "2.4.9"
+  sha256 "8de08bd435ef8ae0fc5fbd6acefa9c68e62fb898c5ae0fbdacd26853bea9d4d6"
 
   url "https://releases.hashicorp.com/vagrant/#{version}/vagrant_#{version}_darwin_#{arch}.dmg",
       verified: "hashicorp.com/vagrant/"
@@ -12,8 +11,8 @@ cask "vagrant" do
   homepage "https://www.vagrantup.com/"
 
   livecheck do
-    url "https://developer.hashicorp.com/vagrant/install"
-    regex(/href=[^ >]*?vagrant[._-]v?(\d+(?:\.\d+)+)(?:[._-]darwin)?(?:[._-]#{arch})?\.dmg/i)
+    url "https://releases.hashicorp.com/vagrant/"
+    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/}i)
   end
 
   pkg "vagrant.pkg"

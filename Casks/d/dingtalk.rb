@@ -1,6 +1,6 @@
 cask "dingtalk" do
-  version "7.8.0,46945406"
-  sha256 "ac4acc12f3bea16dfb9c6b892321559cbf38bbec5226a5d97133b33b38a37394"
+  version "8.0.2,48936485"
+  sha256 "d35a0e88d92f9398a76959419864b6399a014dbe13c8a286ad4af2939d3b40b7"
 
   url "https://dtapp-pub.dingtalk.com/dingtalk-desktop/mac_dmg/Release/M1-Beta/DingTalk_v#{version.csv.first}_#{version.csv.second}_universal.dmg"
   name "DingTalk"
@@ -14,7 +14,6 @@ cask "dingtalk" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "DingTalk.app"
 

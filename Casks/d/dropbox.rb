@@ -2,9 +2,9 @@ cask "dropbox" do
   arch arm: ".arm64"
   livecheck_query = on_arch_conditional arm: "&arch=arm64"
 
-  version "227.4.4774"
-  sha256 arm:   "8a19071673f11a00063b89220eb4f11a61568fbf0b5354a4f0a2988c213d2bb8",
-         intel: "7734ea4ecfe3ae97662a017171178ae89f0311e42202ca08210ae19483ec1b4f"
+  version "244.4.6580"
+  sha256 arm:   "96f189a3052379e47163e0eb9545387db591f0eda7c1322c877ccd0bc262f622",
+         intel: "1def1dd49a93ffa536c8eef9df40e23781be1d62e2232a9eb546205e912f8d5e"
 
   url "https://edge.dropboxstatic.com/dbx-releng/client/Dropbox%20#{version}#{arch}.dmg",
       verified: "dropboxstatic.com/dbx-releng/client/"
@@ -20,7 +20,6 @@ cask "dropbox" do
 
   auto_updates true
   conflicts_with cask: "dropbox@beta"
-  depends_on macos: ">= :high_sierra"
 
   app "Dropbox.app"
 
@@ -45,6 +44,7 @@ cask "dropbox" do
     "~/Library/Application Support/FileProvider/com.getdropbox.dropbox.fileprovider",
     "~/Library/Caches/CloudKit/com.apple.bird/iCloud.com.getdropbox.Dropbox",
     "~/Library/Caches/com.dropbox.DropboxMacUpdate",
+    "~/Library/Caches/com.dropbox.DropboxUpdater",
     "~/Library/Caches/com.getdropbox.dropbox",
     "~/Library/Caches/com.getdropbox.DropboxMetaInstaller",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/com.dropbox.DropboxMacUpdate",

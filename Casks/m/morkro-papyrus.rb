@@ -7,7 +7,7 @@ cask "morkro-papyrus" do
   desc "Unofficial Dropbox Paper desktop app"
   homepage "https://github.com/morkro/papyrus"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   conflicts_with cask: "papyrus"
 

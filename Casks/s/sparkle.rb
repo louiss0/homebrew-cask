@@ -1,6 +1,6 @@
 cask "sparkle" do
-  version "2.7.1"
-  sha256 "f7385c3e8c70c37e5928939e6246ac9070757b4b37a5cb558afa1b0d5ef189de"
+  version "2.9.0"
+  sha256 "01e0f0ebf6614061ea816d414de50f937d64ffa6822ad572243031ca3676fe19"
 
   url "https://github.com/sparkle-project/Sparkle/releases/download/#{version}/Sparkle-#{version}.tar.xz",
       verified: "github.com/sparkle-project/Sparkle/"
@@ -13,10 +13,9 @@ cask "sparkle" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :high_sierra"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Sparkle Test App.app"
-  binary "sparkle.app/Contents/MacOS/sparkle"
 
   zap trash: [
     "~/Library/Application Scripts/org.sparkle-project.Downloader",

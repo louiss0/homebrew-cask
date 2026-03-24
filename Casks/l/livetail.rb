@@ -6,9 +6,8 @@ cask "livetail" do
   name "Sumologic livetail CLI"
   homepage "https://github.com/SumoLogic/livetail-cli"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-30", because: :unmaintained
+  disable! date: "2025-11-01", because: :unmaintained
 
   binary "livetail"
 

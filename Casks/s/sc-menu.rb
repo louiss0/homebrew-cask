@@ -1,6 +1,6 @@
 cask "sc-menu" do
-  version "1.8.1"
-  sha256 "acdf2ba19bb1adc4cacc36554c1d18aa9591f3d4e7b22f437b094e88dfc84855"
+  version "2.1"
+  sha256 "13318245268a2ecc10a64d2fea561807e9f5bef69bf3e66b85ab44ef3157bbda"
 
   url "https://github.com/boberito/sc_menu/releases/download/#{version}/SC_Menu.dmg"
   name "SC Menu"
@@ -11,8 +11,6 @@ cask "sc-menu" do
     url :url
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :ventura"
 

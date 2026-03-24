@@ -1,6 +1,6 @@
 cask "wine@devel" do
-  version "10.10"
-  sha256 "619b3d2db7257fd966e12cb31c44ed1f0a98b69a8607c6a1fe29d4ec5b27756c"
+  version "11.5"
+  sha256 "89c4371a96d187be0f11dfd4d9bfc915e0607e3823f82bc6c32639105fe96bc1"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -15,7 +15,7 @@ cask "wine@devel" do
   # recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(/^v?((?:\d+(?:\.\d+)+)(?:-RC\d)?)$/i)
+    regex(/^v?((?:\d+(?:[._]\d+)+)(?:-RC\d)?)$/i)
     strategy :github_releases do |json, regex|
       file_regex = /^wine[._-]devel[._-].*?$/i
 
@@ -31,12 +31,13 @@ cask "wine@devel" do
     end
   end
 
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
   conflicts_with cask: [
     "wine-stable",
     "wine@staging",
   ]
   depends_on cask: "gstreamer-runtime"
-  depends_on macos: ">= :catalina"
 
   app "Wine Devel.app"
   dir_path = "#{appdir}/Wine Devel.app/Contents/Resources"

@@ -6,9 +6,8 @@ cask "yemuzip" do
   name "YemuZip"
   homepage "https://yellowmug.com/yemuzip/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-12", because: :unmaintained
+  disable! date: "2025-10-12", because: :unmaintained
 
   app "YemuZip.app"
 

@@ -7,14 +7,14 @@ cask "juice" do
   desc "Make your battery information a bit more interesting"
   homepage "https://github.com/brianmichel/Juice"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
-
   app "Juice.app"
 
   zap trash: [
     "~/Library/Containers/com.bsm.macos.Juice",
     "~/Library/Containers/com.bsm.macos.JuiceHelper",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

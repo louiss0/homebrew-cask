@@ -6,9 +6,8 @@ cask "supersync" do
   name "SuperSync"
   homepage "https://supersync.com/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-09-08", because: :unmaintained
+  disable! date: "2025-09-09", because: :unmaintained
 
   app "SuperSync.app"
 

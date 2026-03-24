@@ -1,6 +1,6 @@
 cask "proxyman" do
-  version "5.22.0,52200"
-  sha256 "509cccfeb5615635b9806c894aaf2d6ba3dc2dfb24847747a8e81839fb5e2f25"
+  version "6.7.0,60700"
+  sha256 "976f278eff9ca4f465e5ab9b96801c73427f20286efacff62402deef1dd4413c"
 
   url "https://download.proxyman.com/#{version.csv.second}/Proxyman_#{version.csv.first}.dmg"
   name "Proxyman"
@@ -13,7 +13,7 @@ cask "proxyman" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :ventura"
 
   app "Proxyman.app"
   binary "#{appdir}/Proxyman.app/Contents/MacOS/proxyman-cli"

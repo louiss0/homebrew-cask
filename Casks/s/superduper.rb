@@ -1,5 +1,5 @@
 cask "superduper" do
-  version "3.10.0,135"
+  version "3.11,136"
   sha256 :no_check
 
   url "https://shirtpocket.s3.amazonaws.com/SuperDuper/SuperDuper!.dmg",
@@ -19,10 +19,7 @@ cask "superduper" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "SuperDuper!.app"
 

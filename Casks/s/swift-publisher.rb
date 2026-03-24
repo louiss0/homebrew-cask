@@ -1,5 +1,5 @@
 cask "swift-publisher" do
-  version "5.7.2"
+  version "5.7.5"
   sha256 :no_check
 
   url "https://belightsoft.s3.amazonaws.com/SwiftPublisher.dmg",
@@ -13,10 +13,7 @@ cask "swift-publisher" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   app "Swift Publisher #{version.major}.app"
 

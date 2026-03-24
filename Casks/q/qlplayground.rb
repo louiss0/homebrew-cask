@@ -7,7 +7,7 @@ cask "qlplayground" do
   desc "Quick Look plugin for Swift files"
   homepage "https://github.com/norio-nomura/qlplayground"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "qlplayground.qlgenerator"
 

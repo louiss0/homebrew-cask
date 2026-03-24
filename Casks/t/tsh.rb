@@ -8,16 +8,14 @@ cask "tsh" do
   desc "SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-11-18", because: :unmaintained, replacement_cask: "teleport"
+  disable! date: "2025-11-18", because: :unmaintained, replacement_cask: "teleport"
 
-  conflicts_with cask:    [
-                   "teleport",
-                   "teleport@16",
-                   "tsh@13",
-                 ],
-                 formula: "teleport"
+  conflicts_with cask: [
+    "teleport-suite",
+    "teleport-suite@16",
+    "teleport-suite@17",
+  ]
 
   pkg "tsh-#{version}.pkg"
 

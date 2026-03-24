@@ -1,6 +1,6 @@
 cask "flutterflow" do
-  version "6.0.37"
-  sha256 "2df34950ec10919acbc478fe70d2659cb94bc214a28942b49419a3416208143c"
+  version "6.6.17"
+  sha256 "30d55426bc09c1bfb4edc8fd4beed73f0e307a5013b765f9e39e2104420f6e75"
 
   url "https://storage.googleapis.com/flutterflow-downloads/macos/flutterflow-#{version}-macos.zip",
       verified: "storage.googleapis.com/flutterflow-downloads/"
@@ -12,8 +12,6 @@ cask "flutterflow" do
     url "https://storage.googleapis.com/flutterflow-downloads/macos/appcast.xml"
     strategy :sparkle
   end
-
-  depends_on macos: ">= :catalina"
 
   app "FlutterFlow.app"
 

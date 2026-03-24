@@ -34,10 +34,7 @@ cask "inkstitch" do
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   depends_on cask: "inkscape"
-  depends_on macos: ">= :high_sierra"
 
   preflight do
     # This needs to exist, otherwise the installer gets stuck at a prompt asking the user to run Inkscape first.

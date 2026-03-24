@@ -1,6 +1,6 @@
 cask "futubull" do
-  version "15.22.12108"
-  sha256 "92f533fd42c3566d188c9d120982a070119cbc2506f1fca52b6e2258f8e04958"
+  version "16.8.15308"
+  sha256 "8876dae5ddff43ab700d5da87601092657f2eccbddc084ba587a826eb48bab56"
 
   url "https://softwaredownload.futunn.com/FTNN_desktop_#{version}_Website.dmg",
       user_agent: :fake,
@@ -21,13 +21,14 @@ cask "futubull" do
     end
   end
 
-  depends_on macos: ">= :high_sierra"
-
   # Renamed for consistency: app name is different in the Finder and in a shell.
   app "富途牛牛.app", target: "Futubull.app"
+
+  uninstall quit: "cn.futu.niuniu.nx"
 
   zap trash: [
     "~/Library/Application Scripts/cn.futu.Niuniu",
     "~/Library/Containers/cn.futu.Niuniu",
+    "~/Library/Containers/cn.futu.niuniu.nx",
   ]
 end

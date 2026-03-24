@@ -1,16 +1,21 @@
 cask "whichspace" do
-  version "0.3.2"
-  sha256 "8a59e12862af491de4c42413c839426c28dcb2f29138bfa2f45529c079119ce8"
+  version "0.17.7"
+  sha256 "6d86db90f29aae3a22c78928aedb3cb2f1586bf8d9a239674c311666dce4df51"
 
   url "https://github.com/gechr/WhichSpace/releases/download/v#{version}/WhichSpace.zip"
   name "WhichSpace"
   desc "Active space menu bar icon"
   homepage "https://github.com/gechr/WhichSpace"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url "https://raw.githubusercontent.com/gechr/WhichSpace/updates/appcast.xml"
+    strategy :sparkle
+  end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   auto_updates true
-  depends_on macos: ">= :el_capitan"
+  depends_on macos: ">= :sonoma"
 
   app "WhichSpace.app"
 
@@ -22,8 +27,4 @@ cask "whichspace" do
     "~/Library/Preferences/io.gechr.WhichSpace.plist",
     "~/Library/Saved Application State/io.gechr.WhichSpace.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

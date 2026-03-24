@@ -11,15 +11,9 @@ cask "volta-app" do
   desc "GitHub issues and notifications"
   homepage "https://volta.net/"
 
-  livecheck do
-    url "https://s3.fr-par.scw.cloud/volta-build/latest-mac.yml"
-    strategy :electron_builder
-  end
-
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-02-23", because: :no_longer_available
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Volta.app"
 

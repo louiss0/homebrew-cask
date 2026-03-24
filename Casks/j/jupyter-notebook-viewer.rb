@@ -7,9 +7,7 @@ cask "jupyter-notebook-viewer" do
   desc "Utility to render Jupyter notebooks"
   homepage "https://github.com/tuxu/nbviewer-app"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Jupyter Notebook Viewer.app"
 

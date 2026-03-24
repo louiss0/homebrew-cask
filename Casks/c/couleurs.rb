@@ -7,11 +7,7 @@ cask "couleurs" do
   desc "Grab and tweak the colours you see on your screen"
   homepage "https://couleursapp.com/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2025-03-31", because: :unmaintained
-
-  depends_on macos: ">= :sierra"
 
   app "Couleurs.app"
 

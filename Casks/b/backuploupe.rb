@@ -1,6 +1,6 @@
 cask "backuploupe" do
-  version "3.14.3"
-  sha256 "03d9627c2c5b564259f40d520a3ab157bc26ab11a2a26efbd8232265ca025714"
+  version "3.14.7"
+  sha256 "cee8ea51c18e1d329c96d844d03a67aec7a21cbc466f66c8ea2be018b43b84f6"
 
   url "https://www.soma-zone.com/download/files/BackupLoupe-#{version}.tar.xz"
   name "BackupLoupe"
@@ -13,7 +13,6 @@ cask "backuploupe" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "BackupLoupe.app"
 

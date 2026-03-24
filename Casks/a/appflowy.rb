@@ -1,9 +1,9 @@
 cask "appflowy" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.9.4"
-  sha256 arm:   "305335d4c844a16ea93ba0f1807fbd6c951eee1d0929eae23e872c2471a50695",
-         intel: "24cab981fba32064193e919c9501f82ccd7bae6660541330f5a8970c6f6b0df4"
+  version "0.11.4"
+  sha256 arm:   "eee19e03bb8d5fd529b1fe184b8b3dcc6548f6de273b52d700dfdf0ea8c0ad45",
+         intel: "f3493aaaf46956b9e654dc30b7ffdf35f4938d80f024bb60e8bc33d812151ebd"
 
   url "https://github.com/AppFlowy-IO/AppFlowy/releases/download/#{version}/Appflowy-#{version}-macos-#{arch}.zip",
       verified: "github.com/AppFlowy-IO/AppFlowy/"
@@ -16,9 +16,9 @@ cask "appflowy" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :monterey"
 
-  app "AppFlowy.app"
+  app "AppFlowy-#{arch}.app", target: "AppFlowy.app"
 
   zap trash: [
     "~/Library/Application Scripts/com.appflowy.macos",

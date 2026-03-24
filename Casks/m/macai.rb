@@ -1,14 +1,20 @@
 cask "macai" do
-  version "2.1.0"
-  sha256 "3fa056ddd9bbfcfe1d4e30cc4e013ac0591cd36b453d385e13d86f67fcdbe196"
+  version "2.4.2"
+  sha256 "b5eee27eae7f591da644b80b123d93ebaf7888b448702a04cabf65b159c1d47d"
 
-  url "https://github.com/Renset/macai/releases/download/v#{version}/macai.#{version}.Universal.zip"
+  url "https://renset.dev/macai/macai%20#{version}%20Universal.zip",
+      verified: "renset.dev/macai/"
   name "macai"
   desc "Native chat application for all major LLM APIs"
   homepage "https://github.com/Renset/macai"
 
+  livecheck do
+    url "https://renset.dev/macai/appcast.xml"
+    strategy :sparkle, &:version
+  end
+
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: ">= :sonoma"
 
   app "macai.app"
 

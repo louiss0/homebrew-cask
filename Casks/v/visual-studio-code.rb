@@ -10,10 +10,19 @@ cask "visual-studio-code" do
       skip "Legacy version"
     end
   end
-  on_big_sur :or_newer do
-    version "1.101.2"
-    sha256 arm:   "b96385fd01a05e870a64090530de0a87b1e38904d2222f8f54fcb757dd30ac00",
-           intel: "51ade88741efd28896d79bb745bd29498bbe243f26d6860c026e691335c3e91c"
+  on_big_sur do
+    version "1.106.3"
+    sha256 arm:   "35dd438808dde1dd1f65490ffe7713ed64102324c0809efbec0b4eb2809b218b",
+           intel: "c41872149a205f3a3be3e5d3a8f04920407a0762531e607f78dc93f4d4813cda"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  end
+  on_monterey :or_newer do
+    version "1.112.0"
+    sha256 arm:   "d2c38a5acc2feccdd50ab6a516dd41000e3926b432017e05affe6298d99c6870",
+           intel: "dc00ad6146e5689b3c2350471c539216e00e0cfd1dce25c5bddd2a749fe2cd9f"
 
     livecheck do
       url "https://update.code.visualstudio.com/api/update/#{arch}/stable/latest"
@@ -30,8 +39,6 @@ cask "visual-studio-code" do
   homepage "https://code.visualstudio.com/"
 
   auto_updates true
-  conflicts_with formula: "code-cli"
-  depends_on macos: ">= :catalina"
 
   app "Visual Studio Code.app"
   binary "#{appdir}/Visual Studio Code.app/Contents/Resources/app/bin/code"

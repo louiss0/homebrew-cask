@@ -1,6 +1,6 @@
 cask "oracle-jdk-javadoc@21" do
-  version "21.0.7,8,8fe202bfe6c4465583b1dc9710c4fade"
-  sha256 "759159dbdb6c5c5a2daafda36a91c58a98b41143a8c090261f6b5b7f6242cfe9"
+  version "21.0.10,8,c7cd7020f02e418d8008cdaefb15b4ba"
+  sha256 "118da93f4dc76d486490bc333a987b74c8ee86a573b31f022eececa18d8fe3dc"
 
   url "https://download.oracle.com/otn_software/java/jdk/#{version.csv.first}+#{version.csv.second}/#{version.csv.third}/jdk-#{version.csv.first}_doc-all.zip",
       cookies: {

@@ -1,6 +1,6 @@
 cask "teleport-suite@16" do
-  version "16.5.13"
-  sha256 "d2b02d32a817c9fcc555e3a1a568d84eeb827f3ade5ce1c0d4cdeaf9de264e2f"
+  version "16.5.18"
+  sha256 "e7644697d2a254096ddd6ce11c1c4ddb237fd2e1251055c0fdd23a42a1f5b99d"
 
   url "https://cdn.teleport.dev/teleport-#{version}.pkg",
       verified: "cdn.teleport.dev/"
@@ -8,22 +8,12 @@ cask "teleport-suite@16" do
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https://goteleport.com/"
 
-  livecheck do
-    url "https://goteleport.com/download/"
-    regex(/teleport[._-]v?(16(?:\.\d+)+)\.pkg/i)
-  end
-
   disable! date: "2025-10-01", because: :discontinued
 
-  conflicts_with cask:    [
-                   "teleport-suite",
-                   "tsh",
-                   "tsh@13",
-                 ],
-                 formula: [
-                   "etsh",
-                   "teleport",
-                 ]
+  conflicts_with cask: [
+    "teleport-suite",
+    "tsh",
+  ]
 
   pkg "teleport-#{version}.pkg"
 

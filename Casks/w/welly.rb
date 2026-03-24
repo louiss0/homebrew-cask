@@ -7,7 +7,7 @@ cask "welly" do
   desc "BBS client"
   homepage "https://github.com/clyang/welly"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   auto_updates true
 

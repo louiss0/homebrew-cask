@@ -1,6 +1,6 @@
 cask "youku" do
-  version "9.2.64.1001"
-  sha256 "6364cfe17560e0ee2bc07e38d712b2ae4650805f70a0264aafd2cc81209a7cc5"
+  version "9.2.72.1001"
+  sha256 "b600e2b2eeaa771a4f5ee0fe1a6385b27674eaf60bd32936879e6567289b4385"
 
   url "https://pcclient.download.youku.com/iku_electron_client/youkuclient_setup_#{version}.dmg",
       user_agent: :fake
@@ -13,8 +13,6 @@ cask "youku" do
     url :homepage
     regex(/youkuclient[._-]setup[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
-
-  depends_on macos: ">= :mojave"
 
   app "优酷.app"
 

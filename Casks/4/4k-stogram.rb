@@ -15,10 +15,7 @@ cask "4k-stogram" do
     regex(%r{href=.*?/4kstogram[._-]?v?(\d+(?:\.\d+)+)(?:[._-]#{arch})?\.dmg}i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "4K Stogram.app"
 

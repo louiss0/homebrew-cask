@@ -7,7 +7,10 @@ cask "font-bungee" do
   name "Bungee"
   homepage "https://djr.com/bungee/"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   font "Bungee-fonts/Bungee_Basic/Bungee-Regular.ttf"
   font "Bungee-fonts/Bungee_Basic/BungeeHairline-Regular.ttf"

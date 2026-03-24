@@ -7,9 +7,8 @@ cask "ao" do
   desc "Elegant Microsoft To-Do desktop app"
   homepage "https://github.com/klaussinani/ao"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-11-10", because: :unmaintained
+  disable! date: "2025-11-10", because: :unmaintained
 
   app "Ao.app"
 

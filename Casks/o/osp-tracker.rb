@@ -1,6 +1,6 @@
 cask "osp-tracker" do
-  version "6.3.1"
-  sha256 "f6454c04191a77df9e517f521f693a634c7e7f4e93b1f7aa173d09bffbc9d486"
+  version "6.3.3"
+  sha256 "fbd43076ffca63ee6691b9ef175cc792b939d2e2182dd597bc2389a367f8e228"
 
   url "https://physlets.org/tracker/installers/Tracker-#{version}-osx-installer.dmg",
       verified: "physlets.org/tracker/installers/"
@@ -12,8 +12,6 @@ cask "osp-tracker" do
     url :homepage
     regex(/href=.*?Tracker[._-]v?(\d+(?:\.\d+)+)[._-]osx[._-]installer\.dmg/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   installer script: {
     executable: "Tracker-#{version}-osx-installer.app/Contents/MacOS/osx-x86_64",

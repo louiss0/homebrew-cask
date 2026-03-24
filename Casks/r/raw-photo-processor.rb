@@ -1,7 +1,7 @@
 cask "raw-photo-processor" do
   # Betas of this software are release quality: https://groups.google.com/d/msg/raw-photo-processor/PJyyP2JwIwI/dn3CFknuCwAJ
-  version "1950Beta"
-  sha256 "02c4b8a248b1302a5d3aa81b32478777eff16421a6b8cee84582543816691a0d"
+  version "1956Beta"
+  sha256 "ec57f099fbbbb89a3d0aaec6a5492e12e32c8b4677096a27bd1316a025df12ec"
 
   url "https://www.raw-photo-processor.com/RPP/RPP64_#{version}.zip"
   name "Raw Photo Processor"
@@ -14,8 +14,6 @@ cask "raw-photo-processor" do
     # https://groups.google.com/g/raw-photo-processor
     skip "No version information available"
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "Raw Photo Processor 64.app"
 

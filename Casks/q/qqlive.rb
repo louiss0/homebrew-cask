@@ -1,6 +1,6 @@
 cask "qqlive" do
-  version "2.127.0.55155"
-  sha256 "a64c3c388f15d6fab84fba4f2bc66dff0c9482368602840de152275901b91168"
+  version "2.160.0.55527"
+  sha256 "f8a8decf8c91a5a26cc20b430eef232baf173c7409050fd4a5fc86df3734e543"
 
   url "https://dldir1.qq.com/qqtv/mac/TencentVideo#{version}.dmg"
   name "QQLive"
@@ -10,12 +10,16 @@ cask "qqlive" do
   homepage "https://v.qq.com/download.html#mac"
 
   livecheck do
-    url :homepage
-    regex(%r{href=.*/TencentVideo(\d+(?:\.\d+)+)\.dmg}i)
+    url "https://cache.wuji.qq.com/x/api/wuji_cache/object?appid=vqqcom&schemaid=downloadpage_config&schemakey=5dbbd3491a7342ad9bd2ed9bc098484a&filter=isShow%3Dtrue"
+    regex(/TencentVideo[._-]?v?(\d+(?:\.\d+)+)\.dmg/i)
+    strategy :json do |json, regex|
+      json["data"]&.filter_map do |item|
+        item["downloadLink"]&.[](regex, 1)
+      end
+    end
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "QQLive.app"
 

@@ -1,6 +1,6 @@
 cask "cycling74-max" do
-  version "9.0.7,250520"
-  sha256 "6897c192c7f9eb5c0b10292a36b9f104a588a5518ca017c26e1e98cc4e24132f"
+  version "9.1.3,260310"
+  sha256 "f1503fe3e2958701fcb516e3cf3162a3c0a2b5c11c9b157cbab3b7b5e615d115"
 
   url "https://downloads.cdn.cycling74.com/max#{version.csv.first.major}/Max#{version.csv.first.no_dots}_#{version.csv.second}.dmg"
   name "Cycling ‘74 Max"
@@ -19,6 +19,8 @@ cask "cycling74-max" do
       "#{id},#{match[1]}#{match[2]}#{match[3]}"
     end
   end
+
+  depends_on macos: ">= :big_sur"
 
   app "Max.app"
 

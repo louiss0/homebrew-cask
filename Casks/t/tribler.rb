@@ -1,17 +1,18 @@
 cask "tribler" do
-  version "8.1.3"
-  sha256 "2f0c8821cbb6d515894bef01f2abd3ebcd9cd73a4bc41fcb80b9f5c59d9aed42"
+  version "8.3.1"
+  sha256 "6a37959aa4b89464d863ee663be869459faaf1bc38189797fea69a5b9293b719"
 
-  url "https://github.com/Tribler/tribler/releases/download/v#{version}/Tribler-#{version}.dmg",
-      verified: "github.com/Tribler/tribler/"
+  url "https://github.com/Tribler/tribler/releases/download/v#{version}/Tribler-#{version}.dmg"
   name "Tribler"
   desc "Privacy enhanced BitTorrent client with P2P content discovery"
-  homepage "https://www.tribler.org/"
+  homepage "https://github.com/Tribler/tribler"
 
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Tribler.app"
 

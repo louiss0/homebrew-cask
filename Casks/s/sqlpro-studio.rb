@@ -1,6 +1,6 @@
 cask "sqlpro-studio" do
-  version "2025.10"
-  sha256 "33d6a0d9524fb291204ceefac8b662dc38cff69f59b61fd1269ec0cc3667385e"
+  version "2026.07"
+  sha256 "085cdcf2883e9eea923ceaaafdda25149b7630ed952a79b01067bbf97001e0dc"
 
   url "https://d3fwkemdw8spx3.cloudfront.net/studio/SQLProStudio.#{version}.app.zip",
       verified: "d3fwkemdw8spx3.cloudfront.net/studio/"
@@ -13,9 +13,7 @@ cask "sqlpro-studio" do
     strategy :header_match
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :ventura"
 
   app "SQLPro Studio.app"
 

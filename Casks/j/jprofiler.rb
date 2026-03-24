@@ -1,6 +1,6 @@
 cask "jprofiler" do
-  version "15.0.2"
-  sha256 "06185b0e09da7fe5edbe3527173f1875b19c5e2385779017ec002b57771d1728"
+  version "16.0"
+  sha256 "1504b089704961b242ff7f13045f51f1530b39c5fea3e880ba278709ba7998ef"
 
   url "https://download-gcdn.ej-technologies.com/jprofiler/jprofiler_macos_#{version.dots_to_underscores}.dmg"
   name "JProfiler"
@@ -19,6 +19,8 @@ cask "jprofiler" do
       end
     end
   end
+
+  depends_on macos: ">= :big_sur"
 
   app "JProfiler.app"
 

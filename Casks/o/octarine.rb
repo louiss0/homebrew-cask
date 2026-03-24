@@ -2,9 +2,9 @@ cask "octarine" do
   arch arm: "aarch64", intel: "x64"
   folder = on_arch_conditional arm: "arm", intel: "intel"
 
-  version "0.26.8"
-  sha256 arm:   "34f83ab893074afa6052c71cae8d01ca84f9b95f962e8f3c5ce3024f04b48081",
-         intel: "7c987ec00bedecc20e65ef74ef21a26b9c1b3a2d2380e2881dea374c5d3991b2"
+  version "0.39.0"
+  sha256 arm:   "5432596f96af8a21588e358413a0dc90c55b40cfea6c6989b82aa79c9dfbc3f3",
+         intel: "17ca89b24921a241a6d1179509a84d779da0158e197c50529a9563561c9c11ea"
 
   url "https://pub-3d35bc018fc54f11bde129e3e73e8002.r2.dev/#{version}/#{folder}/octarine_#{version}_#{arch}.dmg",
       verified: "pub-3d35bc018fc54f11bde129e3e73e8002.r2.dev/"
@@ -16,8 +16,6 @@ cask "octarine" do
     url "https://octarine.app/releases"
     regex(/href=.*?octarine[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "Octarine.app"
 

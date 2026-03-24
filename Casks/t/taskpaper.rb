@@ -1,6 +1,6 @@
 cask "taskpaper" do
-  version "3.9.3"
-  sha256 "db1762263b3cc79555c630a3a09909ad6b488964e55c3525e7a44ddb7b1cc449"
+  version "3.9.4"
+  sha256 "7f392d83857d96d5ee3c2a0792e8a24befb5094928ce850283da86bfa0684f7e"
 
   url "https://www.taskpaper.com/assets/app/TaskPaper-#{version}.dmg"
   name "TaskPaper"
@@ -12,10 +12,8 @@ cask "taskpaper" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "TaskPaper.app"
 

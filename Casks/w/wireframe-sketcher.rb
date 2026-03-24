@@ -1,9 +1,9 @@
 cask "wireframe-sketcher" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "7.3.0"
-  sha256 arm:   "3b1a04f796e9552189046f3362d7f7272e03d4013655817f35c4fbf36a1935f2",
-         intel: "c75b43fb6cff229adcbf60384215ff2761bf5c231dabf639e7dad408940bd678"
+  version "7.4.3"
+  sha256 arm:   "4dc531410467c9ae17844575ddee4b1a54cb0f8a2105b1dc4bbc722ba207aba0",
+         intel: "0266034c9c7770541908b35904ad0669fefa87500c56faa009482e97a157e84e"
 
   url "https://wireframesketcher.com/downloads/studio/dist/WireframeSketcher-#{version}-macosx.#{arch}.zip"
   name "WireframeSketcher"
@@ -14,6 +14,10 @@ cask "wireframe-sketcher" do
     url "https://wireframesketcher.com/updates/"
     regex(/Current\s+version\s+is\s+v?(\d+(?:\.\d+)+)/i)
   end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :big_sur"
 
   app "WireframeSketcher.app"
 

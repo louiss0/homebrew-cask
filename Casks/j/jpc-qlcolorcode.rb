@@ -7,9 +7,7 @@ cask "jpc-qlcolorcode" do
   desc "Quick Look plug-in that renders source code with syntax highlighting"
   homepage "https://github.com/jpc/QLColorCode"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "QLColorCode.qlgenerator"
 

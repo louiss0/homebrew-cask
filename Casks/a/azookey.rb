@@ -1,17 +1,11 @@
 cask "azookey" do
-  version "0.1.0-alpha.19"
-  sha256 "bc40d2dbc81f7d5982ad008551c89c5bb5442d7031bf5c1a0d555bdfc7a4c14e"
+  version "0.1.3"
+  sha256 "791d3721e932eec6626f7072738d2462e0158d56ee3cd6eec5ed2f7663481bd2"
 
   url "https://github.com/azooKey/azooKey-Desktop/releases/download/v#{version}/azooKey-release-signed.pkg"
   name "azooKey"
   desc "Japanese input method"
   homepage "https://github.com/azooKey/azooKey-Desktop"
-
-  livecheck do
-    url :url
-    regex(/^v?(\d+(?:\.\d+)+(?:[._-]alpha[._-]?\d+)?)$/i)
-    strategy :github_latest
-  end
 
   depends_on macos: ">= :ventura"
 

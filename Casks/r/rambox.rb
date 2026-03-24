@@ -1,6 +1,6 @@
 cask "rambox" do
-  version "2.4.1"
-  sha256 "b54c7a650e94eb80961bf1b1f476a12e0519f037a3181f73a6a7c4227751ff90"
+  version "2.6.1"
+  sha256 "ffa35d4f23f67cb283e6eae9266a7d523aaea77ea7d3ff0ba875cd897c422ba0"
 
   url "https://github.com/ramboxapp/download/releases/download/v#{version}/Rambox-#{version}-mac.zip",
       verified: "github.com/ramboxapp/download/"
@@ -8,12 +8,10 @@ cask "rambox" do
   desc "Workspace simplifier - to organize your workspace and boost your productivity"
   homepage "https://rambox.app/"
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
-  app "Rambox.app"
+  app "Rambox-darwin-universal/Rambox.app"
 
   zap trash: [
     "~/Library/Application Support/CrashReporter/Rambox Helper_*.plist",

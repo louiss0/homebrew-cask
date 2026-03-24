@@ -17,13 +17,9 @@ cask "fvim" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "FVim.app"
 
   zap trash: "~/Library/Saved Application State/com.fvim.www.savedState"
-
-  caveats do
-    requires_rosetta
-  end
 end

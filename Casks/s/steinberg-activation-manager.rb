@@ -1,6 +1,6 @@
 cask "steinberg-activation-manager" do
-  version "1.7.0.1287-1dc45670-d794-39af-a850-535c3ae75297"
-  sha256 "0bdeeb9126ff99787cb87cee3ebd4f94a6e108f4d990c3955164716cc467e65a"
+  version "1.8.1.1383-c7833d7d-e779-371f-8490-077a28b358fe"
+  sha256 "fffcaa1f4f8ae1960d6c5ab2112f0083e49726131616ba327d4a2a38b1580350"
 
   url "https://download.steinberg.net/static_content/runtime-components/steinberg-activation-manager/#{version}/Steinberg_Activation_Manager_Installer_mac.dmg"
   name "Steinberg Activation Manager"
@@ -13,8 +13,6 @@ cask "steinberg-activation-manager" do
     strategy :header_match
   end
 
-  depends_on macos: ">= :mojave"
-
   pkg "Steinberg Activation Manager.pkg"
 
   uninstall quit:    [
@@ -24,8 +22,10 @@ cask "steinberg-activation-manager" do
             pkgutil: [
               "com.steinberg.activationmanager",
               "com.steinberg.licenseengine",
+              "com.steinberg.licenseengine-app",
               "com.steinberg.licenseengineaccess",
               "com.steinberg.silkupdatehelper",
+              "com.steinberg.steinbergruntimeaccess",
             ],
             delete:  "/Applications/Steinberg Activation Manager.app",
             rmdir:   "/Library/Application Support/Steinberg/Activation Manager"

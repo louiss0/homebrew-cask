@@ -1,9 +1,9 @@
 cask "oracle-jdk" do
   arch arm: "aarch64", intel: "x64"
 
-  version "24.0.1"
-  sha256 arm:   "a67402572b2ce39f6fda56d700a8d2883630ec7bb1ea6b35bdd098b0d5d0a646",
-         intel: "cca32d933c8a1aa5162a7b2642b60915d96cdf24ae8bf8f4877a66794babfab2"
+  version "26"
+  sha256 arm:   "02d6e20526ae48c1494ec8352b54b1138fd588fd670e0f108ff0854d9202c361",
+         intel: "34f2487458592f6ad953b6feaef9ba3c247a5f32e9c984f179cb6cfbba042269"
 
   url "https://download.oracle.com/java/#{version.major}/archive/jdk-#{version}_macos-#{arch}_bin.dmg"
   name "Oracle Java Standard Edition Development Kit"
@@ -11,24 +11,11 @@ cask "oracle-jdk" do
   homepage "https://www.oracle.com/java/technologies/downloads/"
 
   livecheck do
-    url :homepage
-    regex(/<li>\s*JDK\s*v?(\d+(?:\.\d+)*)/i)
-    strategy :page_match do |page, regex|
-      major = page.scan(%r{href=.*?/javase/(\d+)u-relnotes\.html}i)
-                  .max_by { |match| Version.new(match[0]) }
-                  &.first
-      next if major.blank?
-
-      release_page = Homebrew::Livecheck::Strategy.page_content(
-        "https://www.oracle.com/java/technologies/javase/#{major}u-relnotes.html",
-      )
-      next if (release_page_content = release_page[:content]).blank?
-
-      release_page_content.scan(regex).map { |match| match[0] }
+    url "https://java.oraclecloud.com/currentJavaReleases"
+    strategy :json do |json|
+      json["items"]&.filter_map { |item| item["releaseVersion"] }
     end
   end
-
-  depends_on macos: ">= :mojave"
 
   pkg "JDK #{version}.pkg"
 

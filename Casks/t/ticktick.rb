@@ -1,12 +1,12 @@
 cask "ticktick" do
-  version "6.3.20,419"
-  sha256 "c4cbce948069a226fe001686b7d596dc89c1fe65acbd7141cef82b2b22bf1c84"
+  version "8.0.30,464"
+  sha256 "bd5ab6da26472b12d6cc0babb4d6098c56c265ccd84f95d22ef58ce707981dfe"
 
-  url "https://ticktick-download-mac.s3.amazonaws.com/download/mac/TickTick_#{version.csv.first}_#{version.csv.second}.dmg",
-      verified: "ticktick-download-mac.s3.amazonaws.com/download/mac/"
+  url "https://download.ticktick.app/download/mac/TickTick_#{version.csv.first}_#{version.csv.second}.dmg",
+      verified: "download.ticktick.app/download/mac/"
   name "TickTick"
   desc "To-do & task list manager"
-  homepage "https://www.ticktick.com/home"
+  homepage "https://www.ticktick.com/"
 
   livecheck do
     url "https://pull.ticktick.com/mac/release_note/mac_appcast.xml"
@@ -14,7 +14,6 @@ cask "ticktick" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "TickTick.app"
 

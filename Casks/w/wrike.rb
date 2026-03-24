@@ -1,8 +1,11 @@
 cask "wrike" do
-  version "4.5.2"
-  sha256 "433ddd4251c55a2ef963fe99acbf3eeddb8bae6b60837f52f46c0aa9242edbae"
+  arch arm: "_ARM"
 
-  url "https://dl.wrike.com/download/WrikeDesktopApp.v#{version}.dmg"
+  version "4.6.0"
+  sha256 arm:   "ed72ca481e1f49a160219ac69ecd0b2f7b2093574895a3dcbfb40cf5baafe16b",
+         intel: "7a6ed455846d0bb44f597028e779528f647eac255482727ad82305908f245180"
+
+  url "https://dl.wrike.com/download/WrikeDesktopApp#{arch}.v#{version}.dmg"
   name "Wrike"
   desc "Project management app"
   homepage "https://www.wrike.com/apps/mobile-and-desktop/desktop-app/"
@@ -20,7 +23,7 @@ cask "wrike" do
     end
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Wrike for Mac.app"
 
@@ -30,8 +33,4 @@ cask "wrike" do
     "~/Library/Preferences/com.wrike.Wrike.plist",
     "~/Library/Saved Application State/com.wrike.Wrike.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

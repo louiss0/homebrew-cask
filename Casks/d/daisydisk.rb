@@ -1,5 +1,5 @@
 cask "daisydisk" do
-  version "4.31"
+  version "4.33.3"
   sha256 :no_check
 
   url "https://daisydiskapp.com/download/DaisyDisk.zip"
@@ -12,10 +12,7 @@ cask "daisydisk" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "DaisyDisk.app"
 

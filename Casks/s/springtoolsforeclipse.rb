@@ -1,11 +1,11 @@
 cask "springtoolsforeclipse" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "4.31.0,4.36.0"
-  sha256 arm:   "edc0ef6ec1db7cb0130abce442be0a1759ec2f303e0d8e7c2f95f35823233a60",
-         intel: "6fda3b43ffd2af64edab1321d624efae7492e26d3601ea6aa9ced313c14c205e"
+  version "5.1.1,4.39.0"
+  sha256 arm:   "eb73dfd8b75bbd559b562bc8a4b82e179c1c7f3b1b39d541184e1400b8589c31",
+         intel: "91b3c6c46a18d008a9fe8671a4bb1616e4e60c908c6f6ccfadd244ec79d3576f"
 
-  url "https://cdn.spring.io/spring-tools/release/STS#{version.major}/#{version.csv.first}.RELEASE/dist/e#{version.csv.second.major_minor}/spring-tools-for-eclipse-#{version.csv.first}.RELEASE-e#{version.csv.second}-macosx.cocoa.#{arch}.dmg"
+  url "https://cdn.spring.io/spring-tools/release/dist/#{version.csv.first}.RELEASE/e#{version.csv.second.major_minor}/spring-tools-for-eclipse-#{version.csv.first}.RELEASE-e#{version.csv.second}-macosx.cocoa.#{arch}.dmg"
   name "Spring Tools for Eclipse"
   desc "Next generation tooling for Spring Boot"
   homepage "https://spring.io/tools/"
@@ -23,6 +23,7 @@ cask "springtoolsforeclipse" do
   end
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "SpringToolsForEclipse.app"
 

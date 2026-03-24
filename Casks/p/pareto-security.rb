@@ -1,6 +1,6 @@
 cask "pareto-security" do
-  version "1.9.4"
-  sha256 "f15c5a5aed80a9add5abcbf104cd75fd61e9525c1b45bc56ef09fd1b37782993"
+  version "1.25.0"
+  sha256 "21a99d021f6c1a4636b961a97965b35c1d34984c157d19a32cf6334db3b67da0"
 
   url "https://github.com/ParetoSecurity/pareto-mac/releases/download/#{version}/ParetoSecurity.dmg",
       verified: "github.com/ParetoSecurity/pareto-mac/"
@@ -14,7 +14,7 @@ cask "pareto-security" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :ventura"
 
   app "Pareto Security.app"
 

@@ -1,9 +1,9 @@
 cask "roblox" do
   arch arm: "arm64/"
 
-  version "0.679.0.6790761,db859ae17f144eea"
-  sha256 arm:   "42faff14f5fe39545ecb9e323ea84ad60d9a917820f4a6705e063a20440273eb",
-         intel: "ca9c7395792bdc268d169579b6f6c0cddfa0d9d281a3274d14c49de7e065cc9a"
+  version "0.713.0.7130910,0b2afd6436e74a1f"
+  sha256 arm:   "7989b49bd22b9676d3504ecd9c688e10754d69129a6e2c066233753f162b0af7",
+         intel: "66afc4e16b3a6f14e39f90505fb47824da0cd2d485788c8c4fd40cd53db9fa0a"
 
   url "https://setup.rbxcdn.com/mac/#{arch}version-#{version.csv.second}-RobloxPlayer.zip",
       verified: "setup.rbxcdn.com/"
@@ -23,7 +23,6 @@ cask "roblox" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   # The default installer installs the application as `Roblox.app` - so do the same for consistency
   app "RobloxPlayer.app", target: "Roblox.app"

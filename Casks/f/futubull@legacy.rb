@@ -1,6 +1,6 @@
 cask "futubull@legacy" do
-  version "15.22.12108"
-  sha256 "018c5ea27d403c6903db68dc1162b9a381daf8da6ed232b657b8d3f35b6aaa5f"
+  version "16.4.14908"
+  sha256 "f4072d06a48df7219cecc72fb83d7ee556ace427498ca766813d9209c04ee420"
 
   url "https://softwaredownload.futunn.com/FTNN_legacy_#{version}_Website.dmg",
       user_agent: :fake,
@@ -22,7 +22,6 @@ cask "futubull@legacy" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "FutuNiuniu.app"
 

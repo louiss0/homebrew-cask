@@ -1,6 +1,6 @@
 cask "shottr" do
-  version "1.8.1"
-  sha256 "2372cd2ee84845d8ca0e7efd1d644ad81fed56c57ed5a1adfda638e36cb7af62"
+  version "1.9.1"
+  sha256 "0bfd797dbcfec52a5e122b50062ad6b954847fe3b53d676c05ac4361f50ce5b3"
 
   url "https://shottr.cc/dl/Shottr-#{version}.dmg"
   name "Shottr"
@@ -12,10 +12,7 @@ cask "shottr" do
     regex(/href=.*?Shottr[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Shottr.app"
 

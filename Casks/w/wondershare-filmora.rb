@@ -17,10 +17,6 @@ cask "wondershare-filmora" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
-
   app "Wondershare Filmora Mac.app"
 
   zap trash: [

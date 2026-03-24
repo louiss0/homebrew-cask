@@ -1,6 +1,6 @@
 cask "fabfilter-pro-l" do
-  version "2.24"
-  sha256 "d27a302af21c7af265eeffe7c9b334ad9b1e742d9eb76017eafcbefe9adaf8c1"
+  version "2.25"
+  sha256 "5dc97e158ae4d96a2e81a540d80edf006bd4327d22b7e4052a40dc4f2138bee0"
 
   url "https://cdn-b.fabfilter.com/downloads/ffprol#{version.no_dots}.dmg"
   name "FabFilter Pro-L"
@@ -11,10 +11,6 @@ cask "fabfilter-pro-l" do
     url "https://www.fabfilter.com/download"
     regex(/FabFilter\s+Pro-L.*?v?(\d+(?:\.\d+)+)/im)
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
 
   pkg "FabFilter Pro-L #{version} Installer.pkg"
 

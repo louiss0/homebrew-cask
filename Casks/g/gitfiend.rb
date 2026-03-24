@@ -18,10 +18,7 @@ cask "gitfiend" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "GitFiend.app"
   # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)

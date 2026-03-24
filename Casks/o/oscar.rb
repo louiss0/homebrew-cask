@@ -1,19 +1,18 @@
 cask "oscar" do
-  version "1.6.0"
-  sha256 "79b005dde8dcd9cc39edefa83f54e937b6ca2be7645b7ad4a98fe6c22f816540"
+  version "1.7.1"
+  sha256 "fa6171ddbef287490469abcdd9793e4303fb116af7c125c487ec571ff787db7d"
 
-  url "https://www.apneaboard.com/OSCAR/#{version}/OSCAR-#{version}.dmg",
-      verified: "apneaboard.com/OSCAR/"
+  url "https://www.sleepfiles.com/OSCAR/#{version}/OSCAR-#{version}-Qt5.dmg"
   name "OSCAR"
   desc "CPAP Analysis Reporter"
   homepage "https://www.sleepfiles.com/OSCAR/"
 
   livecheck do
     url :homepage
-    regex(%r{href=.*?/OSCAR[._-]v?(\d+(?:\.\d+)+)\.dmg}i)
+    regex(%r{href=.*?/OSCAR[._-]v?(\d+(?:\.\d+)+)(?:[._-]Qt5)?\.dmg}i)
   end
 
-  depends_on macos: ">= :high_sierra"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "OSCAR.app"
 

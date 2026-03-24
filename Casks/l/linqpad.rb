@@ -1,9 +1,8 @@
 cask "linqpad" do
-  version "8.107.1.7130434"
-  sha256 "6e738291bf2abbc460fdf8f9e8e14cf8dd7063ae324a9d216dd149d180096c10"
+  version "9.6.6.5942606"
+  sha256 "e0eed8c2cff8150ca8df6cae88b1230198ab4f71e4a06ac5ea6b4eefec208573"
 
-  url "https://linqpad.azureedge.net/preview/LINQPad#{version.major}-Beta.dmg?cache=#{version}",
-      verified: "linqpad.azureedge.net/"
+  url "https://cdn.linqpad.net/public/LINQPad#{version.major}.dmg?cache=#{version}"
   name "LINQPad"
   desc ".NET LINQ database query tool and code scratchpad"
   homepage "https://www.linqpad.net/"
@@ -12,11 +11,11 @@ cask "linqpad" do
     url "https://www.linqpad.net/Download.aspx"
     regex(/v?(\d+(?:\.\d+)+)/i)
     strategy :page_match do |page, regex|
-      beta_file_url = page[/href=["']([^"' >]*?LINQPad[._-]?v?\d+[._-]Beta\.dmg)/i, 1]
-      next unless beta_file_url
+      file_url = page[/href=["']([^"' >]*?LINQPad[._-]?v?\d+(?:[._-]Beta)?\.dmg)/i, 1]
+      next unless file_url
 
       merged_headers = Homebrew::Livecheck::Strategy.page_headers(
-        URI.join("https://www.linqpad.net/", beta_file_url).to_s,
+        URI.join("https://www.linqpad.net/", file_url).to_s,
       ).reduce(&:merge)
 
       match = merged_headers["location"]&.match(regex)
@@ -30,7 +29,7 @@ cask "linqpad" do
   depends_on arch: :arm64
   depends_on macos: ">= :big_sur"
 
-  app "LINQPad #{version.major} beta.app"
+  app "LINQPad #{version.major}.app"
 
   zap trash: [
     "~/Library/Application Support/.LINQPad",

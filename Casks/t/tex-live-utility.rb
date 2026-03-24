@@ -1,6 +1,6 @@
 cask "tex-live-utility" do
-  version "1.54"
-  sha256 "983178326b457b77324151c304269ecaf7ae93aec62e8509c0badf52c718995e"
+  version "1.55"
+  sha256 "c344a0f43f03d644e36d282f2b08e0d5009c984fea7d69295277d2457b8c8099"
 
   url "https://github.com/amaxwell/tlutility/releases/download/#{version}/TeX.Live.Utility.app-#{version}.zip"
   name "TeX Live Utility"
@@ -11,8 +11,6 @@ cask "tex-live-utility" do
     url :url
     strategy :github_latest
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
 

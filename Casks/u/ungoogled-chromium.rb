@@ -1,9 +1,9 @@
 cask "ungoogled-chromium" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "138.0.7204.96-1.1"
-  sha256 arm:   "1749fb2af1f2c2dece84635793ce6401b1fedf4263ecae0b8470a08510b87c4f",
-         intel: "dc194e54548e7a0d69348d93e68f0cb51e7da029889b97c7d8ee350c1975fbd5"
+  version "146.0.7680.80-1.1"
+  sha256 arm:   "3e295e969ac77b4e401716bbf07c3cd091bd8ca446fd8247c5056f194ca247b8",
+         intel: "1d47a7218aeb5f0e316191d2883caf199fa3ffcb108f45ca83f126aaeedc027e"
 
   url "https://github.com/ungoogled-software/ungoogled-chromium-macos/releases/download/#{version}/ungoogled-chromium_#{version}_#{arch}-macos.dmg",
       verified: "github.com/ungoogled-software/ungoogled-chromium-macos/"
@@ -23,7 +23,7 @@ cask "ungoogled-chromium" do
   end
 
   conflicts_with cask: "chromium"
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Chromium.app"
 

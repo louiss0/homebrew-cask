@@ -1,11 +1,11 @@
 cask "frappe-books" do
-  arch arm: "-arm64"
+  arch arm: "arm64", intel: "x64"
 
-  version "0.31.0"
-  sha256 arm:   "f20a2f18521b6757dfe459d8808175c2a84c057c1ccfbbca1ca08432790d719c",
-         intel: "7e96c1055aaa0ad7bc535efacb936e27b7069e73a8dc2ffb65986b2af294d338"
+  version "0.36.0"
+  sha256 arm:   "26ffa956c54a3de41f8768046b6c9c63c7772a0c0b3096578ae06a69f999c8bd",
+         intel: "d25923d862e2a98d467f5a2254933828b2559faf5b7cac5e9b18a68c31d5f5e9"
 
-  url "https://github.com/frappe/books/releases/download/v#{version}/Frappe-Books-#{version}#{arch}.dmg",
+  url "https://github.com/frappe/books/releases/download/v#{version}/Frappe-Books-v#{version}-mac-#{arch}.dmg",
       verified: "github.com/frappe/books/"
   name "Frappe Books"
   desc "Book-keeping software for small businesses and freelancers"
@@ -15,8 +15,6 @@ cask "frappe-books" do
     url :url
     strategy :github_latest
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "Frappe Books.app"
 

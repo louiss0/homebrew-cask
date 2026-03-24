@@ -8,8 +8,8 @@ cask "tunnelbear" do
     end
   end
   on_big_sur :or_newer do
-    version "5.6.1"
-    sha256 "8487fd56e68bcda4ef821c19d988131792b7dbdd7b6f8855b27ce547ff508e84"
+    version "5.8.1"
+    sha256 "66049c139c5bc32c5d8bde0f84ba485555a8685405cc46d11a47c6110769d76b"
 
     # Older versions may have a more recent `pubDate` than newer versions, so we
     # have to check all the items in the appcast.
@@ -28,7 +28,6 @@ cask "tunnelbear" do
   homepage "https://www.tunnelbear.com/"
 
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   app "TunnelBear.app"
 

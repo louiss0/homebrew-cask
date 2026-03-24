@@ -1,21 +1,21 @@
 cask "open-video-downloader" do
-  version "2.5.5"
-  sha256 "18ca0f13e42002983c11807b52aa55948f02ef876fb51c72b9893c774521974b"
+  arch arm: "aarch64", intel: "x64"
 
-  url "https://github.com/StefanLobbenmeier/youtube-dl-gui/releases/download/v#{version}/Open-Video-Downloader-#{version}-universal.dmg"
+  version "3.1.3"
+  sha256 arm:   "9d39a7b650582fb68e4d649341bdbd4a8eaf3c92880168e59fd95d15c8dd9d02",
+         intel: "49a831e97a6236a3be786ad6f585f626f083507650fdae6732b63aec95050c1c"
+
+  url "https://github.com/jely2002/youtube-dl-gui/releases/download/app-v#{version}/Open.Video.Downloader_#{version}_#{arch}.dmg"
   name "Open Video Downloader"
   desc "Cross-platform GUI for youtube-dl made in Electron and node.js"
-  homepage "https://github.com/StefanLobbenmeier/youtube-dl-gui"
+  homepage "https://github.com/jely2002/youtube-dl-gui"
 
   livecheck do
     url :url
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Open Video Downloader.app"
 

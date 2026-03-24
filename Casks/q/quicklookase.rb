@@ -7,7 +7,7 @@ cask "quicklookase" do
   desc "Quick Look generator for Adobe Swatch Exchange files"
   homepage "https://github.com/rsodre/QuickLookASE"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "QuickLookASE.qlgenerator"
 

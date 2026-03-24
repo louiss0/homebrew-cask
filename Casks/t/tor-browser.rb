@@ -1,8 +1,8 @@
 cask "tor-browser" do
-  version "14.5.4"
-  sha256 "0d3626e756af66f901bad39ceda1bb9be20941d33c3b5c948d6576bc42ea631b"
+  version "15.0.7"
+  sha256 "29852c4f3aa3b77bccdf359c5a22cf3ffa49ad1828b3967fb722134ffdc29e20"
 
-  url "https://archive.torproject.org/tor-package-archive/torbrowser/#{version}/tor-browser-macos-#{version}.dmg"
+  url "https://www.torproject.org/dist/torbrowser/#{version}/tor-browser-macos-#{version}.dmg"
   name "Tor Browser"
   desc "Web browser focusing on security"
   homepage "https://www.torproject.org/"
@@ -18,7 +18,6 @@ cask "tor-browser" do
 
   auto_updates true
   conflicts_with cask: "tor-browser@alpha"
-  depends_on macos: ">= :catalina"
 
   app "Tor Browser.app"
 

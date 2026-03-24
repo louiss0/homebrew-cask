@@ -1,9 +1,9 @@
 cask "requestly" do
   arch arm: "-arm64"
 
-  version "25.6.27"
-  sha256 arm:   "0dc43cf8917eb41aeef866a158ef8fc2c33cf2faa93d4af511a302bbd55ae767",
-         intel: "91378cf3e2a3653235f32fc63f7e83115eec13f40c286255ac385a520630bb84"
+  version "26.3.3"
+  sha256 arm:   "8f4f3da94376b797717aaa98dfe3ad27cd75234e3e227ce4e34b817c3e82755f",
+         intel: "007276d8f881dd3955b6c18a427857ecc7c0f76a9efbf89c03eecaa61a51792d"
 
   url "https://github.com/requestly/requestly-desktop-app/releases/download/v#{version}/Requestly-#{version}#{arch}.dmg",
       verified: "github.com/requestly/requestly-desktop-app/"
@@ -15,8 +15,6 @@ cask "requestly" do
     url :url
     strategy :github_latest
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "Requestly.app"
 

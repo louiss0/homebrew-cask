@@ -1,6 +1,6 @@
 cask "stability-matrix" do
-  version "2.14.2"
-  sha256 "0f9f8d85f0045040537b08e015924aae1e04c4f8d450630ef41ec000cdc1823f"
+  version "2.15.6"
+  sha256 "b30ea7d7a7c62b30a3df02a2c7abcf900870e86b61cbbd6b7df2065e78fd7da4"
 
   url "https://github.com/LykosAI/StabilityMatrix/releases/download/v#{version}/StabilityMatrix-macos-arm64.dmg"
   name "Stability Matrix"
@@ -16,7 +16,7 @@ cask "stability-matrix" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Stability Matrix.app"
 

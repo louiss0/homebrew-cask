@@ -1,6 +1,6 @@
 cask "cloudflare-warp@beta" do
-  version "2025.5.828.1"
-  sha256 "58787f72e3e13c42efd472c78f77608b460740762c006c228c79fa12f6a12518"
+  version "2026.3.566.1"
+  sha256 "227a8e5ed52e24b72f062a65199bf044e5e61e526ff3d5adfaaeb3d19d2dc3e8"
 
   url "https://downloads.cloudflareclient.com/v1/download/macos/version/#{version}",
       verified: "downloads.cloudflareclient.com/v1/download/macos/"
@@ -15,7 +15,6 @@ cask "cloudflare-warp@beta" do
 
   auto_updates true
   conflicts_with cask: "cloudflare-warp"
-  depends_on macos: ">= :catalina"
 
   pkg "Cloudflare_WARP_#{version}.pkg"
 

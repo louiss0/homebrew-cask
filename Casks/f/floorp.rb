@@ -1,6 +1,6 @@
 cask "floorp" do
-  version "11.28.0"
-  sha256 "2cbb7a3535f60f3d6d0a61dc3484489919da4adf23b7ed31a5dce994b60b4e3b"
+  version "12.11.0"
+  sha256 "adac6b0bc406b132dcc9fd72ac10ebbdfc87b5e276d89d4b4155c5e515716ecf"
 
   url "https://github.com/Floorp-Projects/Floorp/releases/download/v#{version}/floorp-macOS-universal.dmg",
       verified: "github.com/Floorp-Projects/Floorp/"
@@ -14,7 +14,6 @@ cask "floorp" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Floorp.app"
 

@@ -1,6 +1,6 @@
 cask "zandronum" do
-  version "3.2"
-  sha256 "38b2963f55e003d2680fcf007f5b4732ce9f5a465d241a6259d6d581013798bd"
+  version "3.2.1"
+  sha256 "9067488a1d72847c87a29f6798b12b3d7b114b2654c3e8b7d7b96090393072a2"
 
   url "https://zandronum.com/downloads/zandronum#{version}-macosx.dmg"
   name "Zandronum"
@@ -12,7 +12,7 @@ cask "zandronum" do
     regex(/href=.*?zandronum[._-]?v?(\d+(?:\.\d+)+)[._-]macosx\.dmg/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Zandronum.app"
   app "Doomseeker.app"

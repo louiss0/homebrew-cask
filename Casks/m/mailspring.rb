@@ -1,9 +1,9 @@
 cask "mailspring" do
   arch arm: "-AppleSilicon"
 
-  version "1.15.1"
-  sha256 arm:   "30c276ea9dcaa7fac132dcae3850f2be6033e49d05730e6d8859cc88f677e2f0",
-         intel: "a9cf0158ef2e35070b5f94fc8b6ac2ddf36cbae68465cf638cf56d9fd54658f6"
+  version "1.19.0"
+  sha256 arm:   "c46eafefcb053a3b878dd62efc62a174534ba5e61fe3c4b7063a74f59231b3e3",
+         intel: "7d3375daf03a4f53813fabb0be9aeecd399739a06d552c501e36ee2255048eeb"
 
   url "https://github.com/Foundry376/Mailspring/releases/download/#{version}/Mailspring#{arch}.zip",
       verified: "github.com/Foundry376/Mailspring/"
@@ -11,10 +11,8 @@ cask "mailspring" do
   desc "Fork of Nylas Mail"
   homepage "https://getmailspring.com/"
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Mailspring.app"
 

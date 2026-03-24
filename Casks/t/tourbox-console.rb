@@ -1,6 +1,6 @@
 cask "tourbox-console" do
-  version "5.8.6"
-  sha256 "ae255ff57a587d45df8ba2d023fb71d99f0ca7f48fd7b4666ffd8c7f7a9a9390"
+  version "5.11.1"
+  sha256 "b835dc633e37c04bf468d182250459d5978b4288656bf28d2e6334003a17618a"
 
   url "https://tourbox-web-files.s3.us-west-2.amazonaws.com/prod/console/TourBoxInstall#{version}.zip",
       verified: "tourbox-web-files.s3.us-west-2.amazonaws.com/prod/console/"
@@ -16,8 +16,6 @@ cask "tourbox-console" do
       json.dig("result", "normalSoft", "version")
     end
   end
-
-  depends_on macos: ">= :high_sierra"
 
   pkg "TourBoxInstall#{version}/TourBoxInstall#{version}.pkg"
 

@@ -1,11 +1,20 @@
 cask "schism-tracker" do
-  version "20250415"
-  sha256 "d531ecf95b4a06b83975aff00d7311ffb32d4dd04dfcd0f22af0fbcdb8d3ad72"
+  version "20251014"
+  sha256 "13b32ac8578c88ae2f621530fc1b0d7b01a9d2ad2cd4b3828445408aab202f33"
 
   url "https://github.com/schismtracker/schismtracker/releases/download/#{version}/schismtracker-#{version}-macos.zip"
   name "Schism Tracker"
   desc "Oldschool sample-based music composition tool"
   homepage "https://github.com/schismtracker/schismtracker"
+
+  livecheck do
+    url :url
+    regex(/^v?(\d+(?:\.\d+)*)$/i)
+  end
+
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :big_sur"
 
   app "Schism Tracker.app"
 

@@ -16,16 +16,14 @@ cask "latest" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Latest.app"
 
   zap trash: [
     "~/Library/Caches/com.max-langer.Latest",
     "~/Library/Cookies/com.max-langer.Latest.binarycookies",
+    "~/Library/HTTPStorages/com.max-langer.Latest",
     "~/Library/Preferences/com.max-langer.Latest.plist",
     "~/Library/Saved Application State/com.max-langer.Latest.savedState",
   ]

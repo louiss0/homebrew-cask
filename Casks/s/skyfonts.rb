@@ -7,12 +7,7 @@ cask "skyfonts" do
   desc "Font manager"
   homepage "https://skyfonts.com/"
 
-  livecheck do
-    url "https://api.skyfonts.com/api/SkyFontsAppCast?osid=3"
-    regex(%r{href=.*?/Monotype_SkyFonts_Mac64_(\d+(?:\.\d+)*)\.dmg}i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-11-02", because: :discontinued
 
   installer manual: "Install SkyFonts.app"
 

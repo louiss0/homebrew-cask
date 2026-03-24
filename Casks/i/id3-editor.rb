@@ -7,12 +7,8 @@ cask "id3-editor" do
   desc "MP3 and AIFF ID3 tag editor"
   homepage "http://www.pa-software.com/id3editor/"
 
-  livecheck do
-    url "http://www.pa-software.com/id3editor/history/"
-    regex(/Version\s*v?(\d+(?:\.\d+)+)/i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  # Artifact not available over HTTPS
+  disable! date: "2025-12-23", because: :no_longer_meets_criteria
 
   depends_on macos: ">= :big_sur"
 

@@ -1,9 +1,9 @@
 cask "vorta" do
   arch arm: "arm", intel: "intel"
 
-  version "0.10.3"
-  sha256 arm:   "78960fd229074fc0d76c4d8d22b078e6b8b6d947a00491ec9880f9abc8f17bb7",
-         intel: "b903ea4f122aa04d62c5e6185c4a1f8a414b6c6e97296843bcdeeee6274d04f0"
+  version "0.11.3"
+  sha256 arm:   "03f234d030e7ec1ae9bf4af808f71c081325c495a498909ba706ba69d0c10ad3",
+         intel: "17d665e02ca51c888d6d620d13a667d307dafb549ea7308ae3999172d376d26a"
 
   url "https://github.com/borgbase/vorta/releases/download/v#{version}/Vorta-v#{version}-#{arch}.dmg"
   name "Vorta"
@@ -15,10 +15,7 @@ cask "vorta" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "Vorta.app"
 

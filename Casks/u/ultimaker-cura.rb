@@ -1,9 +1,9 @@
 cask "ultimaker-cura" do
   arch arm: "ARM64", intel: "X64"
 
-  version "5.10.1"
-  sha256 arm:   "6fdcbec9a6803a419abd89171a3740debb90dc0133a60e36f41850e6891d0060",
-         intel: "6ce363910529160f4cb68a58b529d62b5f66bed164fba5f91a4111095e48ba56"
+  version "5.12.0"
+  sha256 arm:   "db2c58e47e6c20f2731feb73406ee62d5763c01c22f16109728ff02b66d0108e",
+         intel: "13acd9f15aea3fc9dd8ca4e220ab8c982a4546bbc71da96a6008e3f17d7ac315"
 
   url "https://github.com/Ultimaker/Cura/releases/download/#{version.csv.second || version.csv.first}/UltiMaker-Cura-#{version.csv.first}-macos-#{arch}.dmg",
       verified: "github.com/Ultimaker/Cura/"
@@ -24,7 +24,7 @@ cask "ultimaker-cura" do
     end
   end
 
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
   app "UltiMaker Cura.app"
 

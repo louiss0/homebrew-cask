@@ -12,10 +12,6 @@ cask "reflector@2" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
-  deprecate! date: "2025-05-01", because: :unsigned
-
   app "Reflector #{version.major}.app"
 
   zap trash: [
@@ -23,4 +19,8 @@ cask "reflector@2" do
     "~/Library/Caches/com.squirrels.Reflector-#{version.major}",
     "~/Library/Preferences/com.squirrels.Reflector-#{version.major}.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

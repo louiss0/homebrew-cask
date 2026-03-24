@@ -7,7 +7,7 @@ cask "whale" do
   desc "Unofficial Trello app"
   homepage "https://github.com/1000ch/whale"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Whale.app"
 

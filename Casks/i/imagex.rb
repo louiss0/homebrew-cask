@@ -12,9 +12,7 @@ cask "imagex" do
     regex(/href=.*?ImageX[._-]v?(\d+(?:\.\d+)+)[._-]macos\.zip/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "ImageX.app"
 

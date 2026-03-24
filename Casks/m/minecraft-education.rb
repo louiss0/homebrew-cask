@@ -1,6 +1,6 @@
 cask "minecraft-education" do
-  version "1.21.10.0"
-  sha256 "08cacdc36846a5b238a503d754799e55cc05dc7022ea034dcd26182c30070edf"
+  version "1.21.132.1"
+  sha256 "d16ed6c5b87fd4d05461437ce0fed55caf7e5616b1c366f92489d8f8dd039ac5"
 
   url "https://downloads.minecrafteduservices.com/retailbuilds/MacOS/Minecraft_Education_#{version}.dmg",
       verified: "downloads.minecrafteduservices.com/"
@@ -13,8 +13,6 @@ cask "minecraft-education" do
     regex(/Minecraft[._-]Education[._-]?(\d+(?:[.-]\d+)+)\.dmg/i)
     strategy :header_match
   end
-
-  depends_on macos: ">= :high_sierra"
 
   # Renamed for consistency: app name is different in the Finder and in a shell.
   app "minecraft-edu.app", target: "Minecraft Education.app"

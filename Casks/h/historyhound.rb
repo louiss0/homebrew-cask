@@ -1,6 +1,6 @@
 cask "historyhound" do
-  version "2.3.5"
-  sha256 "1a3f5199c7f822949a784dd53e55256d15910d09dbda900baf64032ec3a6ea56"
+  version "2.3.6"
+  sha256 "ddf235b832279d50006bec6d4301479f23413721720576e183b443c2fef13669"
 
   url "https://www.stclairsoft.com/download/HistoryHound-#{version}.dmg"
   name "HistoryHound"
@@ -12,10 +12,7 @@ cask "historyhound" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "HistoryHound.app"
 

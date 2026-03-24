@@ -6,11 +6,8 @@ cask "core-data-editor" do
   name "Core Data Editor"
   homepage "https://github.com/ChristianKienle/Core-Data-Editor/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-10", because: :unmaintained
-
-  depends_on macos: ">= :sierra"
+  disable! date: "2025-10-11", because: :unmaintained
 
   app "Core Data Editor.app"
 

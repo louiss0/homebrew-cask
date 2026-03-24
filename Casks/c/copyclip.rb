@@ -1,23 +1,21 @@
 cask "copyclip" do
-  version "2.9.99.2"
-  sha256 :no_check
+  version "3.989"
+  sha256 "ea5aa66a1a866315e03d34602adb2a99407a44c155cdf26d9ca9237d1ef665c1"
 
-  url "https://fiplab.com/app-download/CopyClip_#{version.major}.zip"
+  url "https://fiplab.com/updates/copyclip2/CopyClip-2-#{version}.zip"
   name "CopyClip"
   desc "Clipboard manager"
   homepage "https://fiplab.com/apps/copyclip-for-mac"
 
   livecheck do
-    url "https://api.appcenter.ms/v0.1/public/sparkle/apps/ffb43606-0eb3-79c0-cb23-097402e92379"
+    url "https://fiplab.com/updates/copyclip2/appcast.xml"
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
-  app "CopyClip #{version.major}.app"
+  app "CopyClip 2.app"
 
   uninstall quit: "com.fiplab.copyclip#{version.major}"
 

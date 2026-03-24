@@ -1,8 +1,8 @@
 cask "emacs-app@nightly" do
   arch arm: "arm64-11", intel: "x86_64-10_12"
 
-  version "2025-06-16_00-09-08,a4ca0cd7f03c1cf0e7b1f3e0d49c4cf42fcacc90"
-  sha256 "de57a674c094059acfabdf2e3b99659811fcd301a895a72ac60853db87a0982e"
+  version "2025-12-21_00-09-31,1eb247af73c3dbfbf8d4c4363d1a22e3fbcf6ce7"
+  sha256 "376a4a37ff5d0717a0f88497eeef1c8fa3b0eced5fc230272128a6b10b85f53b"
 
   url "https://emacsformacosx.com/emacs-builds/Emacs-#{version.csv.first}-#{version.csv.second}-universal.dmg"
   name "Emacs"
@@ -20,11 +20,11 @@ cask "emacs-app@nightly" do
     end
   end
 
-  conflicts_with cask:    [
-                   "emacs",
-                   "emacs@pretest",
-                 ],
-                 formula: "emacs"
+  conflicts_with cask: [
+    "emacs-app",
+    "emacs-app@pretest",
+  ]
+  depends_on macos: ">= :big_sur"
 
   app "Emacs.app"
   binary "#{appdir}/Emacs.app/Contents/MacOS/Emacs", target: "emacs"

@@ -1,19 +1,13 @@
 cask "little-snitch@nightly" do
-  version "6.3,7163"
-  sha256 "237ec9ffd70e08045a025e0beff80e29cad69bb04667f0ebd5d645ef40d0075a"
+  version "6.3,7164"
+  sha256 "fabca858692ce61f0b3818fc11050c807f1d8b788ec9a81d0145a601c173bedf"
 
   url "https://www.obdev.at/downloads/littlesnitch/nightly/LittleSnitch-#{version.csv.first}-nightly-(#{version.csv.second}).dmg"
   name "Little Snitch"
   desc "Host-based application firewall"
   homepage "https://www.obdev.at/products/littlesnitch/download-nightly.html"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?LittleSnitch[._-]v?(\d+(?:\.\d+)+)[._-]nightly[._-]\((\d+(?:\.\d+)*)\)\.dmg/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
-    end
-  end
+  disable! date: "2025-11-20", because: :no_longer_available
 
   auto_updates true
   conflicts_with cask: [

@@ -7,12 +7,7 @@ cask "firefox@cn" do
   desc "Chinese version of Firefox"
   homepage "https://www.firefox.com.cn/"
 
-  livecheck do
-    url "https://download-redirect.firefox.com.cn/?product=firefox-latest-ssl&os=osx"
-    strategy :header_match
-  end
-
-  no_autobump! because: :requires_manual_review
+  disable! date: "2025-11-20", because: :no_longer_available, replacement_cask: "firefox"
 
   auto_updates true
   conflicts_with cask: [
@@ -20,7 +15,6 @@ cask "firefox@cn" do
     "firefox@beta",
     "firefox@esr",
   ]
-  depends_on macos: ">= :catalina"
 
   app "Firefox.app"
 

@@ -7,9 +7,8 @@ cask "texts" do
   desc "Word processor that uses plain text Markdown"
   homepage "http://www.texts.io/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-11-01", because: :unmaintained
+  disable! date: "2025-11-01", because: :unmaintained
 
   app "Texts.app"
 

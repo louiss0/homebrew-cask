@@ -1,6 +1,6 @@
 cask "clamxav" do
-  version "3.9,11124"
-  sha256 "ef4a71f79021e75f6c072c79175a1acf99f206acb1a0797aeae80518bf531e31"
+  version "3.9.2,11297"
+  sha256 "be1e4bff1bde52507e434bc11918d6e581e2fd87bbc961ca55e5d3e769d2541c"
 
   url "https://cdn.clamxav.com/ClamXAVdownloads/ClamXAV_#{version.csv.first}_#{version.csv.second}_Installer.pkg"
   name "ClamXAV"
@@ -11,8 +11,6 @@ cask "clamxav" do
     url "https://www.clamxav.com/sparkle/appcast#{version.major}.xml"
     strategy :sparkle
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
 

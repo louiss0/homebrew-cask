@@ -1,6 +1,6 @@
 cask "linearmouse@beta" do
-  version "0.10.1-beta.3"
-  sha256 "6541c84d04f6970f19e9c4021f735a9b9a9a0106da2f549316543ad6c1843f96"
+  version "0.11.0-beta.2"
+  sha256 "c363e42f883836a61981309f8fd21fb3e9ffa678c7cfc1b860d237b42ecc460c"
 
   url "https://dl.linearmouse.org/v#{version}/LinearMouse.dmg"
   name "LinearMouse"
@@ -12,11 +12,8 @@ cask "linearmouse@beta" do
     strategy :sparkle, &:version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
   conflicts_with cask: "linearmouse"
-  depends_on macos: ">= :catalina"
 
   app "LinearMouse.app"
 

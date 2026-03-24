@@ -6,9 +6,8 @@ cask "shrinkit" do
   name "ShrinkIt"
   homepage "https://panic.com/blog/shrinkit-1-2/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-10", because: :unmaintained
+  disable! date: "2025-10-11", because: :unmaintained
 
   app "ShrinkIt.app"
 

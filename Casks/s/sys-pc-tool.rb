@@ -19,10 +19,7 @@ cask "sys-pc-tool" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   pkg "SYS_PC_TOOL_setup_mac-#{version}.pkg"
 

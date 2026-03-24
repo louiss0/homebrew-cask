@@ -13,10 +13,7 @@ cask "detectx-swift" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :el_capitan"
 
   app "DetectX Swift.app"
 

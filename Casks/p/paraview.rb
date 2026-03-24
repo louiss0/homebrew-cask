@@ -2,12 +2,12 @@ cask "paraview" do
   arch arm: "arm64", intel: "x86_64"
 
   on_arm do
-    version "5.13.3,MPI-OSX11.0-Python3.10"
-    sha256 "d37e9d7e83733b8881d63a260b2252800afff167cd37f7297c3f0c06e06b94cb"
+    version "6.1.0,RC1-MPI-OSX11.0-Python3.12"
+    sha256 "f8c6b7d552b41362db07098cc3e3296b42c7cf2f06d29ca77833b18efdac8542"
   end
   on_intel do
-    version "5.13.2,MPI-OSX10.15-Python3.10"
-    sha256 "dbf6e006927b6bcc91040440078b9aaf355ac34f4ccb7fbd20b117df9f74f485"
+    version "6.1.0,RC1-MPI-OSX10.15-Python3.12"
+    sha256 "c675db6e3dca60b5b574111ccb0c4a8a21c4fa61c1d1f50cf419862efe373ac2"
   end
 
   url "https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v#{version.csv.first.major_minor}&type=binary&os=macOS&downloadFile=ParaView-#{version.csv.first}#{"-#{version.csv.second}" if version.csv.second}-#{arch}.dmg",
@@ -26,12 +26,10 @@ cask "paraview" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
+  depends_on macos: ">= :big_sur"
 
-  depends_on macos: ">= :sierra"
-
-  app "ParaView-#{version.csv.first}.app"
-  binary "#{appdir}/ParaView-#{version.csv.first}.app/Contents/MacOS/paraview"
+  app "ParaView-#{version.csv.first}-#{version.csv.second.split("-").first}.app"
+  binary "#{appdir}/ParaView-#{version.csv.first}-#{version.csv.second.split("-").first}.app/Contents/MacOS/paraview"
 
   zap trash: [
     "~/.config/ParaView",

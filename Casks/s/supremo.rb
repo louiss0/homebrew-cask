@@ -1,6 +1,6 @@
 cask "supremo" do
-  version "4.11.4.2831"
-  sha256 "700d8a29b5a74388fb4045b04d91656585a198d5e4b961f35e8ef305651a69ce"
+  version "4.11.6.2934"
+  sha256 "4d7ca80358fc41de5e348d1476d2c21b536c6db4e9e857bbe499a81d1a9f0524"
 
   url "https://www.nanosystems.com/AutoUpdateS/macOS/stable/Supremo_#{version}.dmg",
       verified: "nanosystems.com/"
@@ -14,7 +14,6 @@ cask "supremo" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   app "Supremo.app"
 

@@ -23,10 +23,7 @@ cask "teamspeak-client" do
   desc "Voice communication client"
   homepage "https://www.teamspeak.com/"
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   app "TeamSpeak #{version.major} Client.app"
 

@@ -1,6 +1,6 @@
 cask "chirp" do
-  version "20250704"
-  sha256 "dac5f212d870dee75e5124b5cb23bf14faff3f01813cd8f472d6a462be6a462d"
+  version "20250801"
+  sha256 "07809e2558bfd248e65c69f4b56a7c9a08b5d262730900b5f5020912ed282868"
 
   url "https://archive.chirpmyradio.com/chirp_next/next-#{version}/chirp-next-#{version}.app.zip",
       verified: "archive.chirpmyradio.com/",
@@ -9,12 +9,7 @@ cask "chirp" do
   desc "Tool for programming amateur radio"
   homepage "https://chirp.danplanet.com/projects/chirp/wiki/Home"
 
-  livecheck do
-    url "https://archive.chirpmyradio.com/chirp_next/"
-    regex(/next[._-]v?(\d+(?:\.\d+)*)/i)
-  end
-
-  depends_on macos: ">= :big_sur"
+  disable! date: "2025-08-05", because: "cannot be reliably fetched due to Cloudflare protections"
 
   app "CHIRP.app"
 

@@ -7,12 +7,10 @@ cask "cheatsheet" do
   desc "Tool to list all active shortcuts of the current application"
   homepage "https://www.mediaatelier.com/CheatSheet/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-11-09", because: :discontinued
+  disable! date: "2025-11-09", because: :discontinued
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "CheatSheet.app"
 

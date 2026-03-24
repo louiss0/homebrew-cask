@@ -1,6 +1,6 @@
 cask "font-geist" do
-  version "1.5.0"
-  sha256 "8a57ecad52a78d5d4f90e1ac2f8cbf1ed9479c796e52ef2e564f67c8cf06c247"
+  version "1.8.0"
+  sha256 "ee309b6b0762f89c3e8a799f700bee0323315ff047df3a587af978f8180daa28"
 
   url "https://github.com/vercel/geist-font/releases/download/#{version}/geist-font-#{version}.zip",
       verified: "github.com/vercel/geist-font/"
@@ -12,8 +12,6 @@ cask "font-geist" do
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
   font "geist-font-#{version}/fonts/Geist/otf/Geist-Black.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-BlackItalic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-Bold.otf"
@@ -22,12 +20,12 @@ cask "font-geist" do
   font "geist-font-#{version}/fonts/Geist/otf/Geist-ExtraBoldItalic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-ExtraLight.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-ExtraLightItalic.otf"
+  font "geist-font-#{version}/fonts/Geist/otf/Geist-Italic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-Light.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-LightItalic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-Medium.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-MediumItalic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-Regular.otf"
-  font "geist-font-#{version}/fonts/Geist/otf/Geist-RegularItalic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-SemiBold.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-SemiBoldItalic.otf"
   font "geist-font-#{version}/fonts/Geist/otf/Geist-Thin.otf"

@@ -1,6 +1,6 @@
 cask "thedesk" do
-  version "25.0.15"
-  sha256 "6acd958ea4a1ea496bd1b7069a231170c8be5ded50964b712d715dd548bf82b4"
+  version "25.3.0"
+  sha256 "c59e5d4a235ef26675bef723097f7566a37b075822562adfa43374506089485c"
 
   url "https://github.com/cutls/thedesk-next/releases/download/v#{version}/TheDesk-#{version}-universal.dmg",
       verified: "github.com/cutls/thedesk-next/"
@@ -13,9 +13,7 @@ cask "thedesk" do
     strategy :github_latest
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "TheDesk.app"
 

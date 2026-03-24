@@ -1,6 +1,6 @@
 cask "wing-personal" do
-  version "11.0.1.0"
-  sha256 "0fd5e9034dc962b90caf942ecbba808e62539252156bb611df18cdcc87ac1acd"
+  version "11.1.0.0"
+  sha256 "cda18237fc627aa12bc8247c2c16be5650e82e90ac8d675ab657c537a9452303"
 
   url "https://wingware.com/pub/wing-personal/#{version}/wing-personal-#{version}.dmg"
   name "Wing Personal"
@@ -12,7 +12,7 @@ cask "wing-personal" do
     regex(%r{href=.*?/pub/wing-personal/v?(\d+(?:\.\d+)+)}i)
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Wing Personal.app"
 

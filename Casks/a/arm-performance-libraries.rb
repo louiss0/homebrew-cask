@@ -1,19 +1,19 @@
 cask "arm-performance-libraries" do
-  version "25.04.1"
-  install_suffix="#{version.major_minor}_flang-new_clang_19"
-  sha256 "6917cbccc1decb3ca8c9cbcddaec70284c6dbfa1f6d32c0780db572c3b00cc36"
+  version "26.01"
+  install_suffix="#{version}_flang-21"
+  sha256 "f69da819aad0faf4817df1503b270832ea67d2decec6240dda99c9891dd2bc2f"
 
-  url "https://developer.arm.com/-/cdn-downloads/permalink/Arm-Performance-Libraries/Version_#{version}/arm-performance-libraries_#{version.major_minor}_macOS.tgz"
+  url "https://developer.arm.com/-/cdn-downloads/permalink/Arm-Performance-Libraries/Version_#{version}/arm-performance-libraries_#{version}_macOS.tgz",
+      user_agent: :curl
   name "Arm Performance Libraries"
   desc "Optimized standard core math libraries for Arm processors"
-  homepage "https://developer.arm.com/downloads/-/arm-performance-libraries"
+  homepage "https://developer.arm.com/Tools%20and%20Software/Arm%20Performance%20Libraries"
 
   livecheck do
-    url :homepage
+    url :homepage,
+        user_agent: :curl
     regex(/Version[._-]v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on arch: :arm64
 

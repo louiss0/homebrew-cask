@@ -1,6 +1,6 @@
 cask "fabfilter-timeless" do
-  version "3.08"
-  sha256 "ba26f3dd8f2cd8dca37620bde17521d4e37a9f4dcc7dd5f1d03a6bf61fa9d929"
+  version "3.09"
+  sha256 "3fb2f4a376c4bea9b442e06b961fa38ce4a46bc1ad2e923b5bdb80260f042c73"
 
   url "https://cdn-b.fabfilter.com/downloads/fftimeless#{version.no_dots}.dmg"
   name "FabFilter Timeless"
@@ -11,10 +11,6 @@ cask "fabfilter-timeless" do
     url "https://www.fabfilter.com/download"
     regex(/FabFilter\s+Timeless.*?v?(\d+(?:\.\d+)+)/im)
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
 
   pkg "FabFilter Timeless #{version} Installer.pkg"
 

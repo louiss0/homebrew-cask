@@ -1,9 +1,9 @@
 cask "anytype" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.47.5"
-  sha256 arm:   "9a3a9c996f6de0bf4a0ea50e69743ad4dd748508489fb664b4a7bef4a5af03b2",
-         intel: "6b40def28845f9c321a013d8b237208d17419be09e5a3acf460c34e2af75b9cc"
+  version "0.54.9"
+  sha256 arm:   "2ba448000199080ab573f13091d9f378f2bd646d965358bca9872905bdb2b7ae",
+         intel: "9cb3341418d830c040d478ee6ddb143e2f9b1cb04651acb758b1424a3fa055c1"
 
   url "https://anytype-release.fra1.cdn.digitaloceanspaces.com/Anytype-#{version}-mac-#{arch}.dmg",
       verified: "anytype-release.fra1.cdn.digitaloceanspaces.com/"
@@ -21,14 +21,24 @@ cask "anytype" do
     "anytype@alpha",
     "anytype@beta",
   ]
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "Anytype.app"
 
   zap trash: [
-    "~/Library/Application Support/anytype2",
-    "~/Library/Logs/anytype2",
-    "~/Library/Preferences/com.anytype.anytype2.plist",
-    "~/Library/Saved Application State/com.anytype.anytype2.savedState",
+    "~/Library/Application Support/anytype",
+    "~/Library/Application Support/Chromium/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.anytype.anytype.sfl*",
+    "~/Library/Application Support/Google/Chrome Beta/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Google/Chrome Canary/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Google/Chrome Dev/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Microsoft Edge Beta/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Microsoft Edge Canary/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Microsoft Edge Dev/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Mozilla/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Application Support/Vivaldi/NativeMessagingHosts/com.anytype.desktop.json",
+    "~/Library/Preferences/com.anytype.anytype.plist",
   ]
 end

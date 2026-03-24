@@ -1,6 +1,6 @@
 cask "disk-diet" do
-  version "5.6.2"
-  sha256 "f5adbe02a706459967dfd387ffa29012305db9c19591fa66c3c974dca6442a4f"
+  version "5.6.3"
+  sha256 "77a1c476fd0d9bb710b1fbccd45509a62f9839b5668a84c6336bdbbab0cda341"
 
   url "https://www.tunabellysoftware.com/resources/Disk%20Diet%20#{version}.dmg"
   name "Disk Diet"
@@ -12,10 +12,7 @@ cask "disk-diet" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Disk Diet.app"
 

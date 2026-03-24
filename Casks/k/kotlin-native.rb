@@ -1,9 +1,9 @@
 cask "kotlin-native" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "2.2.0"
-  sha256 arm:   "53e68794a19e7399bf8fec905c96f486595aefe90d2e9c65421c72dc059bcbfd",
-         intel: "43e7135762756e9fd6f2f5afcc259d87ebf85e500e16f82910c49ea39e8b2577"
+  version "2.3.20"
+  sha256 arm:   "5c2f14d34025a6eddc6e371f8cbac0d09d1f895be6a3c0e81c2226d06a7a43ab",
+         intel: "88c000e2b23db78ac801e9584653c1d7a8317a8c06a8ba0d258b5dc8b5d94050"
 
   url "https://github.com/JetBrains/kotlin/releases/download/v#{version}/kotlin-native-prebuilt-macos-#{arch}-#{version}.tar.gz",
       verified: "github.com/JetBrains/kotlin/"
@@ -16,11 +16,8 @@ cask "kotlin-native" do
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
-  conflicts_with formula: "kotlin"
-
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/cinterop"
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/generate-platform"
-  binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/jsinterop"
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/klib"
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/konan-lldb"
   binary "kotlin-native-prebuilt-macos-#{arch}-#{version}/bin/konanc"

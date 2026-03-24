@@ -7,9 +7,8 @@ cask "maelstrom" do
   desc "Multidirectional shooter game"
   homepage "https://www.libsdl.org/projects/Maelstrom/index.html"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-11-16", because: :unmaintained
+  disable! date: "2025-11-16", because: :unmaintained
 
   app "Maelstrom.app"
 

@@ -7,12 +7,10 @@ cask "fig" do
   desc "Reimagine your terminal"
   homepage "https://fig.io/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-08-03", because: :discontinued
+  disable! date: "2025-08-03", because: :discontinued
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Fig.app"
   binary "#{appdir}/Fig.app/Contents/MacOS/fig-darwin-universal", target: "fig"
@@ -42,8 +40,4 @@ cask "fig" do
     "~/Library/Preferences/com.mschrage.fig.*",
     "~/Library/WebKit/com.mschrage.fig",
   ]
-
-  caveats <<~EOS
-    Please launch the Fig application to finish setup.
-  EOS
 end

@@ -1,5 +1,5 @@
 cask "farrago" do
-  version "2.1.2"
+  version "2.1.5"
   sha256 :no_check
 
   url "https://cdn.rogueamoeba.com/farrago/download/Farrago.zip"
@@ -11,8 +11,6 @@ cask "farrago" do
     url "https://rogueamoeba.net/ping/versionCheck.cgi?format=sparkle&system=999&bundleid=com.rogueamoeba.farrago&platform=osx&version=#{version.no_dots}8000"
     strategy :sparkle
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :big_sur"

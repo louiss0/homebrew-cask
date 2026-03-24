@@ -8,7 +8,7 @@ cask "airpass" do
   desc "Status bar app to overcome time-constrained WiFi networks"
   homepage "https://airpass.tiagoalves.me/"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Airpass.app"
 

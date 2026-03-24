@@ -1,9 +1,16 @@
 cask "darktable" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "5.2.0"
-  sha256 arm:   "8dabf58b6d76c04800be8ab540d3c2f1e772123279e22629a7396fe3e26273de",
-         intel: "bdffebcf758cd1ec6d4ee26eb031d52b1d7e4fe8fe000e728edb14bec91f3a35"
+  version "5.4.1"
+  sha256 arm:   "23ce74a4d7cbab30dc5e55043f97480b2a4eb1d96d602d529c9f9a428b99d041",
+         intel: "d615f7e78af9fb23d7c8017a5d35be50ea13f1ccf89491ef4b927e23eff0f43a"
+
+  on_arm do
+    depends_on macos: ">= :sonoma"
+  end
+  on_intel do
+    depends_on macos: ">= :sequoia"
+  end
 
   url "https://github.com/darktable-org/darktable/releases/download/release-#{version.major_minor_patch}/darktable-#{version}-#{arch}.dmg",
       verified: "github.com/darktable-org/darktable/"
@@ -16,7 +23,7 @@ cask "darktable" do
     regex(/href=.*?darktable[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
   end
 
-  depends_on macos: ">= :ventura"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "darktable.app"
 

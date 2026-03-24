@@ -6,9 +6,8 @@ cask "popmaker" do
   name "PopMaker"
   homepage "https://brettterpstra.com/2014/05/12/popmaker-popclip-extension-generator/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-14", because: :discontinued
+  disable! date: "2025-10-14", because: :discontinued
 
   app "PopMaker.app"
 

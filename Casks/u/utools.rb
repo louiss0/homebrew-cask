@@ -1,9 +1,9 @@
 cask "utools" do
   arch arm: "-arm64"
 
-  version "7.2.1"
-  sha256 arm:   "68b48a4e1e7aca447d29872613bca41e7274c1e34466c26570ee16125f9f3380",
-         intel: "b60eead00a1c71c881e6d786999c0006bce0b8be4e9430e399560d7da1d1a4c3"
+  version "7.6.1"
+  sha256 arm:   "81a987fc28072fd88bfc974a5e1a30ccd690b3331faaa5b2922697461862baa6",
+         intel: "a805ffa963084bc05990e207177e7fe85b6a5ffa353fe13cd08c85406f0e99b4"
 
   url "https://open.u-tools.cn/download/uTools-#{version}#{arch}.dmg"
   name "uTools"
@@ -14,8 +14,6 @@ cask "utools" do
     url "https://www.u-tools.cn/download/"
     regex(/uTools[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
-
-  depends_on macos: ">= :high_sierra"
 
   app "uTools.app"
 

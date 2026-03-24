@@ -1,5 +1,5 @@
 cask "odbc-manager" do
-  version "1.0.24"
+  version "1.0.25"
   sha256 :no_check
 
   url "https://www.odbcmanager.net/downloads/ODBC_Manager64_Installer.dmg"
@@ -11,8 +11,6 @@ cask "odbc-manager" do
     url :homepage
     regex(/Download\s*ODBC\s*Manager\s*v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   conflicts_with cask: "actual-odbc-pack"
 

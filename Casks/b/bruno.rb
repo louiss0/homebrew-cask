@@ -1,9 +1,9 @@
 cask "bruno" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.7.0"
-  sha256 arm:   "a537da9e2356b2fd0d8a22ecd14f313b7bef381e7e662b6256e7a51678d8173d",
-         intel: "19f5dce51c7c77a8adc7bda9a4f970e849c7dd2daaf7c78c05b419dcad64073a"
+  version "3.2.0"
+  sha256 arm:   "246470d4d569380c2b58e58d59522b4e7f425ba009190d6975e8795dcdea116e",
+         intel: "72918531c59daa591323acfd36a5e0d62cd4ae084acfdcfd2bbb9c05c8108a26"
 
   url "https://github.com/usebruno/bruno/releases/download/v#{version}/bruno_#{version}_#{arch}_mac.dmg",
       verified: "github.com/usebruno/bruno/"
@@ -16,6 +16,7 @@ cask "bruno" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: ">= :big_sur"
 
   app "Bruno.app"

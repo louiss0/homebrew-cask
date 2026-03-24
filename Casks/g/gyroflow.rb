@@ -1,16 +1,12 @@
 cask "gyroflow" do
-  version "1.6.1"
-  sha256 "3c9ae9fbc8de95ea02e87891159711f98920d15014cc01bb03ff112226eb1627"
+  version "1.6.3"
+  sha256 "fbe26793c639f1410d8995debad188721587108cb6a74224e879f79e4bb8a1c0"
 
   url "https://github.com/gyroflow/gyroflow/releases/download/v#{version}/Gyroflow-mac-universal.dmg",
       verified: "github.com/gyroflow/gyroflow/"
   name "Gyroflow"
   desc "Video stabilization using gyroscope data"
   homepage "https://gyroflow.xyz/"
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
 
   app "Gyroflow.app"
 

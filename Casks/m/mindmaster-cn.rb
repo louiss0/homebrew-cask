@@ -1,8 +1,8 @@
 cask "mindmaster-cn" do
-  version "12.3.4,5379"
-  sha256 "020bbdf064b5bf5c42d2778cb9b6984643e45e7fcf2c656be4e2e3fb61435cbd"
+  version "13.0.13,5379"
+  sha256 "b94f8d9596325306ed476f856f329c74c370405e7c664c37c68b2631268dc476"
 
-  url "https://cc-download.edrawsoft.cn/mindmaster_cn_full#{version.csv.second}.dmg"
+  url "https://cc-download.edrawsoft.cn/cbs_down/mindmaster_cn_full#{version.csv.second}.dmg"
   name "MindMaster"
   name "亿图脑图MindMaster"
   desc "Mind mapping software"

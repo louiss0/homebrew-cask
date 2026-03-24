@@ -1,9 +1,9 @@
 cask "dotnet-sdk" do
   arch arm: "arm64", intel: "x64"
 
-  version "9.0.301"
-  sha256 arm:   "d19e341938cf17c2194bdb6d9f5131b8265f47c810226a5668ff7ebac20ab0c3",
-         intel: "404e52b7837df74eae8d51a3b10fefc8a7efe25f3a711584b52b1a86c61a24fc"
+  version "10.0.201"
+  sha256 arm:   "0443386286ec778c4271a49b1447f7573d642e159717ad5033e24b14d6ce3d5c",
+         intel: "d853fbdd308b13e623eae07072027cc6254ddd429f647ff7ac841c0a44d844ab"
 
   url "https://builds.dotnet.microsoft.com/dotnet/Sdk/#{version}/dotnet-sdk-#{version}-osx-#{arch}.pkg"
   name ".NET SDK"
@@ -30,11 +30,12 @@ cask "dotnet-sdk" do
     "dotnet-runtime",
     "dotnet-runtime@preview",
     "dotnet-sdk@preview",
-  ], formula: "dotnet"
-  depends_on macos: ">= :mojave"
+  ]
+  depends_on macos: ">= :monterey"
 
   pkg "dotnet-sdk-#{version.csv.first}-osx-#{arch}.pkg"
   binary "/usr/local/share/dotnet/dotnet"
+  binary "/usr/local/share/dotnet/dnx"
 
   uninstall pkgutil: [
     "com.microsoft.dotnet.*#{version.major_minor}*#{arch}",

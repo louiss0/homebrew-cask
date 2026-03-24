@@ -1,6 +1,6 @@
 cask "ddnet" do
-  version "19.3"
-  sha256 "37fc33a21ef6c97f56bdf8abf54c09b524ecbe5ea4ab4f56dd570ca02bd9b2f3"
+  version "19.8"
+  sha256 "17f4dee026352063ae075755b811f676dd3dadac2d04b228ea3566f8df6673cc"
 
   url "https://ddnet.org/downloads/DDNet-#{version}-macos.dmg"
   name "DDNet"
@@ -13,6 +13,7 @@ cask "ddnet" do
   end
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "DDNet.app"
   app "DDNet-Server.app"

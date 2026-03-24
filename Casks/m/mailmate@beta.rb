@@ -13,10 +13,7 @@ cask "mailmate@beta" do
     regex(/Revision\s(\d+)/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   conflicts_with cask: "mailmate"
-  depends_on macos: ">= :sierra"
 
   app "MailMate.app"
   binary "#{appdir}/MailMate.app/Contents/Resources/emate"

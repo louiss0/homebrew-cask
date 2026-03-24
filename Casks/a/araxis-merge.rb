@@ -1,10 +1,6 @@
 cask "araxis-merge" do
   on_big_sur :or_older do
-    on_mojave :or_older do
-      version "2021.5602"
-      sha256 "06c56e6d08057090f3718b6db560e2a79551f953d4c83c0fad8b60f415c59347"
-    end
-    on_catalina do
+    on_catalina :or_older do
       version "2022.5786"
       sha256 "a8a65089d7965a3ecdf3b65dbeaed54f4f31d0bc7b85c9d970aa999ab5cfa4df"
     end
@@ -18,8 +14,8 @@ cask "araxis-merge" do
     end
   end
   on_monterey :or_newer do
-    version "2025.0"
-    sha256 "ee5acb1b7fdce128b2c267b9b9cc3318f324b1dc63685163135b7d4e523d8810"
+    version "2025.1"
+    sha256 "16a46064ea2e446975b92bd4cd147304782ee2abf8f61d0c640b9ca8207011ef"
 
     livecheck do
       url "https://www.araxis.com/merge/download.en"
@@ -31,10 +27,6 @@ cask "araxis-merge" do
   name "Araxis Merge"
   desc "Two and three-way file comparison, merging and folder synchronisation"
   homepage "https://www.araxis.com/merge/"
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
 
   app "Araxis Merge.app"
   binary "#{appdir}/Araxis Merge.app/Contents/Utilities/araxishgmerge"

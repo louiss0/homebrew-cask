@@ -1,9 +1,9 @@
 cask "tandem" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.2.1630,250508dxf0xxx99"
-  sha256 arm:   "0f0e554fc859c4535d94b783a0769299603451379b190bf42a9eef8af64a3d3b",
-         intel: "c1a85e0d59dd20b4becf81e689ef79576c6464c78078706083043fec4f27039c"
+  version "3.0.0,251226zduiutrs9"
+  sha256 arm:   "752cb298635d614c59737806fb8ed13ba485d87d3a8ecc2b6eb03dc2f9c1503c",
+         intel: "754f7d4070801d9c4a2d4ceebdc30f2edf25ba6fa18674e1eaf66089201b31f7"
 
   url "https://download.todesktop.com/200527auaqaacsy/Tandem%20#{version.csv.first}%20-%20Build%20#{version.csv.second}-#{arch}.dmg",
       verified: "download.todesktop.com/200527auaqaacsy/"
@@ -25,7 +25,7 @@ cask "tandem" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :monterey"
 
   app "Tandem.app"
 

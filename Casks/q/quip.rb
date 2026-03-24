@@ -1,6 +1,6 @@
 cask "quip" do
-  version "8.92.0"
-  sha256 "8cef3bb3aec847531b3eafb60c0d7c43f4f7daf053d387e139c5b8cbe823c528"
+  version "9.32.12"
+  sha256 "bbcfdb2869f7b6090281a9c1aa2ec79bb6a006cd827690c75f332590dcf1bd72"
 
   url "https://quip-clients.com/macosx_#{version}.dmg",
       verified: "quip-clients.com/"
@@ -14,7 +14,6 @@ cask "quip" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "Quip.app"
 

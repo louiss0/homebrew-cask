@@ -1,19 +1,9 @@
 cask "texstudio" do
-  version "4.8.7"
+  arch arm: "-m1"
 
-  on_ventura :or_older do
-    sha256 "4f325c3bf10e0f63e8b4fb46d5c2a7362060dbfbae63148af49ae337b780f752"
-
-    caveats do
-      requires_rosetta
-    end
-  end
-  on_sonoma :or_newer do
-    arch arm: "-m1"
-
-    sha256 arm:   "73c7195d4ae56bf1b5757012cff3b87ccce885c427c1233c2d584b641172a023",
-           intel: "4f325c3bf10e0f63e8b4fb46d5c2a7362060dbfbae63148af49ae337b780f752"
-  end
+  version "4.9.2"
+  sha256 arm:   "b404caf563ec3f7de953cf7368b8a04c572bd327d17763464a5f95e757c35099",
+         intel: "1cd7a9585bf135122ec95555347152789d093e54a5811ffd48327f069e534f6e"
 
   url "https://github.com/texstudio-org/texstudio/releases/download/#{version}/texstudio-#{version}-osx#{arch}.zip",
       verified: "github.com/texstudio-org/texstudio/"
@@ -21,7 +11,9 @@ cask "texstudio" do
   desc "LaTeX editor"
   homepage "https://texstudio.org/"
 
-  depends_on macos: ">= :big_sur"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :ventura"
 
   app "texstudio-#{version}-osx#{arch}.app"
 

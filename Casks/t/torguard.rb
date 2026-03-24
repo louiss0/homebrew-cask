@@ -13,10 +13,6 @@ cask "torguard" do
     regex(/TorGuard[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
-
   pkg "Install TorGuard.pkg"
 
   uninstall pkgutil: "net.torguard.TorGuardDesktopQt",

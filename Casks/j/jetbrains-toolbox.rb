@@ -1,9 +1,9 @@
 cask "jetbrains-toolbox" do
   arch arm: "-arm64"
 
-  version "2.6.3,2.6.3.43718"
-  sha256 arm:   "038b2658899e1f08106bda1a469b7f58f4711be0d609d43b66b8cd34ac15d3a2",
-         intel: "dc2cd4280a7e63fb029c6808ed490cba7e179cd11448883d75616295ed4c2e4e"
+  version "3.4,3.4.0.77112"
+  sha256 arm:   "2672b8efb217ea912567b5830dfacb586e5620b703b6349394a7723c66e94d2b",
+         intel: "45f49628fb5a2530c2c532946cd6d752d4a8469890548b7f8da7491a1d9908bf"
 
   url "https://download.jetbrains.com/toolbox/jetbrains-toolbox-#{version.csv.second}#{arch}.dmg"
   name "JetBrains Toolbox"
@@ -24,7 +24,6 @@ cask "jetbrains-toolbox" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "JetBrains Toolbox.app"
 

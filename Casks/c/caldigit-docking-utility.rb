@@ -13,9 +13,10 @@ cask "caldigit-docking-utility" do
     skip "No version information available"
   end
 
-  no_autobump! because: :requires_manual_review
+  # The url is unversioned, but the download returns a pkg with a version number
+  rename "CalDigit Docking Station Utility*.pkg", "CalDigit Docking Station Utility.pkg"
 
-  pkg "CalDigit Docking Station Utility v#{version}.pkg"
+  pkg "CalDigit Docking Station Utility.pkg"
 
   uninstall signal:  ["TERM", "CalDigit.CalDigit-Docking-Station-Utility"],
             pkgutil: "com.CalDigit.CDSU#{arch}.pkg"

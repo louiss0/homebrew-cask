@@ -1,6 +1,6 @@
 cask "mailtrackerblocker" do
-  version "0.8.6"
-  sha256 "96dc1e4386386362b204c6e0e40055c86766dfe12ef74c8ae3d30d11922085ea"
+  version "0.8.10"
+  sha256 "1ed068e689a3a64bb489881d912a79b7f584e8bd564f073de8e0bc9a18c0ecb2"
 
   url "https://github.com/apparition47/MailTrackerBlocker/releases/download/#{version}/MailTrackerBlocker.pkg",
       verified: "github.com/apparition47/MailTrackerBlocker/"
@@ -8,10 +8,7 @@ cask "mailtrackerblocker" do
   desc "Email tracker, read receipt and spy pixel blocker plugin for Apple Mail"
   homepage "https://apparition47.github.io/MailTrackerBlocker/"
 
-  no_autobump! because: :requires_manual_review
-
-  deprecate! date: "2024-04-22", because: :moved_to_mas
-  disable! date: "2025-04-22", because: :moved_to_mas
+  no_autobump! because: :bumped_by_upstream
 
   auto_updates true
   depends_on macos: "<= :ventura"

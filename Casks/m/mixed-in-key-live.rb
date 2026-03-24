@@ -1,5 +1,5 @@
 cask "mixed-in-key-live" do
-  version "11.0.1.550"
+  version "11.0.4.567"
   sha256 :no_check
 
   url "https://builds.mixedinkey.com/download/55/release/latest?key=public"
@@ -12,9 +12,8 @@ cask "mixed-in-key-live" do
     strategy :header_match
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   pkg "Mixed In Key Live.pkg"
 

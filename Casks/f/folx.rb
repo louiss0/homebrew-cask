@@ -1,5 +1,5 @@
 cask "folx" do
-  version "5.29"
+  version "5.33"
   sha256 :no_check
 
   url "https://cdn.electronic.us/products/folx/mac/download/downloader_mac.dmg",
@@ -13,10 +13,7 @@ cask "folx" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :sierra"
 
   app "Folx.app"
 
@@ -36,8 +33,4 @@ cask "folx" do
     "~/Library/Preferences/com.eltima.FolxAgent.plist",
     "~/Library/Saved Application State/com.eltima.Folx3.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

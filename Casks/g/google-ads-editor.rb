@@ -1,5 +1,5 @@
 cask "google-ads-editor" do
-  version "2.9"
+  version "2.12"
   sha256 :no_check
 
   url "https://dl.google.com/adwords_editor/Google_AdWords_Editor.dmg"
@@ -11,8 +11,6 @@ cask "google-ads-editor" do
     url "https://support.google.com/google-ads/editor/topic/13728"
     regex(/version\s+v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :monterey"

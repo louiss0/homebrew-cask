@@ -7,7 +7,7 @@ cask "git-it" do
   desc "Desktop app for learning Git and GitHub"
   homepage "https://github.com/jlord/git-it-electron"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Git-it-Mac-x64/Git-it.app"
 

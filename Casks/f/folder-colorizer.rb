@@ -1,6 +1,6 @@
 cask "folder-colorizer" do
-  version "4.11.7"
-  sha256 "808adcafef59c3f1b7d4358e4eb07798983c45f4ad29079c40f4eb204688f19c"
+  version "4.11.8"
+  sha256 "bc94f79a953d7682648d29f3740a77096bb94b638d83ef0ced0e5e4f5797c3c8"
 
   url "https://ushining.softorino.com/shine_uploads/foldercolorizermac_#{version}.dmg"
   name "Folder Colorizer"
@@ -12,9 +12,8 @@ cask "folder-colorizer" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "Folder Colorizer.app"
 

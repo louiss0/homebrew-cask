@@ -1,6 +1,6 @@
 cask "openscad@snapshot" do
-  version "2025.07.04"
-  sha256 "67b4ad11943f831f588c8bee6ebd67228be5cc6c6377ff09214f813acf3fff63"
+  version "2026.03.16"
+  sha256 "817c67a4732f0c61c11fd02de3f448d1aa291ab6be5ba4ff9fd8380ef0fcf215"
 
   url "https://files.openscad.org/snapshots/OpenSCAD-#{version}.dmg"
   name "OpenSCAD"
@@ -13,6 +13,7 @@ cask "openscad@snapshot" do
   end
 
   conflicts_with cask: "openscad"
+  depends_on macos: ">= :monterey"
 
   app "OpenSCAD.app"
   binary "#{appdir}/OpenSCAD.app/Contents/MacOS/OpenSCAD", target: "openscad"

@@ -8,9 +8,8 @@ cask "lockdown" do
   desc "Audits and remediates security configuration settings"
   homepage "https://objective-see.org/products/lockdown.html"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2025-03-02", because: :unmaintained
+  disable! date: "2026-03-02", because: :unmaintained
 
   app "Lockdown.app"
 

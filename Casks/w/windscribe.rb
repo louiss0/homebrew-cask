@@ -1,6 +1,6 @@
 cask "windscribe" do
-  version "2.15.9"
-  sha256 "766c891aaced2d49033026704d04d7c6f6b57e36b47230c09a13f06c26bdfb93"
+  version "2.20.7"
+  sha256 "3cb538a6bbda0388470621f856e2c3652cc2b6f28a64545e80899cb22879ef71"
 
   url "https://deploy.totallyacdn.com/desktop-apps/#{version}/Windscribe_#{version}_universal.dmg",
       verified: "deploy.totallyacdn.com/desktop-apps/"

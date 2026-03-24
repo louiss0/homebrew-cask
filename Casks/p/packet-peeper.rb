@@ -7,7 +7,7 @@ cask "packet-peeper" do
   desc "Network protocol analyzer"
   homepage "https://github.com/choll/packetpeeper"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Packet Peeper.app"
 

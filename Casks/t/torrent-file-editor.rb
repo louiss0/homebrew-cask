@@ -1,6 +1,6 @@
 cask "torrent-file-editor" do
-  version "1.0.0"
-  sha256 "c815da8676388b30db7a2bb5e6691df72519b543eb3f5785ba13f39f658acb14"
+  version "1.0.2"
+  sha256 "ca32e993d17fb61d39ad3305d2bd5d518174ffb5a20dba025f7382dec5400599"
 
   url "https://github.com/torrent-file-editor/torrent-file-editor/releases/download/v#{version}/torrent-file-editor-#{version}.dmg",
       verified: "github.com/torrent-file-editor/torrent-file-editor/"
@@ -8,9 +8,7 @@ cask "torrent-file-editor" do
   desc "GUI for editing and creating torrent files"
   homepage "https://torrent-file-editor.github.io/"
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Torrent File Editor.app"
 

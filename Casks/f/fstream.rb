@@ -7,9 +7,8 @@ cask "fstream" do
   desc "WebRadio listener/recorder software"
   homepage "https://www.sourcemac.com/?page=fstream"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-11-01", because: :unmaintained
+  disable! date: "2025-11-01", because: :unmaintained
 
   app "FStream.app"
 

@@ -1,6 +1,6 @@
 cask "mellel" do
-  version "6.4.0,64012"
-  sha256 "66280116308fba832f2ccb753e42fa9ac20a1e8b56b983c955596416f3a7acda"
+  version "6.6.5,66510"
+  sha256 "8ee806dfc0cedb43c0fe86e415163f1457eecfa4872109b7b5fef113d9d28e35"
 
   url "https://d1riogbqt3a9uw.cloudfront.net/mellel_#{version.csv.second}.dmg",
       verified: "d1riogbqt3a9uw.cloudfront.net/"
@@ -22,7 +22,6 @@ cask "mellel" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Mellel #{version.major}.app"
 

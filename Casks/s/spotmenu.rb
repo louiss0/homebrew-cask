@@ -1,6 +1,6 @@
 cask "spotmenu" do
-  version "2.1.0"
-  sha256 "0b7b5727fa7ff9cceb6363f145cf16f3d09b38d2a1482c8745724c4b52e0ac99"
+  version "2.3.0"
+  sha256 "00394a4ce7413e9fbb8d9df11c0154dde011a74fc1b013f4a9e613883c2dcb8c"
 
   url "https://github.com/kmikiy/SpotMenu/releases/download/v#{version}/SpotMenu.app.zip"
   name "SpotMenu"
@@ -13,7 +13,7 @@ cask "spotmenu" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :ventura"
 
   app "SpotMenu.app"
 

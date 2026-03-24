@@ -1,6 +1,6 @@
 cask "microsoft-edge" do
-  version "138.0.3351.65,872e4b54-2592-4a5d-b07e-a7003d07b1c6"
-  sha256 "ac470a66fdd6d588a6ed4e7b61e47d4e1718dca35721c0ae33fb8ee9ce7c29c7"
+  version "146.0.3856.72,efa8e7a7-9101-457f-a0b2-da924575e033"
+  sha256 "683166aaaf3d90496d85a2f1fcb4d8e41d74439b943e5e14b02a63a612ed83e1"
 
   url "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/#{version.csv.second}/MicrosoftEdge-#{version.csv.first}.dmg"
   name "Microsoft Edge"
@@ -19,7 +19,7 @@ cask "microsoft-edge" do
   end
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "Microsoft Edge.app"
 

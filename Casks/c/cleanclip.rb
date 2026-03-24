@@ -1,6 +1,6 @@
 cask "cleanclip" do
-  version "2.4.1"
-  sha256 "e466f9c7f7b8899468794217cca1dd0d9bc041336be26eb7fe97bdaeaee4c54f"
+  version "2.4.6"
+  sha256 "c7fb0c39dc89698a4ca4f80ce905478d965857d7c2629c7f2cb0ffbd14a4a851"
 
   url "https://cleanclip.cc/releases/download/v#{version}/CleanClip.dmg"
   name "CleanClip"

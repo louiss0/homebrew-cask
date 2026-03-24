@@ -12,10 +12,6 @@ cask "prowritingaid" do
     regex(/Version\s*v?(\d+(?:\.\d+)+)/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
-
   app "ProWritingAid.app"
 
   zap trash: [

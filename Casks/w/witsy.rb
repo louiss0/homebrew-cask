@@ -1,9 +1,9 @@
 cask "witsy" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.10.0"
-  sha256 arm:   "82245d9dd78b7e3aca89d53ff885dd96108418c3cbdf226e0dc99b1b32210fbb",
-         intel: "21fd424fc7313b327d75b83e769d283c4d0d6d126bfe4c48877465f4f3fcf3ed"
+  version "3.5.2"
+  sha256 arm:   "e9c8e371362c43b41812b17f7280807a5feb3cb9a4829ca0909824639ca23205",
+         intel: "fb9d62c2e050e7969ef3bc535eb4ce02239174667b2eb174e8038eb2f0b29d5a"
 
   url "https://github.com/nbonamy/witsy/releases/download/v#{version}/Witsy-#{version}-darwin-#{arch}.dmg",
       verified: "github.com/nbonamy/witsy/"
@@ -19,7 +19,7 @@ cask "witsy" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "Witsy.app"
 

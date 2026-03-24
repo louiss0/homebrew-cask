@@ -12,10 +12,6 @@ cask "twelite-stage" do
     regex(/MWSTAGEv?(\d+(?:[._]\d+)+)/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
-
   # It is an SDK with a shell-based application that
   # includes source code and other user resources.
   # It is neither an "app" nor a "suite".

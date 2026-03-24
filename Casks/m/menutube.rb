@@ -8,7 +8,7 @@ cask "menutube" do
   desc "Tool to capture YouTube into the menu bar"
   homepage "https://edanchenkov.github.io/MenuTube/"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "MenuTube.app"
 

@@ -1,8 +1,8 @@
 cask "insta360-studio" do
-  version "5.6.4,release_insta360,RC_build65,_20250630_151425_signed_1751267755970,a028cfd724beaf477ca68bd74321cc2a"
-  sha256 "8b353d9cdf254a87b6e0c9d180688000fa008336e0c5220672fa7ad70ebe9b9d"
+  version "5.9.2,release_insta360,RC_build54,_20260303_111658_signed_1772515615194,4125b6f1018d4b37b7c41309adc776e8"
+  sha256 "d2d1ad02c5ebad11236db9fbffa7c3138bfccb64db7fe00a3a458e0b5c165f07"
 
-  url "https://file.insta360.com/static/#{version.csv.fifth}/Insta360Studio_#{version.csv.first}_#{version.csv.second}(#{version.csv.third})#{version.csv.fourth}.pkg"
+  url "https://wassets.insta360.com/common/#{version.csv.fifth}/Insta360_Studio_#{version.csv.first}_#{version.csv.second}(#{version.csv.third})#{version.csv.fourth}.zip"
   name "Insta360 Studio"
   desc "Video and photo editor"
   homepage "https://www.insta360.com/"
@@ -15,8 +15,7 @@ cask "insta360-studio" do
   # that may be beta, RC, etc.
   livecheck do
     url "https://openapi.insta360.com/app/appDownload/getGroupApp?group=insta360-go2&X-Language=en-us"
-    regex(%r{/(\h+)/Insta360(?:%20)?Studio(?:[._-]|%20)v?(?:\d+(?:\.\d+)+)[._-](.+)\.pkg}i)
-
+    regex(%r{/(\h+)/Insta360(?:[._-]|%20)?Studio(?:[._-]|%20)v?(\d+(?:\.\d+)+)[._-](.+)\.(?:pkg|zip)}i)
     strategy :json do |json, regex|
       # Find the Insta360 Studio app
       app = json.dig("data", "apps")&.find { |item| item["app_id"] == 38 }
@@ -31,16 +30,17 @@ cask "insta360-studio" do
       channel = newest_release["channels"]&.find { |item| item["channel"] == "official" }
       next if channel.blank?
 
-      # Collect the version parts
-      version = newest_release["version"]
       match = channel["download_url"]&.match(regex)
-      next if version.blank? || match.blank?
+      next if match.blank?
 
-      "#{version},#{match[2].tr("()", ",")},#{match[1]}"
+      "#{match[2]},#{match[3].tr("()", ",")},#{match[1]}"
     end
   end
 
-  pkg "Insta360Studio_#{version.csv.first}_#{version.csv.second}(#{version.csv.third})#{version.csv.fourth}.pkg"
+  # The pkg is often inconsistently named comparatively to the url version
+  rename "Insta360_Studio*.pkg", "Insta360_Studio.pkg"
+
+  pkg "Insta360_Studio.pkg"
 
   uninstall quit:    "com.insta360.studio",
             pkgutil: [

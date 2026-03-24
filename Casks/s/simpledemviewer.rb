@@ -1,6 +1,6 @@
 cask "simpledemviewer" do
-  version "8.5.1"
-  sha256 "e748aaff63eea2aef6a6803f60cbe8a04783e7d8c613057f2ff7a84b5f6f8da8"
+  version "8.5.3"
+  sha256 "fbf367a1ff956f68dd2882074fcb188198e4b0e93481bec78545603a7530393c"
 
   url "https://jizoh.jp/program/SDVr_#{version.no_dots}.zip"
   name "SimpleDEMViewer"
@@ -11,8 +11,6 @@ cask "simpledemviewer" do
     url "https://jizoh.jp/pages/download.html"
     regex(/SimpleDEMViewer\s+v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :monterey"
 

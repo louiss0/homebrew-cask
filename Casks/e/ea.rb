@@ -1,5 +1,5 @@
 cask "ea" do
-  version "13.501.0.6014"
+  version "13.667.1.6173"
   sha256 :no_check
 
   url "https://origin-a.akamaihd.net/EA-Desktop-Client-Download/installer-releases/EA%20app.dmg",
@@ -16,7 +16,6 @@ cask "ea" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "EA app.app"
 

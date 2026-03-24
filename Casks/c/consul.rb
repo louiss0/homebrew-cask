@@ -1,9 +1,9 @@
 cask "consul" do
   arch arm: "arm64", intel: "amd64"
 
-  version "1.21.2"
-  sha256 arm:   "fea0f3f9bb096adcdcb1292da3e4d93996e1c0711be3b2261b6b877bd15b1037",
-         intel: "917754ed822912f5fe7724055a79cccd16ad6d0553438c854fb18ccbe8bb9625"
+  version "1.22.5"
+  sha256 arm:   "a728b166849ce51d107c22073c89217d27510dd9adad3326454273ac80ac2aef",
+         intel: "88028cf5c040a24193b2efd195efa6a6ca043c8340c7eb6b00343eecdf88ca40"
 
   url "https://releases.hashicorp.com/consul/#{version}/consul_#{version}_darwin_#{arch}.zip",
       verified: "releases.hashicorp.com/consul/"
@@ -13,7 +13,7 @@ cask "consul" do
 
   livecheck do
     url "https://releases.hashicorp.com/consul/"
-    regex(%r{href=.*?/consul/v?(\d+(?:\.\d+)+)/}i)
+    regex(%r{href=.*?/v?(\d+(?:\.\d+)+)/}i)
   end
 
   binary "consul"

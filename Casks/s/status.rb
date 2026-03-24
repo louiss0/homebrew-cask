@@ -1,47 +1,28 @@
 cask "status" do
-  arch arm: "aarch64", intel: "x86_64"
+  version "2.37.0,7a514a"
+  sha256 "012daa7f8d088f1375ca536617baeb16a54d6c95d45ac8431f4fa488ebeb4439"
 
-  on_arm do
-    version "2.34.2,03f75f"
-    sha256 "ba0235f5368d580a63efa9ff3bec2eab1ffc7d0deebe009bf5835337e92a4f8d"
-
-    url "https://github.com/status-im/status-desktop/releases/download/#{version.csv.first}/StatusIm-Desktop-#{version.csv.first}-#{version.csv.second}-#{arch}.dmg",
-        verified: "github.com/status-im/status-desktop/releases/download/"
-  end
-  on_intel do
-    version "2.32.1,aab802"
-    sha256 "0335a0b16caf61354d2413d72a51100fca395f1c0c787db3b2890c7674a5a02f"
-
-    url "https://github.com/status-im/status-desktop/releases/download/#{version.csv.first}/StatusIm-Desktop-v#{version.csv.first}-#{version.csv.second}-#{arch}.dmg",
-        verified: "github.com/status-im/status-desktop/releases/download/"
-  end
-
+  url "https://github.com/status-im/status-desktop/releases/download/#{version.csv.first}/StatusIm-Desktop-#{version.csv.first}-#{version.csv.second}-aarch64.dmg",
+      verified: "github.com/status-im/status-desktop/releases/download/"
   name "Status"
   desc "Decentralised wallet and messenger"
   homepage "https://status.app/"
 
-  # Not every GitHub release provides a file for both architectures, so we check
-  # multiple recent releases instead of only the "latest" release.
   livecheck do
     url :url
-    regex(/^StatusIm[._-]Desktop[._-]v?(\d+(?:\.\d+)+)[._-](\h+)[._-]#{arch}\.dmg$/i)
-    strategy :github_releases do |json, regex|
-      json.map do |release|
-        next if release["draft"]
+    regex(/^StatusIm[._-]Desktop[._-]v?(\d+(?:\.\d+)+)[._-](\h+)[._-]aarch64\.dmg$/i)
+    strategy :github_latest do |json, regex|
+      json["assets"]&.map do |asset|
+        match = asset["name"]&.match(regex)
+        next if match.blank?
 
-        release["assets"]&.map do |asset|
-          match = asset["name"]&.match(regex)
-          next if match.blank?
-
-          "#{match[1]},#{match[2]}"
-        end
-      end.flatten
+        "#{match[1]},#{match[2]}"
+      end
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :monterey"
+  depends_on arch: :arm64
+  depends_on macos: ">= :sonoma"
 
   app "Status.app"
 

@@ -1,12 +1,10 @@
 cask "font-lxgw-bright-gb" do
-  version "5.526"
-  sha256 "e2adc37688c94fc152d1fc40186c37f3380bf6188d269aad61b88331e7ecd35c"
+  version "5.528"
+  sha256 "c0b23b1338b06166b8f4ba9b3319b0dc49fc0ca25603fe8ea1f4b8cd6f7bed9a"
 
   url "https://github.com/lxgw/LxgwBright/releases/download/v#{version}/LXGWBrightGB.7z"
   name "LXGW Bright GB"
   homepage "https://github.com/lxgw/LxgwBright"
-
-  no_autobump! because: :requires_manual_review
 
   font "LXGWBrightGB/LXGWBrightGB-Italic.ttf"
   font "LXGWBrightGB/LXGWBrightGB-Light.ttf"

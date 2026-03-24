@@ -7,7 +7,7 @@ cask "crunch-app" do
   desc "PNG image optimiser"
   homepage "https://github.com/chrissimpkins/Crunch"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Crunch.app"
 

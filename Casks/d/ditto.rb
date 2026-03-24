@@ -1,6 +1,6 @@
 cask "ditto" do
-  version "1.11.7"
-  sha256 "1c01024af0df8b9ca69832d36a4a5b03fae591b9bb5255822ced9ecdaf79a7f1"
+  version "1.11.9"
+  sha256 "27fcad6aa285a21c23eca05938bcab5f0123b20228c2049382080c8fc8c0d6f5"
 
   url "https://download.airsquirrels.com/Ditto/App/Mac/Ditto-#{version}.dmg"
   name "Ditto"
@@ -12,10 +12,7 @@ cask "ditto" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Ditto.app"
 

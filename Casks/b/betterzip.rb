@@ -1,9 +1,8 @@
 cask "betterzip" do
-  version "5.3.4"
-  sha256 "ba4b3e468d93299ffc71f86543071cc34ab7b5943c20789c43bc8c50b1472c9b"
+  version "5.4.1"
+  sha256 "74aaa635d38c9a74d54749cec827e42e560ce4234afb516aad0b30fa57852c39"
 
-  url "https://macitbetter.s3.amazonaws.com/BetterZip-#{version}.zip",
-      verified: "macitbetter.s3.amazonaws.com/"
+  url "https://macitbetter.com/dl/BetterZip-#{version}.zip"
   name "BetterZip"
   desc "Utility to create and modify archives"
   homepage "https://macitbetter.com/"
@@ -13,10 +12,7 @@ cask "betterzip" do
     strategy :header_match
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "BetterZip.app"
 

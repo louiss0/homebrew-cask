@@ -1,6 +1,6 @@
 cask "bluewallet" do
-  version "7.1.8"
-  sha256 "ff87d5ddc8988fa9efd8952881b9785b07773705f1c41e32df4f793ba3bceb97"
+  version "7.2.6"
+  sha256 "38299c0800d1bf19656638ccf64266fa1d2e614f2845918fe544c0c1b3935328"
 
   url "https://github.com/BlueWallet/BlueWallet/releases/download/v#{version}/BlueWallet.#{version}.dmg",
       verified: "github.com/BlueWallet/BlueWallet/"
@@ -27,7 +27,7 @@ cask "bluewallet" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :monterey"
 
   app "BlueWallet.app"
 

@@ -1,6 +1,6 @@
 cask "cog-app" do
-  version "3184,0979c55fd"
-  sha256 "9941f1f8417b3c6735eb655802f46e3fda2c488b07bb1742080baa8f47abf904"
+  version "3422,d6b2d453f"
+  sha256 "ebc5393c8d44e48140b11992d5e29722c42072768b38ac63aa0a5c397a63f140"
 
   url "https://cogcdn.cog.losno.co/Cog-#{version.csv.second}.zip"
   name "Cog"
@@ -19,7 +19,6 @@ cask "cog-app" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Cog.app"
 

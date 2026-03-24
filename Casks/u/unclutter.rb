@@ -1,5 +1,5 @@
 cask "unclutter" do
-  version "2.1.25d"
+  version "2.2.16d"
   sha256 :no_check
 
   url "https://unclutterapp.com/files/Unclutter.zip"
@@ -8,13 +8,9 @@ cask "unclutter" do
   homepage "https://unclutterapp.com/"
 
   livecheck do
-    url "https://unclutterapp.com/updates/"
+    url "https://unclutterapp.com/updates/feed/?osVersion=99"
     strategy :sparkle, &:short_version
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
 
   app "Unclutter.app"
 

@@ -1,15 +1,20 @@
 cask "proton-drive" do
-  version "2.6.0"
-  sha256 "f3b163900603f6f6e30d417275774c8f7ef3da027b754b6c6905bfc3f2861893"
+  version "2.10.3"
+  sha256 "7ccf585786a66f6173aec359cf5b91c59c7c4db7aa4268a9f96618dd9afd213a"
 
-  url "https://proton.me/download/drive/macos/ProtonDrive-#{version}.dmg"
+  url "https://proton.me/download/drive/macos/#{version}/ProtonDrive-#{version}.dmg"
   name "Proton Drive"
   desc "Client for Proton Drive"
   homepage "https://proton.me/drive"
 
+  # The appcast publishes versions in `gradual-rollout` and `stable` channals.
+  # The upstream download page serves the `stable` version, so we track the
+  # `stable` channel.
   livecheck do
     url "https://proton.me/download/drive/macos/appcast.xml"
-    strategy :sparkle, &:short_version
+    strategy :sparkle do |items|
+      items.find { |item| item.channel == "stable" }&.short_version
+    end
   end
 
   auto_updates true

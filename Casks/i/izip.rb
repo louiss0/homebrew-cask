@@ -1,15 +1,17 @@
 cask "izip" do
-  version "5.0.53"
+  version "26.01"
   sha256 :no_check
 
-  url "https://www.izip.com/izip.dmg"
+  url "https://www.izip.com/izip.dmg",
+      user_agent: :browser
   name "iZip"
   desc "App to manage ZIP, ZIPX, RAR, TAR, 7ZIP and other compressed files"
   homepage "https://www.izip.com/"
 
   livecheck do
-    url "https://www.izip.com/updates"
-    strategy :sparkle
+    url "https://www.izip.com/updates",
+        user_agent: :browser
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

@@ -1,6 +1,6 @@
 cask "syncmate" do
-  version "8.9.563"
-  sha256 "312fd1fe034b4e268bc009cb1532fa13a23a609fb78f0d4748738b824f314e70"
+  version "8.10.575"
+  sha256 "40338edb0651afd9578333467ff847053e62b8b82017193dda7418abb1ef87a3"
 
   url "https://cdn.electronic.us/products/syncmate/mac/update/SyncMate_#{version}.zip",
       verified: "cdn.electronic.us/products/syncmate/"
@@ -12,10 +12,6 @@ cask "syncmate" do
     url "https://cdn.electronic.us/products/syncmate/mac/update/syncmate6.xml"
     strategy :sparkle
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
 
   app "SyncMate.app"
 

@@ -7,12 +7,8 @@ cask "iceberg" do
   desc "Integrated packaging environment"
   homepage "http://s.sudre.free.fr/Software/Iceberg.html"
 
-  livecheck do
-    url "http://s.sudre.free.fr/Software/documentation/Iceberg/English.lproj/documentation/Release%20Notes.html"
-    regex(/Version\s+(\d+(?:\.\d+)+)/i)
-  end
-
-  no_autobump! because: :requires_manual_review
+  # Artifact not available over HTTPS
+  disable! date: "2025-12-23", because: :no_longer_meets_criteria
 
   pkg "Iceberg.mpkg"
 

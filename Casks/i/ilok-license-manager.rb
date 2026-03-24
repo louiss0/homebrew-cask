@@ -1,5 +1,5 @@
 cask "ilok-license-manager" do
-  version "5.10.1"
+  version "5.10.4"
   sha256 :no_check
 
   url "https://installers.ilok.com/iloklicensemanager/LicenseSupportInstallerMac.zip"
@@ -13,10 +13,6 @@ cask "ilok-license-manager" do
       item.short_version.split.first
     end
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
 
   pkg "License Support.pkg"
 

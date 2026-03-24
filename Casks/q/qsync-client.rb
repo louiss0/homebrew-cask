@@ -1,6 +1,6 @@
 cask "qsync-client" do
-  version "5.1.4,1504"
-  sha256 "35ebba1b46101ee27f288c860ef521d7565f96d7b225bd6a4c85b7031b624f5c"
+  version "5.1.6,0122"
+  sha256 "be3f5f87021ba6b9117b486ede2754b89a012ccf52e42869d1a2e6ecad6b6abc"
 
   url "https://download.qnap.com/Storage/Utility/QNAPQsyncClientMac-#{version.csv.first}.#{version.csv.second}.dmg"
   name "Qnap Qsync"
@@ -20,8 +20,6 @@ cask "qsync-client" do
       "#{version},#{build}"
     end
   end
-
-  no_autobump! because: :requires_manual_review
 
   installer manual: "Qsync Client.pkg"
 

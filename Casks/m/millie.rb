@@ -1,6 +1,6 @@
 cask "millie" do
-  version "2.5.3"
-  sha256 "0ed59cf448a82d9e566548cc2ade4530e436cd7064119b6839cb36b24ac797cd"
+  version "2.11.2"
+  sha256 "a6c2f3ed9e657c4ffad3dfe1b5859a3af5c57c1d340cc4bd82dd0949e37620cb"
 
   url "https://install.millie.co.kr/flutter/#{version}/millie.dmg"
   name "Millie"
@@ -10,17 +10,13 @@ cask "millie" do
   livecheck do
     url "https://install.millie.co.kr/flutter/flutter_desktop_version.json"
     strategy :json do |json|
-      json["versions"]&.map do |version, platforms|
-        next if platforms["macos"] != "prod"
-
-        version
-      end
+      json.dig("min", "macos")
     end
   end
 
   depends_on macos: ">= :big_sur"
 
-  app "Millie.app"
+  app "밀리의서재.app"
 
   zap trash: [
     "~/Library/Application Support/kr.co.millie.MillieShelf",

@@ -2,12 +2,12 @@ cask "xpra" do
   arch arm: "arm64", intel: "x86_64"
 
   on_arm do
-    version "6.2.3,0"
-    sha256 "762c4e40987193096b187e546b9e02e1cc3891af6e09bc14e1170c64c888b53d"
+    version "6.4.3,0"
+    sha256 "644f581b43958351673d80e4e31e2261dec5ead999964121a1131af011b62d18"
   end
   on_intel do
-    version "6.2.5,0"
-    sha256 "0081002f2a867a2d5cf41a81d4b04b9bbc888d455c65b98cb1c3142e7bae7b78"
+    version "6.4.2,1"
+    sha256 "b59119b255c615fcc2077c2154ca47646c7726d0a5142f4b12a8ca4c6b4a1640"
   end
 
   url "https://xpra.org/dists/MacOS/#{arch}/Xpra-#{arch}-#{version.csv.first}-r#{version.csv.second}.dmg",
@@ -26,7 +26,9 @@ cask "xpra" do
     end
   end
 
-  depends_on macos: ">= :sierra"
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
+
+  depends_on macos: ">= :monterey"
 
   app "Xpra.app"
   binary "#{appdir}/Xpra.app/Contents/MacOS/Xpra", target: "xpra"

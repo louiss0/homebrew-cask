@@ -8,7 +8,7 @@ cask "react-proto" do
   desc "React application prototyping tool for developers and designers"
   homepage "https://react-proto.github.io/react-proto"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "React-Proto.app"
 
@@ -16,4 +16,8 @@ cask "react-proto" do
     "~/Library/Application Support/react-proto",
     "~/Library/Preferences/com.react.proto*.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

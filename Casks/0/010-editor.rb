@@ -1,8 +1,11 @@
 cask "010-editor" do
-  version "15.0.2"
-  sha256 "459b4557701b13929fcd6d7cbac5b4152fc09d7f147adb3f46455ac8100e0d0e"
+  arch arm: "ARM64", intel: "64"
 
-  url "https://download.sweetscape.com/010EditorMac64Installer#{version}.dmg"
+  version "16.0.4"
+  sha256 arm:   "fb253925d3cd4b605f8992ec04bcb20be89e54da9b2166daded7819532035ad9",
+         intel: "bec2345607091a57894d0e42d496a20a410b7d67f08058720b1fba8f99a57489"
+
+  url "https://download.sweetscape.com/010EditorMac#{arch}Installer#{version}.dmg"
   name "010 Editor"
   desc "Text editor"
   homepage "https://www.sweetscape.com/"
@@ -12,7 +15,7 @@ cask "010-editor" do
     regex(/Version:?\s*(\d+(?:\.\d+)+),\s*macOS/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  depends_on macos: ">= :big_sur"
 
   app "010 Editor.app"
 
@@ -22,8 +25,4 @@ cask "010-editor" do
         "~/Library/Saved Application State/com.SweetScape.010Editor.savedState",
       ],
       rmdir: "~/Documents/SweetScape"
-
-  caveats do
-    requires_rosetta
-  end
 end

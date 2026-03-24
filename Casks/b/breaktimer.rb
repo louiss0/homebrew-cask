@@ -1,6 +1,6 @@
 cask "breaktimer" do
-  version "1.3.2"
-  sha256 "d6e46421ec302431132040cbdd148e3ba634b609c42a152ad85c27f00ea440b0"
+  version "2.0.3"
+  sha256 "2b5d3d3a8b9b85c5f41b4eb4384a341ecf6d7d2c0b377619e051a97ceb9ebfdd"
 
   url "https://github.com/tom-james-watson/breaktimer-app/releases/download/v#{version}/BreakTimer.dmg",
       verified: "github.com/tom-james-watson/breaktimer-app/"
@@ -8,7 +8,10 @@ cask "breaktimer" do
   desc "Tool to manage periodic breaks"
   homepage "https://breaktimer.app/"
 
-  no_autobump! because: :requires_manual_review
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   auto_updates true
   depends_on macos: ">= :big_sur"

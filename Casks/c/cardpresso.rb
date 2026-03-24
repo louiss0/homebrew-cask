@@ -1,6 +1,6 @@
 cask "cardpresso" do
-  version "1.7.115"
-  sha256 "4d8808cb1beffc5e4c2944976d7a5b4e7b2ab1cf46995bc2fca5cecc88e402b7"
+  version "1.7.130"
+  sha256 "0e8a0b3e0647cef61310341b7b068943b28025a1aeae3d78b57e418fe06e65c7"
 
   url "https://www.cardpresso.com/downloads/cardpresso_releases/for_mac_osx/cardPresso#{version}.dmg"
   name "cardPresso"
@@ -13,7 +13,6 @@ cask "cardpresso" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "cardPresso.app"
 

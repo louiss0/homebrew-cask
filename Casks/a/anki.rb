@@ -25,23 +25,21 @@ cask "anki" do
     end
   end
   on_monterey :or_newer do
-    version "25.07.1"
-    sha256 "cec4f920f439fc3cce8c3a44eba02a3a7032151146f1c5edfc81ac6ddfd130eb"
+    version "25.09"
+    sha256 "a20952ad45400db2522ff8e8c6e2303d8f5f3ba0fa0ca9e57a14a42912439e77"
 
-    url "https://github.com/ankitects/anki/releases/download/#{version}/Anki.dmg",
+    url "https://github.com/ankitects/anki/releases/download/#{version}/anki-launcher-#{version}-mac.dmg",
         verified: "github.com/ankitects/anki/"
 
     livecheck do
-      url :url
-      strategy :github_latest
+      url :homepage
+      regex(/href=.*?anki[._-]launcher[._-]v?(\d+(?:\.\d+)+)(?:[._-]mac)?\.dmg/i)
     end
   end
 
   name "Anki"
   desc "Memory training application"
   homepage "https://apps.ankiweb.net/"
-
-  depends_on macos: ">= :high_sierra"
 
   app "Anki.app"
 

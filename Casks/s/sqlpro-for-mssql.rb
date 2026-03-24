@@ -1,6 +1,6 @@
 cask "sqlpro-for-mssql" do
-  version "2025.10"
-  sha256 "1236135c53be67809ffae0b6e4f2de49143eda280bcc19dd1f50fc1936840d2b"
+  version "2026.07"
+  sha256 "df8336f535bcdb2c710b6677e23d52a2798cfde3840aad2d327f2a2cfde64207"
 
   url "https://d3fwkemdw8spx3.cloudfront.net/mssql/SQLProMSSQL.#{version}.app.zip",
       verified: "d3fwkemdw8spx3.cloudfront.net/mssql/"
@@ -13,9 +13,7 @@ cask "sqlpro-for-mssql" do
     strategy :header_match
   end
 
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :ventura"
 
   app "SQLPro for MSSQL.app"
 

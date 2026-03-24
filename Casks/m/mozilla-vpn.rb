@@ -1,6 +1,6 @@
 cask "mozilla-vpn" do
-  version "2.29.0"
-  sha256 "521e50a62c760a91ff247bc773bf13e936b3a6b300d96206700ed65a01aa05c5"
+  version "2.34.0"
+  sha256 "709092d604766b102f1490f400a791661a209fe4998dd602463416783141832f"
 
   url "https://archive.mozilla.org/pub/vpn/releases/#{version}/mac/MozillaVPN.pkg"
   name "Mozilla VPN"
@@ -11,8 +11,6 @@ cask "mozilla-vpn" do
     url "https://vpn.mozilla.org/r/vpn/download/mac"
     strategy :header_match
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :big_sur"
 

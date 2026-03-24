@@ -7,7 +7,7 @@ cask "mks" do
   desc "Mechanical keyboard simulator"
   homepage "https://github.com/x0054/MKS"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "MKS.app"
 

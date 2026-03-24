@@ -6,14 +6,7 @@ on:
     branches:
       - main
       - master
-    paths:
-      - '.github/workflows/*.ya?ml'
-      - 'Formula/a/actionlint.rb'
-      - 'Formula/s/shellcheck.rb'
-      - 'Formula/z/zizmor.rb'
   pull_request:
-    paths:
-      - '.github/workflows/*.ya?ml'
 
 defaults:
   run:
@@ -36,6 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    container:
+      image: ghcr.io/homebrew/brew:main
     steps:
       - name: Set up Homebrew
         id: setup-homebrew
@@ -43,19 +38,29 @@ jobs:
         with:
           core: false
           cask: false
-          test-bot: false
+
+      - uses: Homebrew/actions/cache-homebrew-prefix@main
+        # Don't cache the prefix for the formulae.brew.sh repository as it won't download its own JSON API files
+        if: github.repository != 'Homebrew/formulae.brew.sh'
+        with:
+          install: actionlint shellcheck zizmor
+          # Not needed in .github but required for other repositories with multiple uses of cache-homebrew-prefix.
+          workflow-key: actionlint
 
       - name: Install tools
+        if: github.repository == 'Homebrew/formulae.brew.sh'
         run: brew install actionlint shellcheck zizmor
 
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
 
       - run: zizmor --format sarif . > results.sarif
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload SARIF file
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         # We can't use the SARIF file when triggered by `merge_group` so we don't upload it.
         if: always() && github.event_name != 'merge_group'
         with:
@@ -84,19 +89,19 @@ jobs:
       !contains(fromJSON('["cancelled", "skipped"]'), needs.workflow_syntax.result) &&
       !github.event.repository.private &&
       github.event_name != 'merge_group'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       contents: read
       security-events: write
     steps:
       - name: Download SARIF file
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
           name: results.sarif
           path: results.sarif
 
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@181d5eefc20863364f96762470ba6f862bdef56b # v3.29.2
+        uses: github/codeql-action/upload-sarif@0d579ffd059c29b07949a3cce3983f0780820c98 # v4.32.6
         with:
           sarif_file: results.sarif
           category: zizmor

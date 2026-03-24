@@ -1,6 +1,6 @@
 cask "charles" do
-  version "5.0.1"
-  sha256 "42114f8c90fb4eb964e6db761ee61cfeeb81cec1671dd0cc2f0f04c1024a7327"
+  version "5.0.3"
+  sha256 "2dc3535b295ff5b3214d474fb310c2a3fd42433f11d145a5d069c88de1b0dbe0"
 
   url "https://www.charlesproxy.com/assets/release/#{version}/charles-proxy-#{version}.dmg"
   name "Charles"
@@ -8,11 +8,9 @@ cask "charles" do
   homepage "https://www.charlesproxy.com/"
 
   livecheck do
-    url "https://www.charlesproxy.com/latest.do"
+    url "https://www.charlesproxy.com/latest.do", post_json: {}
     regex(/v?(\d+(?:\.\d+)+)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   conflicts_with cask: "charles@4"
 

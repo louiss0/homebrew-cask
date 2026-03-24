@@ -1,9 +1,9 @@
 cask "standard-notes" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.197.0"
-  sha256 arm:   "f9126d9374ed50da107514a0296befc87c9c4595c750c2cccd94464209331173",
-         intel: "f3db3627b81174d34f520abd49ec23f45d7f3dd26a862b1b6ca66fb58cfa91e8"
+  version "3.201.21"
+  sha256 arm:   "192c92d0889dc5b0fbfbd6194d1064afffc06b5d20fe971c1e795aa90e0fdcee",
+         intel: "d2b284b6276b65f25af689d7bd42b8d1b8362539a7f2a9ee4a46561a4ec53242"
 
   url "https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%40#{version}/standard-notes-#{version}-mac-#{arch}.zip",
       verified: "github.com/standardnotes/app/"
@@ -25,7 +25,7 @@ cask "standard-notes" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Standard Notes.app"
 

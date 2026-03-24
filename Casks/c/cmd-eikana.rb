@@ -7,7 +7,7 @@ cask "cmd-eikana" do
   name "⌘英かな"
   homepage "https://github.com/iMasanari/cmd-eikana"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "⌘英かな.app"
 

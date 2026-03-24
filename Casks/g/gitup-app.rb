@@ -13,10 +13,7 @@ cask "gitup-app" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "GitUp.app"
   binary "#{appdir}/GitUp.app/Contents/SharedSupport/gitup"

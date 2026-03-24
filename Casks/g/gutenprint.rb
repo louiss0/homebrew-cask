@@ -8,9 +8,8 @@ cask "gutenprint" do
   desc "Drivers for various printers for use with CUPS and GIMP"
   homepage "https://gimp-print.sourceforge.io/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-10-14", because: :discontinued
+  disable! date: "2025-10-14", because: :discontinued
 
   pkg "gutenprint-#{version}.pkg"
 

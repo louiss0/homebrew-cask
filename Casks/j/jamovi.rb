@@ -1,24 +1,25 @@
 cask "jamovi" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.6.44.0"
-  sha256 arm:   "30ac4a36515b937d1c83eb5034d51a06695c079799364b341340c5c51e83ce2f",
-         intel: "9301617a03a0e0edcb9a5113649820ff04161cd367ff6c5135af75ae3fa3964b"
+  version "2.7.24.0"
+  sha256 arm:   "5098b66d97ea0e4480b593efde3223b82b1e941e10ddc34b0423b0b99cef4473",
+         intel: "0a0bb7314af1cf8a71d50feca38627bf51aaaa8dfde809a831ead10803df6e38"
 
-  url "https://www.jamovi.org/downloads/jamovi-#{version}-macos-#{arch}.dmg"
+  url "https://www.jamovi.org/downloads/jamovi-#{version}-macos-#{arch}.dmg",
+      referer: "https://www.jamovi.org/download.html"
   name "jamovi"
   desc "Statistical software"
   homepage "https://www.jamovi.org/"
 
+  # The download page will redirect to the homepage unless a `referer` is used.
   livecheck do
-    url "https://www.jamovi.org/download.html"
+    url "https://www.jamovi.org/download.html",
+        referer: "https://www.jamovi.org"
     regex(/href=.*?jamovi[._-]v?(\d+(?:\.\d+)+)[._-]macos[._-]#{arch}\.dmg/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :monterey"
 
   app "jamovi.app"
 

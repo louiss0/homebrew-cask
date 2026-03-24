@@ -14,10 +14,7 @@ cask "bias-fx" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   pkg "BIAS_FX_#{version.major}_App.pkg"
 

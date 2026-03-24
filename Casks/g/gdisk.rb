@@ -7,7 +7,7 @@ cask "gdisk" do
   desc "Disk partitioning tool"
   homepage "https://sourceforge.net/projects/gptfdisk/"
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   pkg "gdisk-#{version}.pkg"
 

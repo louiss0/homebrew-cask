@@ -7,14 +7,8 @@ cask "betaflight-configurator" do
   desc "Configuration tool for the Betaflight firmware"
   homepage "https://github.com/betaflight/betaflight-configurator"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :high_sierra"
+  deprecate! date: "2025-12-26", because: :discontinued
+  disable! date: "2026-12-26", because: :discontinued
 
   app "Betaflight Configurator.app"
 

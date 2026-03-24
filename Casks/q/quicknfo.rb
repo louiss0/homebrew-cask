@@ -7,7 +7,7 @@ cask "quicknfo" do
   desc "Quick Look plugin for viewing NFO files"
   homepage "https://github.com/planbnet/QuickNFO"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "QuickNFO.qlgenerator"
 

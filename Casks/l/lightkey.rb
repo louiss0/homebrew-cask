@@ -1,46 +1,5 @@
 cask "lightkey" do
-  on_monterey :or_older do
-    version "4.4.5"
-    sha256 "457df4bb2d2f21a52eec9b9b05830eb082014ce66fd79f91544a0838d54a3241"
-
-    # This check should only return legacy versions and the conditions may need
-    # to be updated as the minimum system version of releases changes. If/when
-    # upstream stops publishing new legacy versions, this should be updated to
-    # use `skip` instead.
-    livecheck do
-      url "https://lightkeyapp.com/en/update"
-      strategy :sparkle do |items|
-        items.map do |item|
-          next unless item.minimum_system_version
-          next if item.minimum_system_version < :big_sur ||
-                  item.minimum_system_version > :monterey
-
-          item.version
-        end
-      end
-    end
-  end
-  on_ventura do
-    version "5.3.3"
-    sha256 "656cd6fdbd9ec27c46f6862d483265b5240f5ce107bb6a660b23b6a7c8473d8b"
-
-    # This check should only return legacy versions and the conditions may need
-    # to be updated as the minimum system version of releases changes. If/when
-    # upstream stops publishing new legacy versions, this should be updated to
-    # use `skip` instead.
-    livecheck do
-      url "https://lightkeyapp.com/en/update"
-      strategy :sparkle do |items|
-        items.map do |item|
-          next unless item.minimum_system_version
-          next if item.minimum_system_version > :ventura
-
-          item.version
-        end
-      end
-    end
-  end
-  on_sonoma do
+  on_sonoma :or_older do
     version "5.3.3"
     sha256 "656cd6fdbd9ec27c46f6862d483265b5240f5ce107bb6a660b23b6a7c8473d8b"
 
@@ -61,8 +20,8 @@ cask "lightkey" do
     end
   end
   on_sequoia :or_newer do
-    version "5.5.2"
-    sha256 "021dd5982d7b1ecd96a5cec6742fe2773d0abf0739738612bf0a3590f62bf0e0"
+    version "5.9.1"
+    sha256 "22a39dfc6c16cd74b55bf21826c3bb7da5b6b7950cce9b0ef9f2e0439662b82d"
 
     # Upstream also publishes legacy versions (with a lower minor version) in
     # the appcast, so the first `item` after sorting by `pubDate`/`version` may
@@ -82,7 +41,7 @@ cask "lightkey" do
   homepage "https://lightkeyapp.com/"
 
   auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on macos: ">= :ventura"
 
   pkg "LightkeyInstaller.pkg"
 

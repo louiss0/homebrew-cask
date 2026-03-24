@@ -1,6 +1,6 @@
 cask "memory-cleaner" do
-  version "5.4,253"
-  sha256 "70abc7fa054199f8c9be14615144bce95e749419bc30139fdcd8399c7e1659c8"
+  version "5.5.1,260"
+  sha256 "ccc49e1c55c0cd2a65d8e2db7cb0a68379a64c87848036b39ad5689d8f408b69"
 
   url "https://download.nektony.com/download/memory-cleaner/dmg/memory-cleaner.dmg?build=#{version.csv.second}"
   name "Memory Cleaner"
@@ -13,7 +13,6 @@ cask "memory-cleaner" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   app "Memory Cleaner #{version.major}.app"
 

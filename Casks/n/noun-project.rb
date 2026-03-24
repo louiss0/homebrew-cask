@@ -9,13 +9,11 @@ cask "noun-project" do
   homepage "https://thenounproject.com/"
 
   livecheck do
-    url "https://thenounproject.com/for-mac/feed/"
-    strategy :sparkle, &:short_version
+    url :url
+    strategy :extract_plist do |items|
+      items["com.thenounproject.Noun-Project"]&.short_version
+    end
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :mojave"
 
   app "Noun Project.app"
 

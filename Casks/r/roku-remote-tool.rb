@@ -1,5 +1,5 @@
 cask "roku-remote-tool" do
-  version "4.1.2"
+  version "4.1.5"
   sha256 :no_check
 
   url "https://devtools.web.roku.com/RokuRemote/app/roku-remote-tool-mac.zip"
@@ -13,10 +13,6 @@ cask "roku-remote-tool" do
       json.dig("darwin-x64-prod", "version")
     end
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :el_capitan"
 
   app "roku_remote_tool.app"
 

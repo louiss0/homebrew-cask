@@ -1,11 +1,8 @@
 cask "netxms-console" do
-  arch arm: "-aarch64"
+  version "6.0.5"
+  sha256 "efadd434959f7b7d84dad46fc92e8ead9863ed53c04d138412f8b18bb60d1092"
 
-  version "5.2.3"
-  sha256 arm:   "9c5870a00b0b49e3d00184c06e65525592c5ebf3af008c11678d7992cf430a4b",
-         intel: "e7a8cf7f808f90c4fcf1fee61d5822abd65f51ab8215e1f6fcc3f329e007aa9c"
-
-  url "https://netxms.com/download/releases/#{version.major_minor}/nxmc-#{version}#{arch}.dmg"
+  url "https://netxms.com/download/releases/#{version.major_minor}/nxmc-#{version}.dmg"
   name "NetXMS Management Console"
   desc "Network and infrastructure monitoring and management system"
   homepage "https://netxms.com/"
@@ -15,7 +12,9 @@ cask "netxms-console" do
     regex(/href=.*?nxmc[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  app "NetXMS Console (#{version}).app"
+  depends_on macos: ">= :big_sur"
+
+  app "NetXMS #{version.major_minor}.app"
 
   zap trash: "~/.nxmc"
 end

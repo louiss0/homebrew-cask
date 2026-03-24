@@ -1,20 +1,19 @@
 cask "pinwheel" do
-  version "1.5.6"
-  sha256 "68f4a2398b4e9a9c43d8df9a56da89c3131480fd0c421179b5fd8230ec76a349"
+  version "1.9.0,107"
+  sha256 "970d17e5ec81f35dd5cb375a9152a06da6fe1d68a24a275f17d536e8a7ad1f56"
 
-  url "https://cdn.skala.app/pinwheel/versions/Pinwheel_#{version.dots_to_underscores}.zip",
-      verified: "cdn.skala.app/"
+  url "https://cdn2.bjango.com/pinwheel/versions/Pinwheel_#{version.csv.first.dots_to_underscores}-#{version.csv.second}.zip"
   name "Pinwheel"
   desc "Design systems and accessibility testing"
   homepage "https://bjango.com/mac/pinwheel/"
 
   livecheck do
     url "https://updates.skala.app/pinwheel/pinwheel.xml"
-    strategy :sparkle, &:short_version
+    strategy :sparkle
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: ">= :sequoia"
 
   app "Pinwheel.app"
 

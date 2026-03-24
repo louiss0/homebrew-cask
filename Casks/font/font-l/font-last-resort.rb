@@ -1,12 +1,10 @@
 cask "font-last-resort" do
-  version "16.000"
-  sha256 "f7b2a5ddecf37e3c9d5a4388eb291430f3382b304470b48677f3d40f93d29166"
+  version "17.000"
+  sha256 "c25223fd85c6dbb4cc720a5ae77c15bc1b5317b4488e37ba648180cbe1682a5e"
 
   url "https://github.com/unicode-org/last-resort-font/releases/download/#{version}/LastResort-Regular.ttf"
   name "Last Resort"
   homepage "https://github.com/unicode-org/last-resort-font"
-
-  no_autobump! because: :requires_manual_review
 
   font "LastResort-Regular.ttf"
 

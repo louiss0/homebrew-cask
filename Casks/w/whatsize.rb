@@ -1,6 +1,6 @@
 cask "whatsize" do
-  version "8.2.2"
-  sha256 "e350424f7e8be6e47ee7eb83ce7f90e1d998c7d02ad4b977ba02b060d2f6e15a"
+  version "8.2.4"
+  sha256 "c72c312ac3db237e15d4594a7ee2473b9470a96b0e81e76f57302d9439e88898"
 
   url "https://www.whatsizemac.com/software/whatsize#{version.major}/whatsize_#{version}.pkg"
   name "WhatSize"
@@ -13,7 +13,6 @@ cask "whatsize" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
 
   pkg "whatsize_#{version}.pkg"
 

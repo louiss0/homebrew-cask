@@ -1,6 +1,6 @@
 cask "freedom" do
-  version "2.24.0"
-  sha256 "89806e4437c3180428ad640821e6bebd0e4be78f3ee983fa7799c78563a27d18"
+  version "2.24.5"
+  sha256 "92d0a847bff6113cc397ec4b11699002c04231d1f53bd0b6019a6260b4cbd569"
 
   url "https://cdn.freedom.to/installers/updates/mac/#{version}/Freedom.zip"
   name "Freedom"
@@ -11,8 +11,6 @@ cask "freedom" do
     url "https://cdn.freedom.to/installers/updates/mac/Appcast.xml"
     strategy :sparkle, &:short_version
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :big_sur"

@@ -1,8 +1,8 @@
 cask "sfm" do
-  version "1.11.14"
-  sha256 "802ee1466dd1e522212acba6202ecbc3137db00ef0dcdbb88ae53c7445f47bc9"
+  version "1.13.3"
+  sha256 "d18c5eda5b71d9ec77fdf5faf0fedd5e9637d43a397fd900a78ee210adfc59f3"
 
-  url "https://github.com/SagerNet/sing-box/releases/download/v#{version}/SFM-#{version}-universal.dmg",
+  url "https://github.com/SagerNet/sing-box/releases/download/v#{version}/SFM-#{version}-Universal.pkg",
       verified: "github.com/SagerNet/sing-box/"
   name "SFM"
   desc "Standalone client for sing-box, the universal proxy platform"
@@ -10,10 +10,15 @@ cask "sfm" do
 
   depends_on macos: ">= :ventura"
 
-  app "SFM.app"
+  pkg "SFM-#{version}-Universal.pkg"
 
-  uninstall quit:       "io.nekohasekai.sfa.independent",
-            login_item: "SFM"
+  uninstall quit:       "io.nekohasekai.sfavt.standalone",
+            login_item: "SFM",
+            pkgutil:    "io.nekohasekai.sfavt.standalone"
 
-  zap trash: "~/Library/Group Containers/group.io.nekohasekai.sfa"
+  zap trash: [
+    "~/Library/Application Scripts/287TTNZF8L.io.nekohasekai.sfavt",
+    "~/Library/Group Containers/287TTNZF8L.io.nekohasekai.sfavt",
+    "~/Library/Preferences/io.nekohasekai.sfavt.standalone.plist",
+  ]
 end

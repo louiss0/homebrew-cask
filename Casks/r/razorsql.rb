@@ -1,9 +1,9 @@
 cask "razorsql" do
   arch arm: "_aarch64"
 
-  version "10.6.5"
-  sha256 arm:   "85a618e46aa6e503acb99b91e288123c39ed15a9ffd483b810d06c740e9dab61",
-         intel: "57bb91a31298bac9730efa13a1d8c78262175b07aa637d2f3b2a5f2f8a8bc9dc"
+  version "10.6.7"
+  sha256 arm:   "385cbbd2c2afa3866623037ef674c325c44547d9db62813a6fc4c436e8842021",
+         intel: "3b2bcc7ebd7b7de8df8e8ecafd98884898faeec6f50edaa52dcc59ee0c4d0c64"
 
   url "https://s3.amazonaws.com/downloads.razorsql.com/downloads/#{version.dots_to_underscores}/razorsql#{version.dots_to_underscores}#{arch}.dmg",
       verified: "s3.amazonaws.com/downloads.razorsql.com/downloads/"
@@ -19,7 +19,7 @@ cask "razorsql" do
     end
   end
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "RazorSQL.app"
 

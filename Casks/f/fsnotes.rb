@@ -1,8 +1,8 @@
 cask "fsnotes" do
-  version "6.10.2"
-  sha256 "2ead29b61e49cddb74908f45ba806542664d743c8979359bb88149e8c674119f"
+  version "7.1.1"
+  sha256 "2fcd1509a944e937b3fe24282be16f8ddbe9eb03cfc34a57b9676a0438fcd003"
 
-  url "https://github.com/glushchenko/fsnotes/releases/download/#{version}/FSNotes_#{version}.zip",
+  url "https://github.com/glushchenko/fsnotes/releases/download/v#{version}/FSNotes_v#{version}.zip",
       verified: "github.com/glushchenko/fsnotes/"
   name "FSNotes"
   desc "Notes manager"
@@ -13,7 +13,7 @@ cask "fsnotes" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :monterey"
 
   app "FSNotes.app"
 

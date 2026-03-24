@@ -1,9 +1,9 @@
 cask "wave" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.11.3"
-  sha256 arm:   "37d9e0472c2354c4d9f80eecb3f80d905fa5b58637cb3f375507f577aa8b2b85",
-         intel: "57a6b443899c4adfa20fb76356ac689547942de9aabf80b6324ca369f3b75426"
+  version "0.14.3"
+  sha256 arm:   "05ed402f0bcd9e57aeaeff3c33170c1a5c72f57f529a38728aa837d93992e1eb",
+         intel: "ec1d02aeaf76cc6d461e70c5d42d378de93de60479c88a3583fe0f5a50267fcf"
 
   url "https://dl.waveterm.dev/releases-w2/Wave-darwin-#{arch}-#{version}.dmg"
   name "Wave Terminal"
@@ -17,7 +17,7 @@ cask "wave" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "Wave.app"
 

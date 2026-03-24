@@ -1,6 +1,6 @@
 cask "basictex" do
-  version "2025.0308"
-  sha256 "2ad4c72a6cd4dd81eccece1e6933351c9324aa33d7d6095c1efa65ba8bd6d988"
+  version "2026.0301"
+  sha256 "19164fbfef08c30fd433f59203c8804abbbd685d3a344ef7f0ba8c1fd4157cb3"
 
   url "https://mirror.ctan.org/systems/mac/mactex/mactex-basictex-#{version.no_dots}.pkg",
       verified: "mirror.ctan.org/systems/mac/mactex/"
@@ -16,13 +16,11 @@ cask "basictex" do
     end
   end
 
-  no_autobump! because: :requires_manual_review
-
   conflicts_with cask: [
-    "mactex-no-gui",
     "mactex",
+    "mactex-no-gui",
   ]
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   pkg "mactex-basictex-#{version.no_dots}.pkg"
 

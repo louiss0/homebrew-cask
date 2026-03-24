@@ -1,18 +1,16 @@
 cask "thinlinc-client" do
-  version "4.18.0_3768"
-  sha256 "3a8ca607e386a9b0f8a6e15b183f96a1d3abeac607b8d12510206d135d9201a3"
+  version "4.20.0_4284"
+  sha256 "5a762511077829a004e0acb45bd5b7e6b4ae2dfe12cb62ec04425937d173f230"
 
-  url "https://www.cendio.com/downloads/clients/tl-#{version}-client-macos.iso"
+  url "https://www.cendio.com/downloads/clients/tl-#{version}-client-macos.dmg"
   name "ThinLinc"
   desc "Linux remote desktop server"
   homepage "https://www.cendio.com/thinlinc/what-is-thinlinc/"
 
   livecheck do
     url "https://www.cendio.com/thinlinc/download/"
-    regex(/tl[._-]v?(\d+(?:[._]\d+)+)[._-]client[._-]macos\.iso/i)
+    regex(/tl[._-]v?(\d+(?:[._]\d+)+)[._-]client[._-]macos\.(?:dmg|iso)/i)
   end
-
-  no_autobump! because: :requires_manual_review
 
   app "ThinLinc Client.app"
 

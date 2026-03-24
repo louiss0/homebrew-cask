@@ -1,6 +1,6 @@
 cask "mixin" do
-  version "3.0.3"
-  sha256 "7c891ba1714d287048a687a3ca907adb898113103686ab44c0ec68c1fd89747b"
+  version "3.7.1"
+  sha256 "7c4f235cb3817cb795088e7e0954fd83d657eee6c909c2fd73e874455b42fc76"
 
   url "https://github.com/MixinNetwork/flutter-app/releases/download/v#{version}/mixin-#{version}.dmg",
       verified: "github.com/MixinNetwork/flutter-app/"
@@ -28,7 +28,6 @@ cask "mixin" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "Mixin.app"
 

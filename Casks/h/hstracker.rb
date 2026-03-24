@@ -1,6 +1,6 @@
 cask "hstracker" do
-  version "3.3.0"
-  sha256 "59e1c9e8b8891a71c9db5d522f63309683654ba2fe044724f752550cecec28e0"
+  version "3.5.1"
+  sha256 "83ca28994bfab6b37bfcba104c2396fed9e16d3483dfe773493c229b778ef282"
 
   url "https://github.com/HearthSim/HSTracker/releases/download/#{version}/HSTracker.app.zip",
       verified: "github.com/HearthSim/HSTracker/"
@@ -16,7 +16,6 @@ cask "hstracker" do
   end
 
   auto_updates true
-  depends_on macos: ">= :mojave"
 
   app "HSTracker.app"
 

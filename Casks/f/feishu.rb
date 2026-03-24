@@ -3,12 +3,12 @@ cask "feishu" do
   livecheck_arch = on_arch_conditional arm: "_m1"
 
   on_arm do
-    version "7.46.6,f96f73cb"
-    sha256 "e005e525ea05bb8d199c738f9fabe667b541244660059e764432d7c13b2a8310"
+    version "7.64.6,2d162447"
+    sha256 "1fa066473f54e60c3dc668e024bb2ed2ee7c2aefa13d05eff6ad7cb253641eea"
   end
   on_intel do
-    version "7.46.6,31e117ea"
-    sha256 "3a358ff41bbd13f463c3933569fe062f9b9430b1f332729dfbbcb8675a733fc6"
+    version "7.64.6,5e894a30"
+    sha256 "d5cece372efe196d981a0d7cc685617a9bd75d3ef6f9e7cbe67746c712a8605e"
   end
 
   url "https://sf3-cn.feishucdn.com/obj/ee-appcenter/#{version.csv.second}/Feishu-darwin_#{arch}-#{version.csv.first}-signed.dmg",
@@ -29,7 +29,7 @@ cask "feishu" do
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
   # Renamed for consistency: app name is different in the Finder and in a shell.
   app "Lark.app", target: "Feishu.app"

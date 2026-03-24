@@ -13,7 +13,7 @@ cask "deluge" do
     regex(/href=["']?deluge[._-]v?(\d+(?:\.\d+)+)[._-][a-z0-9._-]*\.dmg/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   app "Deluge.app"
 
@@ -22,8 +22,4 @@ cask "deluge" do
     "~/Library/Preferences/org.deluge.plist",
     "~/Library/Saved Application State/org.deluge.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

@@ -7,22 +7,19 @@ cask "parallels@17" do
   desc "Desktop virtualization software"
   homepage "https://www.parallels.com/products/desktop/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-09-11", because: :discontinued
+  disable! date: "2025-09-11", because: :discontinued
 
   auto_updates true
   conflicts_with cask: [
     "parallels",
-    "parallels@12",
-    "parallels@13",
     "parallels@14",
     "parallels@15",
     "parallels@16",
     "parallels@18",
     "parallels@19",
+    "parallels@20",
   ]
-  depends_on macos: ">= :high_sierra"
 
   app "Parallels Desktop.app"
 

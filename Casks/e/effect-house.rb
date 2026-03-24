@@ -3,15 +3,15 @@ cask "effect-house" do
   livecheck_arch = on_arch_conditional arm: "arm64", intel: "x86_64"
 
   on_arm do
-    version "4.15.0,3792,06172025,104"
-    sha256 "77182dd0d9682afbf18f988cc5015cc621fcc53cccc838db10bc4e2001b2de08"
+    version "5.8.0,9456,03102026,104"
+    sha256 "a2c262529cfe82e70703499a396d14c250a0c6e1560c5d6d04f8ea6b68221744"
   end
   on_intel do
-    version "4.15.0,3794,06172025,104"
-    sha256 "f10bb1a947713e47b75b9a1f54319f0e1b215cebc43afedb5c1d45a6f4871cf6"
+    version "5.8.0,5673,03102026,104"
+    sha256 "8c2545e2bfaba46e70abe3eb0b73584de0f95f43521d5c6d83965d418c76c146"
   end
 
-  url "https://sf16-va.tiktokcdn.com/obj/eden-va2/olaa_ajlmml_zlp/ljhwZthlaukjlkulzlp/V#{version.csv.first.no_dots}_External_Release_Builds_#{version.csv.third}/Effect_House_v#{version.csv.first}.#{version.csv.second}_#{arch}_#{version.csv.fourth}.dmg",
+  url "https://sf16-va.tiktokcdn.com/obj/eden-va2/olaa_ajlmml_zlp/ljhwZthlaukjlkulzlp/V#{version.csv.first.no_dots}_External_Release_Builds_ET_#{version.csv.third}/Effect_House_v#{version.csv.first}.#{version.csv.second}_#{arch}_#{version.csv.fourth}.dmg",
       verified: "sf16-va.tiktokcdn.com/obj/eden-va2/olaa_ajlmml_zlp/ljhwZthlaukjlkulzlp/"
   name "TikTok Effect House"
   desc "Create vibrant AR effects for TikTok"
@@ -23,7 +23,7 @@ cask "effect-house" do
       arch:       livecheck_arch,
       entryPoint: version.csv.fourth,
     }
-    regex(%r{(\d+)/Effect[._-]House[._-]v?(\d+(?:\.\d+)+)(?:\.(\d+))(?:[._-]#{arch})?[._-](\d+)\.dmg}i)
+    regex(%r{(\d+(?:[._-]\d+)*)/Effect[._-]House[._-]v?(\d+(?:\.\d+)+)(?:\.(\d+))(?:[._-]#{arch})?[._-](\d+)\.dmg}i)
     strategy :header_match do |headers, regex|
       match = headers["location"]&.match(regex)
       next if match.blank?
@@ -31,10 +31,6 @@ cask "effect-house" do
       "#{match[2]},#{match[3]},#{match[1]},#{match[4]}"
     end
   end
-
-  no_autobump! because: :requires_manual_review
-
-  depends_on macos: ">= :sierra"
 
   app "Effect House.app"
 

@@ -1,6 +1,6 @@
 cask "resolume-arena" do
-  version "7.22.9,47596"
-  sha256 "3f15585d5ff5a626e4a67557a196e4f53acc5623cac13f55653105875790a9a1"
+  version "7.25.1,1565"
+  sha256 "19cf409017ca41c01559a178877d0165f3cbb105889ba567a3be7fcbba5ed132"
 
   url "https://dd5sgwxv3xok.cloudfront.net/Resolume_Arena_#{version.csv.first.dots_to_underscores}_rev_#{version.csv.second}_Installer.dmg",
       verified: "dd5sgwxv3xok.cloudfront.net/"
@@ -20,7 +20,6 @@ cask "resolume-arena" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   pkg "Resolume Arena Installer.pkg"
 

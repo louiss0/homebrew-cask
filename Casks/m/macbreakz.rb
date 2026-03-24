@@ -1,6 +1,6 @@
 cask "macbreakz" do
-  version "5.46"
-  sha256 "99dd94c7708ff627ce9fe67b39cab8b85ba7df3021aafa7a24c30c873a38eb42"
+  version "5.48"
+  sha256 "711867e43d35f513d8ad95f3ad8cef4a053b93eff78ed835e71522b772c6a82e"
 
   url "https://www.publicspace.net/download/MacBreakZ#{version.major}.dmg"
   name "MacBreakZ"
@@ -12,9 +12,8 @@ cask "macbreakz" do
     strategy :sparkle
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
+  depends_on macos: ">= :ventura"
 
   app "MacBreakZ #{version.major}.app"
 

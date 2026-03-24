@@ -1,11 +1,12 @@
 cask "dbeaverultimate" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "25.1.0"
-  sha256 arm:   "3a108581d7b492e6b8bfbb735d9d753e15dcd268fa2ac72736b8d873717231ac",
-         intel: "9081cdfb8456459110cf312f0b22166432cc9d364c986a82d612c25d40d792c5"
+  version "26.0.0"
+  sha256 arm:   "0d633329c98a84c339b0e94b84cea77e3de953659354547bb333ed4321e4b449",
+         intel: "f869113b515286c644ab3ba9df5e5e643cdbe8f8684490f7ab04d9a226ae778c"
 
-  url "https://dbeaver.com/downloads-ultimate/#{version}/dbeaver-ue-#{version}-macos-#{arch}.dmg"
+  url "https://downloads.dbeaver.net/ultimate/#{version}/dbeaver-ue-#{version}-macos-#{arch}.dmg",
+      verified: "downloads.dbeaver.net/ultimate/"
   name "DBeaver Ultimate Edition"
   desc "Universal database tool and SQL client"
   homepage "https://dbeaver.com/dbeaver-ultimate/"
@@ -16,8 +17,6 @@ cask "dbeaverultimate" do
       xml.elements["//version/number"]&.text&.strip
     end
   end
-
-  no_autobump! because: :requires_manual_review
 
   depends_on macos: ">= :big_sur"
 

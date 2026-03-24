@@ -1,5 +1,5 @@
 cask "music-widget" do
-  version "1.28"
+  version "1.29.3"
   sha256 :no_check
 
   url "https://marioaguzman.github.io/musicwidget/updater/Music%20Widget.dmg"
@@ -11,8 +11,6 @@ cask "music-widget" do
     url "https://marioaguzman.github.io/musicwidget/updater/musicwidgetappcast.xml"
     strategy :sparkle, &:short_version
   end
-
-  no_autobump! because: :requires_manual_review
 
   auto_updates true
   depends_on macos: ">= :monterey"

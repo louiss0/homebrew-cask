@@ -1,6 +1,6 @@
 cask "dolphin" do
-  version "2506a"
-  sha256 "0ea57eacd80ab51cbf17a0cd6309b5973155cc46c0fa90f5e8c6fb50ee9667cc"
+  version "2603a"
+  sha256 "2b7ddd8b18e0b0e8b492cfd5385da28014a5497061dc2d807222bb3cc4575dfd"
 
   url "https://dl.dolphin-emu.org/releases/#{version}/dolphin-#{version}-universal.dmg"
   name "Dolphin"
@@ -16,7 +16,7 @@ cask "dolphin" do
 
   auto_updates true
   conflicts_with cask: "dolphin@dev"
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Dolphin.app"
 

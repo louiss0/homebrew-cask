@@ -13,10 +13,7 @@ cask "boxy-suite" do
     strategy :sparkle, &:short_version
   end
 
-  no_autobump! because: :requires_manual_review
-
   auto_updates true
-  depends_on macos: ">= :catalina"
 
   app "Boxy for Gmail.app"
   app "Boxy for Calendar.app"

@@ -12,7 +12,7 @@ cask "audiogridder-plugin" do
     regex(/(\d+(?:[._]\d+)+)/i)
   end
 
-  no_autobump! because: :requires_manual_review
+  disable! date: "2026-09-01", because: :fails_gatekeeper_check
 
   pkg "AudioGridderPlugin_#{version}_macOS-universal.pkg"
 

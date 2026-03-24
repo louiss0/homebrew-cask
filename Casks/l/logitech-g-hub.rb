@@ -1,5 +1,5 @@
 cask "logitech-g-hub" do
-  version "2025.5.730277"
+  version "2026.1.829723"
   sha256 :no_check
 
   url "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.zip",
@@ -29,12 +29,6 @@ cask "logitech-g-hub" do
     sudo:       true,
   }
 
-  postflight do
-    set_ownership "#{appdir}/lghub.app"
-    set_ownership "/Users/Shared/LGHUB"
-    set_permissions "#{appdir}/lghub.app", "0755"
-  end
-
   uninstall launchctl: [
               "com.logi.ghub",
               "com.logi.ghub.agent",
@@ -54,8 +48,4 @@ cask "logitech-g-hub" do
     "~/Library/Preferences/com.logi.ghub.plist",
     "~/Library/Saved Application State/com.logi.ghub.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

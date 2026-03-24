@@ -1,21 +1,21 @@
 cask "8x8-work" do
   arch arm: "-arm64"
 
-  version "8.24.2-2"
-  sha256 arm:   "853762cd8aa84a5c23a619ba39e44135340f849bf15b7877b500b4b5a98b8af1",
-         intel: "38a63a415fbfa114011fa0965659fb5e0090109adc70472b00b8585626de6183"
+  version "8.31.3-1"
+  sha256 arm:   "298446c6581c8da07eee245603695de77a935c93a0babddda8dd956f81c170d0",
+         intel: "058c48e123d8352c876c51ed33ff158b3175cc77218610fca37dd60874021a6c"
 
   url "https://work-desktop-assets.8x8.com/prod-publish/ga/work#{arch}-dmg-v#{version}.dmg"
   name "8x8_work"
   desc "Communications application with voice, video, chat, and web conferencing"
-  homepage "https://www.8x8.com/products/apps"
+  homepage "https://docs.8x8.com/8x8WebHelp/8x8-work-for-desktop/Content/workd/about-the-app.htm"
 
   livecheck do
     url "https://support-portal.8x8.com/helpcenter/docrenderservice/services/rest/documents/8bff4970-6fbf-4daf-842d-8ae9b533153d"
-    regex(/work[._-]dmg[._-]v(\d+(?:[.-]\d+)+)\.dmg/i)
+    regex(/href=.*?work[._-]dmg[._-]v?(\d+(?:[.-]\d+)+)\.dmg/i)
   end
 
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :monterey"
 
   app "8x8 Work.app"
 

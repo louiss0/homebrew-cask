@@ -8,11 +8,7 @@ cask "toptracker" do
   desc "Time tracking and invoice processing"
   homepage "https://tracker.toptal.com/tracker/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2025-03-31", because: :unmaintained
-
-  depends_on macos: ">= :sierra"
 
   app "TopTracker.app"
 

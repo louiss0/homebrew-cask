@@ -1,6 +1,6 @@
 cask "inmusic-software-center" do
-  version "1.32.1"
-  sha256 "80069f9514547ea2bd729fb6717459f3a8466c87d0c2a9bb9c326bda2aa788fb"
+  version "1.37.0"
+  sha256 "f73314d31f40da9f8d64fbc08606b72553bef2fe5e65c1e5dc8ff3f2fabd3af8"
 
   url "https://cdn.inmusicbrands.com/Software/SI04/inMusic%20Software%20Center-darwin-universal-#{version}.zip",
       verified: "cdn.inmusicbrands.com/Software/SI04/"

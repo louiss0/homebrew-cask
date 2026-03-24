@@ -7,7 +7,7 @@ cask "qlfits" do
   desc "Quick Look plugin to view FITS files"
   homepage "https://github.com/onekiloparsec/QLFits"
 
-  no_autobump! because: :requires_manual_review
+  deprecate! date: "2025-09-22", because: :no_longer_meets_criteria
 
   qlplugin "QLFits#{version.major}.qlgenerator"
 

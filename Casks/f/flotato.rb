@@ -8,11 +8,8 @@ cask "flotato" do
   desc "Tool to turn any web page into a desktop app"
   homepage "https://flotato.com/"
 
-  no_autobump! because: :requires_manual_review
-
   deprecate! date: "2024-07-15", because: :unmaintained
-
-  depends_on macos: ">= :high_sierra"
+  disable! date: "2025-07-15", because: :unmaintained
 
   app "Flotato.app"
 
